@@ -9,38 +9,318 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VoixOffRouteImport } from './routes/voix-off'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as PrestationsLiveRouteImport } from './routes/prestations-live'
+import { Route as OffresSolsticeRouteImport } from './routes/offres-solstice'
+import { Route as DevisRouteImport } from './routes/devis'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoachingRouteImport } from './routes/coaching'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as OffresSolsticeIndexRouteImport } from './routes/offres-solstice.index'
+import { Route as BookIndexRouteImport } from './routes/book.index'
+import { Route as ServicesLiveRouteImport } from './routes/services.live'
+import { Route as ServicesCoachingRouteImport } from './routes/services.coaching'
+import { Route as OffresSolsticeRestaurateursRouteImport } from './routes/offres-solstice.restaurateurs'
+import { Route as OffresSolsticeMariagesRouteImport } from './routes/offres-solstice.mariages'
+import { Route as OffresSolsticeEntreprisesRouteImport } from './routes/offres-solstice.entreprises'
+import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
+import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
 
+const VoixOffRoute = VoixOffRouteImport.update({
+  id: '/voix-off',
+  path: '/voix-off',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrestationsLiveRoute = PrestationsLiveRouteImport.update({
+  id: '/prestations-live',
+  path: '/prestations-live',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OffresSolsticeRoute = OffresSolsticeRouteImport.update({
+  id: '/offres-solstice',
+  path: '/offres-solstice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevisRoute = DevisRouteImport.update({
+  id: '/devis',
+  path: '/devis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachingRoute = CoachingRouteImport.update({
+  id: '/coaching',
+  path: '/coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const OffresSolsticeIndexRoute = OffresSolsticeIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OffresSolsticeRoute,
+} as any)
+const BookIndexRoute = BookIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BookRoute,
+} as any)
+const ServicesLiveRoute = ServicesLiveRouteImport.update({
+  id: '/live',
+  path: '/live',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesCoachingRoute = ServicesCoachingRouteImport.update({
+  id: '/coaching',
+  path: '/coaching',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const OffresSolsticeRestaurateursRoute =
+  OffresSolsticeRestaurateursRouteImport.update({
+    id: '/restaurateurs',
+    path: '/restaurateurs',
+    getParentRoute: () => OffresSolsticeRoute,
+  } as any)
+const OffresSolsticeMariagesRoute = OffresSolsticeMariagesRouteImport.update({
+  id: '/mariages',
+  path: '/mariages',
+  getParentRoute: () => OffresSolsticeRoute,
+} as any)
+const OffresSolsticeEntreprisesRoute =
+  OffresSolsticeEntreprisesRouteImport.update({
+    id: '/entreprises',
+    path: '/entreprises',
+    getParentRoute: () => OffresSolsticeRoute,
+  } as any)
+const BookSolsticeRoute = BookSolsticeRouteImport.update({
+  id: '/solstice',
+  path: '/solstice',
+  getParentRoute: () => BookRoute,
+} as any)
+const BookMarineAnaisRoute = BookMarineAnaisRouteImport.update({
+  id: '/marine-anais',
+  path: '/marine-anais',
+  getParentRoute: () => BookRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRouteWithChildren
+  '/coaching': typeof CoachingRoute
+  '/contact': typeof ContactRoute
+  '/devis': typeof DevisRoute
+  '/offres-solstice': typeof OffresSolsticeRouteWithChildren
+  '/prestations-live': typeof PrestationsLiveRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/voix-off': typeof VoixOffRoute
+  '/book/marine-anais': typeof BookMarineAnaisRoute
+  '/book/solstice': typeof BookSolsticeRoute
+  '/offres-solstice/entreprises': typeof OffresSolsticeEntreprisesRoute
+  '/offres-solstice/mariages': typeof OffresSolsticeMariagesRoute
+  '/offres-solstice/restaurateurs': typeof OffresSolsticeRestaurateursRoute
+  '/services/coaching': typeof ServicesCoachingRoute
+  '/services/live': typeof ServicesLiveRoute
+  '/book/': typeof BookIndexRoute
+  '/offres-solstice/': typeof OffresSolsticeIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/coaching': typeof CoachingRoute
+  '/contact': typeof ContactRoute
+  '/devis': typeof DevisRoute
+  '/prestations-live': typeof PrestationsLiveRoute
+  '/voix-off': typeof VoixOffRoute
+  '/book/marine-anais': typeof BookMarineAnaisRoute
+  '/book/solstice': typeof BookSolsticeRoute
+  '/offres-solstice/entreprises': typeof OffresSolsticeEntreprisesRoute
+  '/offres-solstice/mariages': typeof OffresSolsticeMariagesRoute
+  '/offres-solstice/restaurateurs': typeof OffresSolsticeRestaurateursRoute
+  '/services/coaching': typeof ServicesCoachingRoute
+  '/services/live': typeof ServicesLiveRoute
+  '/book': typeof BookIndexRoute
+  '/offres-solstice': typeof OffresSolsticeIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRouteWithChildren
+  '/coaching': typeof CoachingRoute
+  '/contact': typeof ContactRoute
+  '/devis': typeof DevisRoute
+  '/offres-solstice': typeof OffresSolsticeRouteWithChildren
+  '/prestations-live': typeof PrestationsLiveRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/voix-off': typeof VoixOffRoute
+  '/book/marine-anais': typeof BookMarineAnaisRoute
+  '/book/solstice': typeof BookSolsticeRoute
+  '/offres-solstice/entreprises': typeof OffresSolsticeEntreprisesRoute
+  '/offres-solstice/mariages': typeof OffresSolsticeMariagesRoute
+  '/offres-solstice/restaurateurs': typeof OffresSolsticeRestaurateursRoute
+  '/services/coaching': typeof ServicesCoachingRoute
+  '/services/live': typeof ServicesLiveRoute
+  '/book/': typeof BookIndexRoute
+  '/offres-solstice/': typeof OffresSolsticeIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/book'
+    | '/coaching'
+    | '/contact'
+    | '/devis'
+    | '/offres-solstice'
+    | '/prestations-live'
+    | '/services'
+    | '/voix-off'
+    | '/book/marine-anais'
+    | '/book/solstice'
+    | '/offres-solstice/entreprises'
+    | '/offres-solstice/mariages'
+    | '/offres-solstice/restaurateurs'
+    | '/services/coaching'
+    | '/services/live'
+    | '/book/'
+    | '/offres-solstice/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/coaching'
+    | '/contact'
+    | '/devis'
+    | '/prestations-live'
+    | '/voix-off'
+    | '/book/marine-anais'
+    | '/book/solstice'
+    | '/offres-solstice/entreprises'
+    | '/offres-solstice/mariages'
+    | '/offres-solstice/restaurateurs'
+    | '/services/coaching'
+    | '/services/live'
+    | '/book'
+    | '/offres-solstice'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/book'
+    | '/coaching'
+    | '/contact'
+    | '/devis'
+    | '/offres-solstice'
+    | '/prestations-live'
+    | '/services'
+    | '/voix-off'
+    | '/book/marine-anais'
+    | '/book/solstice'
+    | '/offres-solstice/entreprises'
+    | '/offres-solstice/mariages'
+    | '/offres-solstice/restaurateurs'
+    | '/services/coaching'
+    | '/services/live'
+    | '/book/'
+    | '/offres-solstice/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRouteWithChildren
+  CoachingRoute: typeof CoachingRoute
+  ContactRoute: typeof ContactRoute
+  DevisRoute: typeof DevisRoute
+  OffresSolsticeRoute: typeof OffresSolsticeRouteWithChildren
+  PrestationsLiveRoute: typeof PrestationsLiveRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
+  VoixOffRoute: typeof VoixOffRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/voix-off': {
+      id: '/voix-off'
+      path: '/voix-off'
+      fullPath: '/voix-off'
+      preLoaderRoute: typeof VoixOffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prestations-live': {
+      id: '/prestations-live'
+      path: '/prestations-live'
+      fullPath: '/prestations-live'
+      preLoaderRoute: typeof PrestationsLiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offres-solstice': {
+      id: '/offres-solstice'
+      path: '/offres-solstice'
+      fullPath: '/offres-solstice'
+      preLoaderRoute: typeof OffresSolsticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/devis': {
+      id: '/devis'
+      path: '/devis'
+      fullPath: '/devis'
+      preLoaderRoute: typeof DevisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coaching': {
+      id: '/coaching'
+      path: '/coaching'
+      fullPath: '/coaching'
+      preLoaderRoute: typeof CoachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +328,138 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/offres-solstice/': {
+      id: '/offres-solstice/'
+      path: '/'
+      fullPath: '/offres-solstice/'
+      preLoaderRoute: typeof OffresSolsticeIndexRouteImport
+      parentRoute: typeof OffresSolsticeRoute
+    }
+    '/book/': {
+      id: '/book/'
+      path: '/'
+      fullPath: '/book/'
+      preLoaderRoute: typeof BookIndexRouteImport
+      parentRoute: typeof BookRoute
+    }
+    '/services/live': {
+      id: '/services/live'
+      path: '/live'
+      fullPath: '/services/live'
+      preLoaderRoute: typeof ServicesLiveRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/coaching': {
+      id: '/services/coaching'
+      path: '/coaching'
+      fullPath: '/services/coaching'
+      preLoaderRoute: typeof ServicesCoachingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/offres-solstice/restaurateurs': {
+      id: '/offres-solstice/restaurateurs'
+      path: '/restaurateurs'
+      fullPath: '/offres-solstice/restaurateurs'
+      preLoaderRoute: typeof OffresSolsticeRestaurateursRouteImport
+      parentRoute: typeof OffresSolsticeRoute
+    }
+    '/offres-solstice/mariages': {
+      id: '/offres-solstice/mariages'
+      path: '/mariages'
+      fullPath: '/offres-solstice/mariages'
+      preLoaderRoute: typeof OffresSolsticeMariagesRouteImport
+      parentRoute: typeof OffresSolsticeRoute
+    }
+    '/offres-solstice/entreprises': {
+      id: '/offres-solstice/entreprises'
+      path: '/entreprises'
+      fullPath: '/offres-solstice/entreprises'
+      preLoaderRoute: typeof OffresSolsticeEntreprisesRouteImport
+      parentRoute: typeof OffresSolsticeRoute
+    }
+    '/book/solstice': {
+      id: '/book/solstice'
+      path: '/solstice'
+      fullPath: '/book/solstice'
+      preLoaderRoute: typeof BookSolsticeRouteImport
+      parentRoute: typeof BookRoute
+    }
+    '/book/marine-anais': {
+      id: '/book/marine-anais'
+      path: '/marine-anais'
+      fullPath: '/book/marine-anais'
+      preLoaderRoute: typeof BookMarineAnaisRouteImport
+      parentRoute: typeof BookRoute
+    }
   }
 }
 
+interface BookRouteChildren {
+  BookMarineAnaisRoute: typeof BookMarineAnaisRoute
+  BookSolsticeRoute: typeof BookSolsticeRoute
+  BookIndexRoute: typeof BookIndexRoute
+}
+
+const BookRouteChildren: BookRouteChildren = {
+  BookMarineAnaisRoute: BookMarineAnaisRoute,
+  BookSolsticeRoute: BookSolsticeRoute,
+  BookIndexRoute: BookIndexRoute,
+}
+
+const BookRouteWithChildren = BookRoute._addFileChildren(BookRouteChildren)
+
+interface OffresSolsticeRouteChildren {
+  OffresSolsticeEntreprisesRoute: typeof OffresSolsticeEntreprisesRoute
+  OffresSolsticeMariagesRoute: typeof OffresSolsticeMariagesRoute
+  OffresSolsticeRestaurateursRoute: typeof OffresSolsticeRestaurateursRoute
+  OffresSolsticeIndexRoute: typeof OffresSolsticeIndexRoute
+}
+
+const OffresSolsticeRouteChildren: OffresSolsticeRouteChildren = {
+  OffresSolsticeEntreprisesRoute: OffresSolsticeEntreprisesRoute,
+  OffresSolsticeMariagesRoute: OffresSolsticeMariagesRoute,
+  OffresSolsticeRestaurateursRoute: OffresSolsticeRestaurateursRoute,
+  OffresSolsticeIndexRoute: OffresSolsticeIndexRoute,
+}
+
+const OffresSolsticeRouteWithChildren = OffresSolsticeRoute._addFileChildren(
+  OffresSolsticeRouteChildren,
+)
+
+interface ServicesRouteChildren {
+  ServicesCoachingRoute: typeof ServicesCoachingRoute
+  ServicesLiveRoute: typeof ServicesLiveRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesCoachingRoute: ServicesCoachingRoute,
+  ServicesLiveRoute: ServicesLiveRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRouteWithChildren,
+  CoachingRoute: CoachingRoute,
+  ContactRoute: ContactRoute,
+  DevisRoute: DevisRoute,
+  OffresSolsticeRoute: OffresSolsticeRouteWithChildren,
+  PrestationsLiveRoute: PrestationsLiveRoute,
+  ServicesRoute: ServicesRouteWithChildren,
+  VoixOffRoute: VoixOffRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
