@@ -14,9 +14,9 @@ export const Route = createFileRoute("/services/")({
 });
 
 const SERVICES = [
-  { title: "Prestations (Live)", to: "/services/live", desc: "Duo acoustique Solstice ou prestation solo sur bande son pour vos événements." },
-  { title: "Coaching Vocal", to: "/services/coaching", desc: "Développez votre voix avec un accompagnement sur-mesure." },
-  { title: "Voix Off", to: "/voix-off", desc: "Donnez vie à vos projets audiovisuels avec une voix professionnelle." },
+  { title: "Concerts (Live)", to: "/services/live", desc: "\u00a0Solo sur Bande Son ou\u00a0\nDuo en Acoustique" },
+  { title: "Coaching Vocal", to: "/services/coaching", desc: "Développons votre Voix ! Accompagnement\u00a0\nsur-mesure" },
+  { title: "Voix Off", to: "/voix-off", desc: "Donnez vie à vos projets audiovisuels\u00a0" },
 ];
 
 function ServicesHub() {
