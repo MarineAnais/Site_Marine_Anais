@@ -40,7 +40,7 @@ function LiveHub() {
             <div style={cardStyle}>
               <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0 }}>Marine Anaïs</h2>
               <p style={{ color: "var(--text-muted)", marginTop: "1rem", textAlign: "center" }}>
-                Anniversaires enfants et restaurateurs
+                Anniversaires d'Enfants et Restaurateurs
               </p>
             </div>
           </Link>
@@ -51,7 +51,7 @@ function LiveHub() {
               <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0 }}>Solstice</h2>
               <h3 style={{ color: "var(--accent-cream)", fontSize: "1.2rem", margin: "0.5rem 0", fontWeight: 700 }}>Duo Acoustique</h3>
               <p style={{ color: "var(--text-muted)", marginTop: "0.5rem", textAlign: "center" }}>
-                ( Mariages, restaurateurs et entreprises )
+                Mariages, Restaurateurs et Entreprises
               </p>
             </div>
           </Link>
