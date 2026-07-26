@@ -10,7 +10,7 @@ const MENU: Item[] = [
     label: "Services",
     to: "/services",
     children: [
-      { label: "Live", to: "/services/live" },
+      { label: "Concerts (Live)", to: "/services/live" },
       { label: "Coaching Vocal", to: "/services/coaching" },
       { label: "Voix Off", to: "/voix-off" },
     ],
