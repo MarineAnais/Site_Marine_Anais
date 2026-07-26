@@ -45,43 +45,6 @@ function Home() {
         />
       </div>
 
-      <div style={{ padding: "5rem 2rem", textAlign: "center", maxWidth: 1100, margin: "0 auto" }}>
-        <h2 style={{ fontSize: "2.2rem", color: "var(--accent-cream)", marginBottom: "2rem" }}>
-          Explorer mes univers
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
-          {[
-            { to: "/services/live", t: "Live" },
-            { to: "/services/coaching", t: "Coaching Vocal" },
-            { to: "/voix-off", t: "Voix Off" },
-            { to: "/book", t: "Mon Book" },
-          ].map((c) => (
-            <Link key={c.to} to={c.to}>
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(212,196,168,0.2)",
-                  borderRadius: 16,
-                  padding: "2.5rem 1.5rem",
-                  color: "var(--text-light)",
-                  fontSize: "1.2rem",
-                  fontWeight: 600,
-                  letterSpacing: 1,
-                  transition: "all 0.3s",
-                }}
-              >
-                {c.t}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
