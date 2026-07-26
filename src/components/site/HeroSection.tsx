@@ -62,19 +62,17 @@ export function HeroSection() {
         </motion.p>
 
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="ma-btn"
-            onClick={() => {
-              const el = document.getElementById("video-section");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            style={{ background: "var(--accent-cream)", color: "#111" }}
-          >
-            Réserver un concert (Live)
-          </motion.button>
+          <Link to="/services/live">
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="ma-btn"
+              style={{ background: "var(--accent-cream)", color: "#111" }}
+            >
+              Réserver un concert (Live)
+            </motion.button>
+          </Link>
 
           <Link to="/services/coaching">
             <motion.button
