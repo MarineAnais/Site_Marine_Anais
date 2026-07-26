@@ -41,7 +41,7 @@ function LiveHub() {
           <Link to="/prestations-live">
             <div style={{ ...cardStyle, backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${marineHub.url})` }}>
               <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0, textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>Marine Anaïs</h2>
-              <p style={{ color: "var(--text-light)", marginTop: "1rem", textAlign: "center", textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>
+              <p style={{ color: "var(--text-light)", marginTop: "1rem", textAlign: "center", textShadow: "1px 1px 6px rgba(0,0,0,0.8)", fontSize: "1.15rem" }}>
                 Anniversaires d'Enfants et Restaurateurs
               </p>
             </div>
