@@ -52,9 +52,11 @@ export function HeroSection() {
             marginBottom: "3rem",
             fontWeight: 300,
             lineHeight: 1.6,
+            whiteSpace: "pre-line",
           }}
         >
-          Chanteuse & Coach Vocal | Pop-Rock, Variété française, Films d'animation
+          Chanteuse & Coach Vocal&nbsp;
+          {"\n"}Pop-Rock, Variété française, Films d'animation
         </motion.p>
 
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
