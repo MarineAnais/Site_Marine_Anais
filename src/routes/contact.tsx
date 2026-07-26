@@ -49,17 +49,17 @@ function Contact() {
           alignItems: "flex-start",
         }}
       >
-        <a href="mailto:marineanaiscontact@gmail.com" style={socialLinkStyle}>
-          <Mail size={28} color="var(--accent-blue)" /> marineanaiscontact@gmail.com
-        </a>
         <a href="https://www.instagram.com/marinanais_" target="_blank" rel="noreferrer" style={socialLinkStyle}>
           <FaInstagram size={28} color="var(--accent-blue)" /> @marinanais_
+        </a>
+        <a href="https://www.youtube.com/@MarineAnaisBook" target="_blank" rel="noreferrer" style={socialLinkStyle}>
+          <FaYoutube size={30} color="var(--accent-blue)" /> Marine Anaïs
         </a>
         <a href="https://vm.tiktok.com/ZNREASSyQ/" target="_blank" rel="noreferrer" style={socialLinkStyle}>
           <FaTiktok size={26} color="var(--accent-blue)" /> @marine_anais_off
         </a>
-        <a href="https://www.youtube.com/@MarineAnaisBook" target="_blank" rel="noreferrer" style={socialLinkStyle}>
-          <FaYoutube size={30} color="var(--accent-blue)" /> Marine Anaïs
+        <a href="mailto:marineanaiscontact@gmail.com" style={socialLinkStyle}>
+          <Mail size={28} color="var(--accent-blue)" /> marineanaiscontact@gmail.com
         </a>
       </motion.div>
     </div>
