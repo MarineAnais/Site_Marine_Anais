@@ -25,8 +25,9 @@ function CoachingHub() {
         <h1 style={{ color: "var(--text-light)", marginBottom: "2rem", fontSize: "3rem", fontWeight: 500 }}>
           Coaching Vocal
         </h1>
-        <p style={{ color: "var(--accent-cream)", fontSize: "1.4rem", lineHeight: 1.6, marginBottom: "3rem", fontStyle: "italic" }}>
-          "Trouvons votre façon d'interpréter au mieux vos morceaux préférés ! Coaching personnalisé pour tous niveaux."
+        <p style={{ color: "var(--accent-cream)", fontSize: "1.4rem", lineHeight: 1.6, marginBottom: "3rem", fontStyle: "italic", whiteSpace: "pre-line" }}>
+          Trouvons comment interpréter au mieux vos morceaux préférés !{" "}&nbsp;
+          {"\n"}Coaching personnalisé pour tous les niveaux
         </p>
 
         <a
