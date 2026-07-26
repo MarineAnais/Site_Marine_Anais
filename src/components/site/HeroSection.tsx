@@ -55,8 +55,10 @@ export function HeroSection() {
             whiteSpace: "pre-line",
           }}
         >
-          Chanteuse & Coach Vocal&nbsp;
-          {"\n"}Pop-Rock, Variété française, Films d'animation
+          <span style={{ display: "block" }}>Chanteuse & Coach Vocal</span>
+          <span style={{ display: "block", fontSize: "1.05rem", fontStyle: "italic" }}>
+            Pop-Rock, Variété française, Films d'animation
+          </span>
         </motion.p>
 
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
