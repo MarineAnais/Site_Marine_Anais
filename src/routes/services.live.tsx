@@ -52,7 +52,6 @@ function LiveHub() {
             <div style={{ ...cardStyle, backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${solsticeHub.url})` }}>
               <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0, textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>Solstice</h2>
               <h3 style={{ color: "var(--accent-cream)", fontSize: "1.2rem", margin: "0.5rem 0", fontWeight: 700, textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>Duo Acoustique</h3>
-              <h3 style={{ color: "var(--accent-cream)", fontSize: "1.2rem", margin: "0.5rem 0", fontWeight: 700, textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>Duo Acoustique</h3>
               <p style={{ color: "var(--text-light)", marginTop: "0.5rem", textAlign: "center", textShadow: "1px 1px 6px rgba(0,0,0,0.8)", fontSize: "1.15rem" }}>
                 Mariages, Restaurateurs et Entreprises
               </p>
