@@ -47,7 +47,7 @@ function ServicesHub() {
                 }}
               >
                 <h2 style={{ fontSize: "2rem", color: "var(--accent-cream)", textAlign: "center" }}>{s.title}</h2>
-                <p style={{ color: "var(--text-muted)", textAlign: "center", flex: 1 }}>{s.desc}</p>
+                <p style={{ color: "var(--text-muted)", textAlign: "center", flex: 1, whiteSpace: "pre-line" }}>{s.desc}</p>
                 <div style={{ textAlign: "center", color: "var(--accent-blue)", fontWeight: 600 }}>Découvrir →</div>
               </div>
             </Link>
