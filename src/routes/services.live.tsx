@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import marineHub from "../assets/marine_hub_btn.jpg.asset.json";
+import solsticeHub from "../assets/solstice_hub_btn.png.asset.json";
 
 export const Route = createFileRoute("/services/live")({
   head: () => ({
@@ -14,11 +16,11 @@ export const Route = createFileRoute("/services/live")({
 });
 
 const cardStyle = {
-  background: "rgba(255,255,255,0.05)",
-  backdropFilter: "blur(10px)",
   border: "1px solid rgba(255,255,255,0.1)",
   borderRadius: 16,
-  height: 250,
+  height: 300,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
   display: "flex",
   flexDirection: "column" as const,
   alignItems: "center",
@@ -37,9 +39,9 @@ function LiveHub() {
       <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap", justifyContent: "center", width: "100%", maxWidth: 900 }}>
         <motion.div whileHover={{ scale: 1.05 }} style={{ flex: "1 1 350px" }}>
           <Link to="/prestations-live">
-            <div style={cardStyle}>
-              <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0 }}>Marine Anaïs</h2>
-              <p style={{ color: "var(--text-muted)", marginTop: "1rem", textAlign: "center" }}>
+            <div style={{ ...cardStyle, backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${marineHub.url})` }}>
+              <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0, textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>Marine Anaïs</h2>
+              <p style={{ color: "var(--text-light)", marginTop: "1rem", textAlign: "center", textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>
                 Anniversaires d'Enfants et Restaurateurs
               </p>
             </div>
@@ -47,10 +49,10 @@ function LiveHub() {
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} style={{ flex: "1 1 350px" }}>
           <Link to="/offres-solstice">
-            <div style={cardStyle}>
-              <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0 }}>Solstice</h2>
-              <h3 style={{ color: "var(--accent-cream)", fontSize: "1.2rem", margin: "0.5rem 0", fontWeight: 700 }}>Duo Acoustique</h3>
-              <p style={{ color: "var(--text-muted)", marginTop: "0.5rem", textAlign: "center" }}>
+            <div style={{ ...cardStyle, backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${solsticeHub.url})` }}>
+              <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0, textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>Solstice</h2>
+              <h3 style={{ color: "var(--accent-cream)", fontSize: "1.2rem", margin: "0.5rem 0", fontWeight: 700, textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>Duo Acoustique</h3>
+              <p style={{ color: "var(--text-light)", marginTop: "0.5rem", textAlign: "center", textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>
                 Mariages, Restaurateurs et Entreprises
               </p>
             </div>
