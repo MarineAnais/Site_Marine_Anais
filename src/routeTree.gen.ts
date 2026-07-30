@@ -21,6 +21,7 @@ import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
 import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
 import { Route as ServicesConcertIndexRouteImport } from './routes/services/concert/index'
 import { Route as ServicesConcertSolsticeIndexRouteImport } from './routes/services/concert/solstice/index'
+import { Route as ServicesConcertMarineAnaisIndexRouteImport } from './routes/services/concert/marine-anais/index'
 import { Route as ServicesConcertSolsticeRestaurateursRouteImport } from './routes/services/concert/solstice/restaurateurs'
 import { Route as ServicesConcertSolsticeMariagesRouteImport } from './routes/services/concert/solstice/mariages'
 import { Route as ServicesConcertSolsticeEntreprisesRouteImport } from './routes/services/concert/solstice/entreprises'
@@ -86,6 +87,12 @@ const ServicesConcertSolsticeIndexRoute =
     path: '/services/concert/solstice/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesConcertMarineAnaisIndexRoute =
+  ServicesConcertMarineAnaisIndexRouteImport.update({
+    id: '/services/concert/marine-anais/',
+    path: '/services/concert/marine-anais/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesConcertSolsticeRestaurateursRoute =
   ServicesConcertSolsticeRestaurateursRouteImport.update({
     id: '/services/concert/solstice/restaurateurs',
@@ -120,6 +127,7 @@ export interface FileRoutesByFullPath {
   '/services/concert/solstice/entreprises': typeof ServicesConcertSolsticeEntreprisesRoute
   '/services/concert/solstice/mariages': typeof ServicesConcertSolsticeMariagesRoute
   '/services/concert/solstice/restaurateurs': typeof ServicesConcertSolsticeRestaurateursRoute
+  '/services/concert/marine-anais/': typeof ServicesConcertMarineAnaisIndexRoute
   '/services/concert/solstice/': typeof ServicesConcertSolsticeIndexRoute
 }
 export interface FileRoutesByTo {
@@ -136,6 +144,7 @@ export interface FileRoutesByTo {
   '/services/concert/solstice/entreprises': typeof ServicesConcertSolsticeEntreprisesRoute
   '/services/concert/solstice/mariages': typeof ServicesConcertSolsticeMariagesRoute
   '/services/concert/solstice/restaurateurs': typeof ServicesConcertSolsticeRestaurateursRoute
+  '/services/concert/marine-anais': typeof ServicesConcertMarineAnaisIndexRoute
   '/services/concert/solstice': typeof ServicesConcertSolsticeIndexRoute
 }
 export interface FileRoutesById {
@@ -154,6 +163,7 @@ export interface FileRoutesById {
   '/services/concert/solstice/entreprises': typeof ServicesConcertSolsticeEntreprisesRoute
   '/services/concert/solstice/mariages': typeof ServicesConcertSolsticeMariagesRoute
   '/services/concert/solstice/restaurateurs': typeof ServicesConcertSolsticeRestaurateursRoute
+  '/services/concert/marine-anais/': typeof ServicesConcertMarineAnaisIndexRoute
   '/services/concert/solstice/': typeof ServicesConcertSolsticeIndexRoute
 }
 export interface FileRouteTypes {
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/services/concert/solstice/entreprises'
     | '/services/concert/solstice/mariages'
     | '/services/concert/solstice/restaurateurs'
+    | '/services/concert/marine-anais/'
     | '/services/concert/solstice/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/services/concert/solstice/entreprises'
     | '/services/concert/solstice/mariages'
     | '/services/concert/solstice/restaurateurs'
+    | '/services/concert/marine-anais'
     | '/services/concert/solstice'
   id:
     | '__root__'
@@ -206,6 +218,7 @@ export interface FileRouteTypes {
     | '/services/concert/solstice/entreprises'
     | '/services/concert/solstice/mariages'
     | '/services/concert/solstice/restaurateurs'
+    | '/services/concert/marine-anais/'
     | '/services/concert/solstice/'
   fileRoutesById: FileRoutesById
 }
@@ -221,6 +234,7 @@ export interface RootRouteChildren {
   ServicesConcertSolsticeEntreprisesRoute: typeof ServicesConcertSolsticeEntreprisesRoute
   ServicesConcertSolsticeMariagesRoute: typeof ServicesConcertSolsticeMariagesRoute
   ServicesConcertSolsticeRestaurateursRoute: typeof ServicesConcertSolsticeRestaurateursRoute
+  ServicesConcertMarineAnaisIndexRoute: typeof ServicesConcertMarineAnaisIndexRoute
   ServicesConcertSolsticeIndexRoute: typeof ServicesConcertSolsticeIndexRoute
 }
 
@@ -310,6 +324,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesConcertSolsticeIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/concert/marine-anais/': {
+      id: '/services/concert/marine-anais/'
+      path: '/services/concert/marine-anais'
+      fullPath: '/services/concert/marine-anais/'
+      preLoaderRoute: typeof ServicesConcertMarineAnaisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/concert/solstice/restaurateurs': {
       id: '/services/concert/solstice/restaurateurs'
       path: '/services/concert/solstice/restaurateurs'
@@ -362,6 +383,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesConcertSolsticeMariagesRoute: ServicesConcertSolsticeMariagesRoute,
   ServicesConcertSolsticeRestaurateursRoute:
     ServicesConcertSolsticeRestaurateursRoute,
+  ServicesConcertMarineAnaisIndexRoute: ServicesConcertMarineAnaisIndexRoute,
   ServicesConcertSolsticeIndexRoute: ServicesConcertSolsticeIndexRoute,
 }
 export const routeTree = rootRouteImport
