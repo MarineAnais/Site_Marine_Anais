@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import photo from "../assets/marine_smiling.jpg.asset.json";
+import photo from "../../../../assets/marine_smiling.jpg.asset.json";
 
-export const Route = createFileRoute("/offres-solstice/restaurateurs")({
+export const Route = createFileRoute("/services/concert/solstice/restaurateurs")({
   head: () => ({
     meta: [
       { title: "Solstice — Restaurateurs" },
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/offres-solstice/restaurateurs")({
 function Resto() {
   return (
     <div style={{ minHeight: "calc(100vh - 85px)", padding: "3rem 2rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Link to="/offres-solstice" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start", marginLeft: "5%" }}>
+      <Link to="/services/concert/solstice" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start", marginLeft: "5%" }}>
         ← Retour aux offres Solstice
       </Link>
       <div className="book-container" style={{ position: "relative", width: "100%", maxWidth: 1100, display: "flex", boxShadow: "0 30px 60px rgba(0,0,0,0.5)", borderRadius: 8, background: "#fdfdfc", color: "#222", overflow: "hidden", minHeight: 600 }}>

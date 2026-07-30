@@ -62,7 +62,7 @@ export function HeroSection() {
         </motion.p>
 
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-          <Link to="/services/live">
+          <Link to="/services/concert">
             <motion.button
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

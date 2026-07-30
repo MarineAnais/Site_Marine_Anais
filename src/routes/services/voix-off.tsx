@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/voix-off")({
+export const Route = createFileRoute("/services/voix-off")({
   head: () => ({
     meta: [
       { title: "Voix Off — Marine Anaïs" },
@@ -15,6 +15,9 @@ export const Route = createFileRoute("/voix-off")({
 function VoixOff() {
   return (
     <div style={{ padding: "5rem 2rem", minHeight: "calc(100vh - 85px)", maxWidth: 1000, margin: "0 auto" }}>
+      <Link to="/services" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", display: "inline-block" }}>
+        ← Retour aux services
+      </Link>
       <div style={{ textAlign: "center", marginBottom: "3rem" }}>
         <h1 style={{ fontSize: "2.5rem", color: "var(--accent-cream)", marginBottom: "1rem" }}>Voix Off</h1>
         <p style={{ color: "var(--text-light)", fontSize: "1.15rem", maxWidth: 800, margin: "0 auto", lineHeight: 1.6 }}>

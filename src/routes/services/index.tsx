@@ -14,9 +14,9 @@ export const Route = createFileRoute("/services/")({
 });
 
 const SERVICES = [
-  { title: "Concerts (Live)", to: "/services/live", desc: "\u00a0Solo sur Bande Son ou\u00a0\nDuo en Acoustique" },
+  { title: "Concerts (Live)", to: "/services/concert", desc: "\u00a0Solo sur Bande Son ou\u00a0\nDuo en Acoustique" },
   { title: "Coaching Vocal", to: "/services/coaching", desc: "Développons votre Voix ! Accompagnement\u00a0\nsur-mesure" },
-  { title: "Voix Off", to: "/voix-off", desc: "Donnez vie à vos projets audiovisuels\u00a0" },
+  { title: "Voix Off", to: "/services/voix-off", desc: "Donnez vie à vos projets audiovisuels\u00a0" },
 ];
 
 function ServicesHub() {
