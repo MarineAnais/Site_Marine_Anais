@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as DevisRouteImport } from './routes/devis'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookRouteImport } from './routes/book'
@@ -28,6 +29,11 @@ import { Route as ServicesConcertSolsticeEntreprisesRouteImport } from './routes
 import { Route as ServicesConcertMarineAnaisRestaurateursRouteImport } from './routes/services/concert/marine-anais/restaurateurs'
 import { Route as ServicesConcertMarineAnaisAnniversairesRouteImport } from './routes/services/concert/marine-anais/anniversaires'
 
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DevisRoute = DevisRouteImport.update({
   id: '/devis',
   path: '/devis',
@@ -131,6 +137,7 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRouteWithChildren
   '/contact': typeof ContactRoute
   '/devis': typeof DevisRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/devis': typeof DevisRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
@@ -171,6 +179,7 @@ export interface FileRoutesById {
   '/book': typeof BookRouteWithChildren
   '/contact': typeof ContactRoute
   '/devis': typeof DevisRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
@@ -193,6 +202,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/devis'
+    | '/mentions-legales'
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
@@ -212,6 +222,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/devis'
+    | '/mentions-legales'
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
@@ -232,6 +243,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/devis'
+    | '/mentions-legales'
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
@@ -253,6 +265,7 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRouteWithChildren
   ContactRoute: typeof ContactRoute
   DevisRoute: typeof DevisRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   ServicesCoachingRoute: typeof ServicesCoachingRoute
   ServicesVoixOffRoute: typeof ServicesVoixOffRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -268,6 +281,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/devis': {
       id: '/devis'
       path: '/devis'
@@ -416,6 +436,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRouteWithChildren,
   ContactRoute: ContactRoute,
   DevisRoute: DevisRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   ServicesCoachingRoute: ServicesCoachingRoute,
   ServicesVoixOffRoute: ServicesVoixOffRoute,
   ServicesIndexRoute: ServicesIndexRoute,

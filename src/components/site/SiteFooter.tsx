@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 export function SiteFooter() {
   return (
     <footer
@@ -11,7 +13,23 @@ export function SiteFooter() {
         background: "var(--bg-secondary)",
       }}
     >
-      © {new Date().getFullYear()} Marine Anaïs. Tous droits réservés.
+      <div style={{ marginBottom: "0.75rem" }}>
+        © {new Date().getFullYear()} Marine Anaïs. Tous droits réservés.
+      </div>
+      <Link
+        to="/mentions-legales"
+        style={{
+          color: "var(--text-muted)",
+          fontSize: "0.8rem",
+          textDecoration: "underline",
+          textUnderlineOffset: "2px",
+          transition: "color 0.2s ease",
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-cream)")}
+        onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+      >
+        Mentions Légales
+      </Link>
     </footer>
   );
 }
