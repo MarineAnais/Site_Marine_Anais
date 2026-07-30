@@ -25,6 +25,7 @@ import { Route as ServicesConcertMarineAnaisIndexRouteImport } from './routes/se
 import { Route as ServicesConcertSolsticeRestaurateursRouteImport } from './routes/services/concert/solstice/restaurateurs'
 import { Route as ServicesConcertSolsticeMariagesRouteImport } from './routes/services/concert/solstice/mariages'
 import { Route as ServicesConcertSolsticeEntreprisesRouteImport } from './routes/services/concert/solstice/entreprises'
+import { Route as ServicesConcertMarineAnaisRestaurateursRouteImport } from './routes/services/concert/marine-anais/restaurateurs'
 import { Route as ServicesConcertMarineAnaisAnniversairesRouteImport } from './routes/services/concert/marine-anais/anniversaires'
 
 const DevisRoute = DevisRouteImport.update({
@@ -112,6 +113,12 @@ const ServicesConcertSolsticeEntreprisesRoute =
     path: '/services/concert/solstice/entreprises',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesConcertMarineAnaisRestaurateursRoute =
+  ServicesConcertMarineAnaisRestaurateursRouteImport.update({
+    id: '/services/concert/marine-anais/restaurateurs',
+    path: '/services/concert/marine-anais/restaurateurs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesConcertMarineAnaisAnniversairesRoute =
   ServicesConcertMarineAnaisAnniversairesRouteImport.update({
     id: '/services/concert/marine-anais/anniversaires',
@@ -132,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/services/': typeof ServicesIndexRoute
   '/services/concert/': typeof ServicesConcertIndexRoute
   '/services/concert/marine-anais/anniversaires': typeof ServicesConcertMarineAnaisAnniversairesRoute
+  '/services/concert/marine-anais/restaurateurs': typeof ServicesConcertMarineAnaisRestaurateursRoute
   '/services/concert/solstice/entreprises': typeof ServicesConcertSolsticeEntreprisesRoute
   '/services/concert/solstice/mariages': typeof ServicesConcertSolsticeMariagesRoute
   '/services/concert/solstice/restaurateurs': typeof ServicesConcertSolsticeRestaurateursRoute
@@ -150,6 +158,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesIndexRoute
   '/services/concert': typeof ServicesConcertIndexRoute
   '/services/concert/marine-anais/anniversaires': typeof ServicesConcertMarineAnaisAnniversairesRoute
+  '/services/concert/marine-anais/restaurateurs': typeof ServicesConcertMarineAnaisRestaurateursRoute
   '/services/concert/solstice/entreprises': typeof ServicesConcertSolsticeEntreprisesRoute
   '/services/concert/solstice/mariages': typeof ServicesConcertSolsticeMariagesRoute
   '/services/concert/solstice/restaurateurs': typeof ServicesConcertSolsticeRestaurateursRoute
@@ -170,6 +179,7 @@ export interface FileRoutesById {
   '/services/': typeof ServicesIndexRoute
   '/services/concert/': typeof ServicesConcertIndexRoute
   '/services/concert/marine-anais/anniversaires': typeof ServicesConcertMarineAnaisAnniversairesRoute
+  '/services/concert/marine-anais/restaurateurs': typeof ServicesConcertMarineAnaisRestaurateursRoute
   '/services/concert/solstice/entreprises': typeof ServicesConcertSolsticeEntreprisesRoute
   '/services/concert/solstice/mariages': typeof ServicesConcertSolsticeMariagesRoute
   '/services/concert/solstice/restaurateurs': typeof ServicesConcertSolsticeRestaurateursRoute
@@ -191,6 +201,7 @@ export interface FileRouteTypes {
     | '/services/'
     | '/services/concert/'
     | '/services/concert/marine-anais/anniversaires'
+    | '/services/concert/marine-anais/restaurateurs'
     | '/services/concert/solstice/entreprises'
     | '/services/concert/solstice/mariages'
     | '/services/concert/solstice/restaurateurs'
@@ -209,6 +220,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/services/concert'
     | '/services/concert/marine-anais/anniversaires'
+    | '/services/concert/marine-anais/restaurateurs'
     | '/services/concert/solstice/entreprises'
     | '/services/concert/solstice/mariages'
     | '/services/concert/solstice/restaurateurs'
@@ -228,6 +240,7 @@ export interface FileRouteTypes {
     | '/services/'
     | '/services/concert/'
     | '/services/concert/marine-anais/anniversaires'
+    | '/services/concert/marine-anais/restaurateurs'
     | '/services/concert/solstice/entreprises'
     | '/services/concert/solstice/mariages'
     | '/services/concert/solstice/restaurateurs'
@@ -245,6 +258,7 @@ export interface RootRouteChildren {
   ServicesIndexRoute: typeof ServicesIndexRoute
   ServicesConcertIndexRoute: typeof ServicesConcertIndexRoute
   ServicesConcertMarineAnaisAnniversairesRoute: typeof ServicesConcertMarineAnaisAnniversairesRoute
+  ServicesConcertMarineAnaisRestaurateursRoute: typeof ServicesConcertMarineAnaisRestaurateursRoute
   ServicesConcertSolsticeEntreprisesRoute: typeof ServicesConcertSolsticeEntreprisesRoute
   ServicesConcertSolsticeMariagesRoute: typeof ServicesConcertSolsticeMariagesRoute
   ServicesConcertSolsticeRestaurateursRoute: typeof ServicesConcertSolsticeRestaurateursRoute
@@ -366,6 +380,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesConcertSolsticeEntreprisesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/concert/marine-anais/restaurateurs': {
+      id: '/services/concert/marine-anais/restaurateurs'
+      path: '/services/concert/marine-anais/restaurateurs'
+      fullPath: '/services/concert/marine-anais/restaurateurs'
+      preLoaderRoute: typeof ServicesConcertMarineAnaisRestaurateursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/concert/marine-anais/anniversaires': {
       id: '/services/concert/marine-anais/anniversaires'
       path: '/services/concert/marine-anais/anniversaires'
@@ -401,6 +422,8 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesConcertIndexRoute: ServicesConcertIndexRoute,
   ServicesConcertMarineAnaisAnniversairesRoute:
     ServicesConcertMarineAnaisAnniversairesRoute,
+  ServicesConcertMarineAnaisRestaurateursRoute:
+    ServicesConcertMarineAnaisRestaurateursRoute,
   ServicesConcertSolsticeEntreprisesRoute:
     ServicesConcertSolsticeEntreprisesRoute,
   ServicesConcertSolsticeMariagesRoute: ServicesConcertSolsticeMariagesRoute,

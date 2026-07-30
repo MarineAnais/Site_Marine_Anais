@@ -33,12 +33,15 @@ const cardStyle = {
 function LiveHub() {
   return (
     <div style={{ minHeight: "calc(100vh - 85px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "3rem 2rem" }}>
+      <Link to="/services" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start" }}>
+        ← Retour aux services
+      </Link>
       <h1 style={{ color: "var(--text-light)", marginBottom: "4rem", fontSize: "2.5rem", textAlign: "center", fontWeight: 500 }}>
         Choisissez votre prestation Live
       </h1>
       <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap", justifyContent: "center", width: "100%", maxWidth: 900 }}>
         <motion.div whileHover={{ scale: 1.05 }} style={{ flex: "1 1 350px" }}>
-          <Link to="/prestations-live">
+          <Link to="/services/concert/marine-anais">
             <div style={{ ...cardStyle, backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${marineHub.url})` }}>
               <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0, textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>Marine Anaïs</h2>
               <p style={{ color: "var(--text-light)", marginTop: "1rem", textAlign: "center", textShadow: "1px 1px 6px rgba(0,0,0,0.8)", fontSize: "1.15rem" }}>
