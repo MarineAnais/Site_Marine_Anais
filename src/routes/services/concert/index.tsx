@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import marineHub from "../assets/marine_hub_btn.jpg.asset.json";
-import solsticeHub from "../assets/solstice_hub_btn.png.asset.json";
+import marineHub from "../../../assets/marine_hub_btn.jpg.asset.json";
+import solsticeHub from "../../../assets/solstice_hub_btn.png.asset.json";
 
-export const Route = createFileRoute("/services/live")({
+export const Route = createFileRoute("/services/concert/")({
   head: () => ({
     meta: [
       { title: "Prestations Live — Marine Anaïs" },
@@ -48,7 +48,7 @@ function LiveHub() {
           </Link>
         </motion.div>
         <motion.div whileHover={{ scale: 1.05 }} style={{ flex: "1 1 350px" }}>
-          <Link to="/offres-solstice">
+          <Link to="/services/concert/solstice">
             <div style={{ ...cardStyle, backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(${solsticeHub.url})` }}>
               <h2 style={{ color: "var(--text-light)", fontSize: "2rem", fontWeight: 700, margin: 0, textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>Solstice</h2>
               <h3 style={{ color: "var(--accent-cream)", fontSize: "1.2rem", margin: "0.5rem 0", fontWeight: 700, textShadow: "1px 1px 6px rgba(0,0,0,0.8)" }}>Duo Acoustique</h3>

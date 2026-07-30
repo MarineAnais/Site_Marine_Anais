@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/voix-off")({
+export const Route = createFileRoute("/services/voix-off")({
   head: () => ({
     meta: [
       { title: "Voix Off — Marine Anaïs" },

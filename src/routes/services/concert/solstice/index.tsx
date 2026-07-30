@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 
-export const Route = createFileRoute("/offres-solstice/")({
+export const Route = createFileRoute("/services/concert/solstice/")({
   head: () => ({
     meta: [
       { title: "Offres Solstice — Marine Anaïs" },
@@ -28,13 +28,13 @@ const titleStyle: React.CSSProperties = { color: "var(--text-light)", fontSize: 
 
 function SolsticeOffers() {
   const items = [
-    { to: "/offres-solstice/mariages", label: "Mariages", border: "rgba(212,196,168,0.4)" },
-    { to: "/offres-solstice/restaurateurs", label: "Restaurateurs", border: "rgba(153,0,0,0.4)" },
-    { to: "/offres-solstice/entreprises", label: "Entreprises", border: "rgba(42,75,140,0.4)" },
+    { to: "/services/concert/solstice/mariages", label: "Mariages", border: "rgba(212,196,168,0.4)" },
+    { to: "/services/concert/solstice/restaurateurs", label: "Restaurateurs", border: "rgba(153,0,0,0.4)" },
+    { to: "/services/concert/solstice/entreprises", label: "Entreprises", border: "rgba(42,75,140,0.4)" },
   ];
   return (
     <div style={{ minHeight: "calc(100vh - 85px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "3rem 2rem" }}>
-      <Link to="/services/live" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start" }}>
+      <Link to="/services/concert" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start" }}>
         ← Retour aux offres Live
       </Link>
       <h1 style={{ color: "var(--text-light)", marginBottom: "4rem", fontSize: "2.5rem", textAlign: "center", fontWeight: 500 }}>Offres pour</h1>

@@ -38,7 +38,7 @@ function Devis() {
 
   return (
     <div style={{ padding: "3rem 2rem", minHeight: "calc(100vh - 85px)" }}>
-      <Link to="/prestations-live" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", display: "inline-block" }}>
+      <Link to="/services/concert" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", display: "inline-block" }}>
         ← Retour aux prestations
       </Link>
       <div style={{ textAlign: "center", marginBottom: "3rem" }}>
