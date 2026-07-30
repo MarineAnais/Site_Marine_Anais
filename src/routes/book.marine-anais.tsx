@@ -3,6 +3,7 @@ import photo1 from "../assets/marine_studio.jpg.asset.json";
 import photo2 from "../assets/marine_singing.jpg.asset.json";
 import photo3 from "../assets/marine_smiling.jpg.asset.json";
 import photo4 from "../assets/marine_anais.png.asset.json";
+import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
 
 export const Route = createFileRoute("/book/marine-anais")({
   head: () => ({
@@ -36,6 +37,29 @@ function BookMarine() {
         <div>
           <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1rem", fontWeight: 700 }}>Présentation</h3>
           <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.6, opacity: 0.9, whiteSpace: "pre-wrap" }}>{presentation}</p>
+          <a
+            href={cvPdf.url}
+            download="CV_Marine_Martinez_Artistique.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              marginTop: "1.5rem",
+              padding: "0.85rem 1.8rem",
+              borderRadius: 999,
+              background: "var(--accent-blue)",
+              color: "#0b1626",
+              fontWeight: 700,
+              fontSize: "0.95rem",
+              textDecoration: "none",
+              boxShadow: "0 4px 14px rgba(204,220,245,0.25)",
+              transition: "all 0.3s ease",
+            }}
+          >
+            📄 Télécharger mon CV Artistique (PDF)
+          </a>
         </div>
       </div>
 
