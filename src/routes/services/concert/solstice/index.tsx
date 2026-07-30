@@ -49,6 +49,8 @@ function SolsticeOffers() {
           </motion.div>
         ))}
       </div>
+      <style>{`@media (max-width:900px){.solstice-grid{grid-template-columns:1fr !important;gap:1.5rem !important}}`}</style>
     </div>
+
   );
 }
