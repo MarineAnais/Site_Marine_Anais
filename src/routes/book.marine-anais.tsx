@@ -19,9 +19,7 @@ export const Route = createFileRoute("/book/marine-anais")({
   component: BookMarine,
 });
 
-const presentation = `Passionnée par la musique depuis mon plus jeune âge, j'ai fait de la scène mon terrain d'expression favori. Avec un répertoire riche allant des grands classiques de la chanson française aux hits pop/rock internationaux, je m'adapte à l'atmosphère de votre événement pour créer un moment musical sur-mesure et inoubliable.
-
-Que ce soit pour une ambiance feutrée et intimiste lors d'un cocktail, ou une performance plus dynamique pour animer votre soirée, je mets tout mon cœur et mon énergie au service de vos émotions.`;
+const presentation = `Chanter, c'est transmettre des émotions et partager un instant avec le public. Formée au chant lyrique, à la comédie musicale et au théâtre, j'ai eu la chance de jouer aussi bien dans de grandes salles de 800 places que dans l'intimité de Cafés-Concerts ou de maisons de retraite. Je serai ravie d'animer vos événements en live autour d'un répertoire Pop-Rock et variété française, d'incarner vos projets en voix off et de vous guider avec bienveillance lors de séances de coaching vocal.`;
 
 const LIEUX = ["Lieu 1", "Lieu 2", "Lieu 3", "Lieu 4"];
 
