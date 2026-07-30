@@ -38,9 +38,9 @@ function SolsticeOffers() {
         ← Retour aux prestations Live
       </Link>
       <h1 style={{ color: "var(--text-light)", marginBottom: "4rem", fontSize: "2.5rem", textAlign: "center", fontWeight: 500 }}>Offres pour</h1>
-      <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap", justifyContent: "center", width: "100%", maxWidth: 1200 }}>
+      <div className="solstice-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2rem", width: "100%", maxWidth: 1200 }}>
         {items.map((it) => (
-          <motion.div key={it.to} whileHover={{ scale: 1.05 }} style={{ flex: "1 1 300px" }}>
+          <motion.div key={it.to} whileHover={{ scale: 1.05 }}>
             <Link to={it.to}>
               <div style={{ ...cardStyle, borderColor: it.border }}>
                 <h2 style={titleStyle}>{it.label}</h2>
@@ -49,6 +49,8 @@ function SolsticeOffers() {
           </motion.div>
         ))}
       </div>
+      <style>{`@media (max-width:900px){.solstice-grid{grid-template-columns:1fr !important;gap:1.5rem !important}}`}</style>
     </div>
+
   );
 }
