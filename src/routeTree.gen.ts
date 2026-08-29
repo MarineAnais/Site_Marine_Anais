@@ -17,6 +17,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as BookIndexRouteImport } from './routes/book.index'
 import { Route as ServicesVoixOffRouteImport } from './routes/services/voix-off'
+import { Route as ServicesConcertRestaurateurRouteImport } from './routes/services/concert-restaurateur'
+import { Route as ServicesConcertMariageRouteImport } from './routes/services/concert-mariage'
+import { Route as ServicesConcertEntrepriseRouteImport } from './routes/services/concert-entreprise'
 import { Route as ServicesCoachingRouteImport } from './routes/services/coaching'
 import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
 import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
@@ -69,6 +72,23 @@ const ServicesVoixOffRoute = ServicesVoixOffRouteImport.update({
   path: '/services/voix-off',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesConcertRestaurateurRoute =
+  ServicesConcertRestaurateurRouteImport.update({
+    id: '/services/concert-restaurateur',
+    path: '/services/concert-restaurateur',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesConcertMariageRoute = ServicesConcertMariageRouteImport.update({
+  id: '/services/concert-mariage',
+  path: '/services/concert-mariage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesConcertEntrepriseRoute =
+  ServicesConcertEntrepriseRouteImport.update({
+    id: '/services/concert-entreprise',
+    path: '/services/concert-entreprise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesCoachingRoute = ServicesCoachingRouteImport.update({
   id: '/services/coaching',
   path: '/services/coaching',
@@ -141,6 +161,9 @@ export interface FileRoutesByFullPath {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-entreprise': typeof ServicesConcertEntrepriseRoute
+  '/services/concert-mariage': typeof ServicesConcertMariageRoute
+  '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book/': typeof BookIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -161,6 +184,9 @@ export interface FileRoutesByTo {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-entreprise': typeof ServicesConcertEntrepriseRoute
+  '/services/concert-mariage': typeof ServicesConcertMariageRoute
+  '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book': typeof BookIndexRoute
   '/services': typeof ServicesIndexRoute
@@ -183,6 +209,9 @@ export interface FileRoutesById {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-entreprise': typeof ServicesConcertEntrepriseRoute
+  '/services/concert-mariage': typeof ServicesConcertMariageRoute
+  '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book/': typeof BookIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -206,6 +235,9 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-entreprise'
+    | '/services/concert-mariage'
+    | '/services/concert-restaurateur'
     | '/services/voix-off'
     | '/book/'
     | '/services/'
@@ -226,6 +258,9 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-entreprise'
+    | '/services/concert-mariage'
+    | '/services/concert-restaurateur'
     | '/services/voix-off'
     | '/book'
     | '/services'
@@ -247,6 +282,9 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-entreprise'
+    | '/services/concert-mariage'
+    | '/services/concert-restaurateur'
     | '/services/voix-off'
     | '/book/'
     | '/services/'
@@ -267,6 +305,9 @@ export interface RootRouteChildren {
   DevisRoute: typeof DevisRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   ServicesCoachingRoute: typeof ServicesCoachingRoute
+  ServicesConcertEntrepriseRoute: typeof ServicesConcertEntrepriseRoute
+  ServicesConcertMariageRoute: typeof ServicesConcertMariageRoute
+  ServicesConcertRestaurateurRoute: typeof ServicesConcertRestaurateurRoute
   ServicesVoixOffRoute: typeof ServicesVoixOffRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ServicesConcertIndexRoute: typeof ServicesConcertIndexRoute
@@ -335,6 +376,27 @@ declare module '@tanstack/react-router' {
       path: '/services/voix-off'
       fullPath: '/services/voix-off'
       preLoaderRoute: typeof ServicesVoixOffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-restaurateur': {
+      id: '/services/concert-restaurateur'
+      path: '/services/concert-restaurateur'
+      fullPath: '/services/concert-restaurateur'
+      preLoaderRoute: typeof ServicesConcertRestaurateurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-mariage': {
+      id: '/services/concert-mariage'
+      path: '/services/concert-mariage'
+      fullPath: '/services/concert-mariage'
+      preLoaderRoute: typeof ServicesConcertMariageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-entreprise': {
+      id: '/services/concert-entreprise'
+      path: '/services/concert-entreprise'
+      fullPath: '/services/concert-entreprise'
+      preLoaderRoute: typeof ServicesConcertEntrepriseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/coaching': {
@@ -438,6 +500,9 @@ const rootRouteChildren: RootRouteChildren = {
   DevisRoute: DevisRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   ServicesCoachingRoute: ServicesCoachingRoute,
+  ServicesConcertEntrepriseRoute: ServicesConcertEntrepriseRoute,
+  ServicesConcertMariageRoute: ServicesConcertMariageRoute,
+  ServicesConcertRestaurateurRoute: ServicesConcertRestaurateurRoute,
   ServicesVoixOffRoute: ServicesVoixOffRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ServicesConcertIndexRoute: ServicesConcertIndexRoute,
@@ -456,3 +521,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
