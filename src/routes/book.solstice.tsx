@@ -1,24 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
-import photo1 from "../assets/guy_guitar.jpg.asset.json";
-import photo2 from "../assets/marine_smiling.jpg.asset.json";
-import photo3 from "../assets/guy_closeup.jpg.asset.json";
-import photo4 from "../assets/marine_studio.jpg.asset.json";
+import * as React from "react";
+import solsticePhoto from "../assets/solstice_hub_btn.png.asset.json";
 
 export const Route = createFileRoute("/book/solstice")({
   head: () => ({
     meta: [
       { title: "Book — Solstice" },
-      { name: "description", content: "Book du duo acoustique Solstice : présentation, galerie photos, lieux joués." },
+      { name: "description", content: "Découvrez le duo acoustique Solstice en présentation et en vidéos live." },
       { property: "og:title", content: "Book — Solstice" },
-      { property: "og:description", content: "Duo acoustique Solstice — présentation et galerie photos." },
-      { property: "og:image", content: photo2.url },
-      { name: "twitter:image", content: photo2.url },
+      { property: "og:description", content: "Découvrez le duo acoustique Solstice en présentation et en vidéos live." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: BookSolstice,
 });
 
-const LIEUX = ["Lieu A", "Lieu B", "Lieu C"];
+const VIDEOS = [
+  { id: "1", url: "https://www.instagram.com/reel/DWy4W66CHIq/embed" },
+  { id: "2", url: "https://www.instagram.com/reel/DXJnyBXiHLH/embed" },
+  { id: "3", url: "https://www.instagram.com/reel/DXZoQUECMK1/embed" },
+  { id: "4", url: "https://www.instagram.com/reel/DWt2VQiiI5-/embed" },
+  { id: "5", url: "https://www.instagram.com/reel/Dah-OL1o7Ek/embed" },
+];
 
 function BookSolstice() {
   return (
@@ -26,7 +30,11 @@ function BookSolstice() {
       <h1 style={{ color: "var(--text-light)", fontSize: "2.2rem", marginBottom: "3rem", fontWeight: 700 }}>Solstice</h1>
 
       <div className="book-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
-        <div style={{ width: "100%", height: 500, background: `url(${photo1.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
+        <img
+          src={solsticePhoto.url}
+          alt="Le duo acoustique Solstice"
+          style={{ width: "100%", height: 500, objectFit: "cover", display: "block", borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}
+        />
         <div>
           <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1rem", fontWeight: 700 }}>Présentation</h3>
           <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.6, opacity: 0.9 }}>
@@ -35,22 +43,71 @@ function BookSolstice() {
         </div>
       </div>
 
-      <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Galerie Photos</h3>
-      <div style={{ display: "flex", gap: "2rem", marginBottom: "4rem", flexWrap: "wrap" }}>
-        <div style={{ flex: "1 1 300px", height: 300, background: `url(${photo3.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
-        <div style={{ flex: "1 1 300px", height: 300, background: `url(${photo4.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
-      </div>
+      <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Vidéos</h3>
+      <SolsticeVideoCarousel />
 
-      <div style={{ width: "100%", height: 400, background: `url(${photo2.url}) center/cover`, borderRadius: 16, marginBottom: "4rem", boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
-
-      <div>
-        <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Où l'on a joué</h3>
-        <ul style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 2, opacity: 0.9, paddingLeft: "1.5rem" }}>
-          {LIEUX.map((l) => <li key={l}>{l}</li>)}
-        </ul>
-      </div>
-
-      <style>{`@media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+        .solstice-video-track::-webkit-scrollbar { display: none; }
+        @media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; gap: 2rem !important; } }
+      `}</style>
     </div>
+  );
+}
+
+function SolsticeVideoCarousel() {
+  const trackRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollBy = (direction: 1 | -1) => {
+    const track = trackRef.current;
+    const slide = track?.firstElementChild as HTMLElement | null;
+    if (!track || !slide) return;
+    const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+    track.scrollBy({ left: direction * (slide.offsetWidth + gap), behavior: "smooth" });
+  };
+
+  return (
+    <div style={{ marginBottom: "4rem" }}>
+      <div
+        ref={trackRef}
+        className="solstice-video-track"
+        style={{ display: "flex", gap: "1.5rem", overflowX: "auto", scrollSnapType: "x mandatory", scrollbarWidth: "none", padding: "0.5rem 0" }}
+      >
+        {VIDEOS.map((video, index) => (
+          <div key={video.id} style={{ flex: "0 0 min(82vw, 340px)", scrollSnapAlign: "start" }}>
+            <div style={{ position: "relative", width: "100%", aspectRatio: "9 / 16", overflow: "hidden", borderRadius: 16, backgroundColor: "var(--bg-secondary)", boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}>
+              <iframe
+                src={video.url}
+                title={`Reel Instagram Solstice ${index + 1}`}
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                allowFullScreen
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "1.25rem" }}>
+        <CarouselButton label="Vidéo précédente" direction="left" onClick={() => scrollBy(-1)} />
+        <CarouselButton label="Vidéo suivante" direction="right" onClick={() => scrollBy(1)} />
+      </div>
+    </div>
+  );
+}
+
+function CarouselButton({ label, direction, onClick }: { label: string; direction: "left" | "right"; onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      onClick={onClick}
+      style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 44, height: 44, borderRadius: "50%", border: "1px solid var(--accent-cream)", backgroundColor: "transparent", color: "var(--accent-cream)", cursor: "pointer" }}
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        {direction === "left" ? <polyline points="15 18 9 12 15 6" /> : <polyline points="9 18 15 12 9 6" />}
+      </svg>
+    </button>
   );
 }
