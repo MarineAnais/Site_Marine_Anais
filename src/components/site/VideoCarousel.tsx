@@ -1,7 +1,12 @@
 import * as React from "react";
 
+interface VideoItem {
+  id: string;
+  url: string;
+}
+
 interface VideoCarouselProps {
-  videos?: string[];
+  videos?: VideoItem[];
 }
 
 export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
@@ -34,9 +39,9 @@ export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
           padding: "0.5rem 0",
         }}
       >
-        {videos.map((url, i) => (
+        {videos.map((video, i) => (
           <div
-            key={url}
+            key={video.id}
             style={{
               flex: "0 0 auto",
               scrollSnapAlign: "start",
@@ -55,7 +60,7 @@ export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
               }}
             >
               <iframe
-                src={url}
+                src={video.url}
                 title={`Vidéo YouTube ${i + 1}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
