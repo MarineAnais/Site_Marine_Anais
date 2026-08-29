@@ -1,8 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import photo1 from "../assets/marine_studio.jpg.asset.json";
-import photo2 from "../assets/marine_singing.jpg.asset.json";
-import photo3 from "../assets/marine_smiling.jpg.asset.json";
-import photo4 from "../assets/marine_anais.png.asset.json";
 import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
 import { VideoCarousel } from "../components/site/VideoCarousel";
 
@@ -13,21 +9,29 @@ export const Route = createFileRoute("/book/marine-anais")({
       { name: "description", content: "Book de Marine Anaïs : présentation, vidéos et galerie photos." },
       { property: "og:title", content: "Book — Marine Anaïs" },
       { property: "og:description", content: "Présentation, vidéos et galerie photos de Marine Anaïs." },
-      { property: "og:image", content: photo2.url },
-      { name: "twitter:image", content: photo2.url },
-    ],
+      ],
   }),
   component: BookMarine,
 });
 
 const presentation = `Chanter, c'est transmettre des émotions et partager un instant avec le public. Formée au chant lyrique, à la comédie musicale et au théâtre, j'ai eu la chance de jouer aussi bien dans de grandes salles de 800 places que dans l'intimité de Cafés-Concerts ou de maisons de retraite. Je serai ravie d'animer vos événements en live autour d'un répertoire Pop-Rock et variété française, d'incarner vos projets en voix off et de vous guider avec bienveillance lors de séances de coaching vocal.`;
 
-const VIDEO_IDS = [
-  "dQw4w9WgXcQ",
-  "9bZkp7q19f0",
-  "kJQP7kiw5Fk",
-  "60ItHLz5WEA",
-  "JGwWNGJdvx8",
+// Vidéos de la chaîne https://www.youtube.com/@MarineAnaisBook
+// Remplacez simplement ID_DE_LA_VIDEO par l'identifiant de chaque vidéo YouTube.
+const VIDEOS = [
+  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_1",
+  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_2",
+  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_3",
+  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_4",
+  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_5",
+];
+
+const GALLERY = [
+  "/marine-photo-2.jpg",
+  "/marine-photo-3.jpg",
+  "/marine-photo-4.jpg",
+  "/marine-photo-5.jpg",
+  "/marine-photo-6.jpg",
 ];
 
 function BookMarine() {
@@ -38,7 +42,7 @@ function BookMarine() {
       </h1>
 
       <div className="book-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
-        <div style={{ width: "100%", height: 500, background: `url(${photo1.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
+        <div style={{ width: "100%", height: 500, background: `url(/marine-photo-1.jpg) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
         <div>
           <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1rem", fontWeight: 700 }}>Présentation</h3>
           <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.6, opacity: 0.9, whiteSpace: "pre-wrap" }}>{presentation}</p>
@@ -70,18 +74,44 @@ function BookMarine() {
 
       <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Vidéos</h3>
       <div style={{ marginBottom: "4rem" }}>
-        <VideoCarousel videoIds={VIDEO_IDS} />
+        <VideoCarousel videos={VIDEOS} />
       </div>
 
       <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Galerie Photos</h3>
-      <div style={{ display: "flex", gap: "2rem", marginBottom: "4rem", flexWrap: "wrap" }}>
-        <div style={{ flex: "1 1 300px", height: 300, background: `url(${photo3.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
-        <div style={{ flex: "1 1 300px", height: 300, background: `url(${photo4.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
+      <div className="photo-gallery" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "4rem" }}>
+        {GALLERY.map((src, i) => (
+          <div
+            key={src}
+            style={{
+              overflow: "hidden",
+              borderRadius: 16,
+              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+              aspectRatio: "4 / 3",
+            }}
+          >
+            <img
+              src={src}
+              alt={`Marine Anaïs en concert ${i + 1}`}
+              loading="lazy"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+                transition: "transform 0.45s ease",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.08)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+            />
+          </div>
+        ))}
       </div>
 
-      <div style={{ width: "100%", height: 400, background: `url(${photo2.url}) center/cover`, borderRadius: 16, marginBottom: "4rem", boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
-
-      <style>{`@media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+        @media (max-width: 1100px){ .photo-gallery{ grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; } }
+        @media (max-width: 640px){ .photo-gallery{ grid-template-columns: 1fr !important; } }
+      `}</style>
     </div>
   );
 }

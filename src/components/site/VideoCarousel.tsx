@@ -1,10 +1,10 @@
 import * as React from "react";
 
 interface VideoCarouselProps {
-  videoIds: string[];
+  videos: string[];
 }
 
-export function VideoCarousel({ videoIds }: VideoCarouselProps) {
+export function VideoCarousel({ videos }: VideoCarouselProps) {
   const trackRef = React.useRef<HTMLDivElement>(null);
 
   const scrollBy = (direction: 1 | -1) => {
@@ -34,9 +34,9 @@ export function VideoCarousel({ videoIds }: VideoCarouselProps) {
           padding: "0.5rem 0",
         }}
       >
-        {videoIds.map((id) => (
+        {videos.map((url, i) => (
           <div
-            key={id}
+            key={url}
             style={{
               flex: "0 0 auto",
               scrollSnapAlign: "start",
@@ -55,8 +55,8 @@ export function VideoCarousel({ videoIds }: VideoCarouselProps) {
               }}
             >
               <iframe
-                src={`https://www.youtube.com/embed/${id}`}
-                title={`Vidéo YouTube ${id}`}
+                src={url}
+                title={`Vidéo YouTube ${i + 1}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 style={{
