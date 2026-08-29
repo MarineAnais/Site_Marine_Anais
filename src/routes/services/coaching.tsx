@@ -34,9 +34,9 @@ function CoachingHub() {
         </p>
 
         <a
-          href="https://calendly.com"
+          href="https://calendly.com/marineanais"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="ma-btn ma-btn-primary"
           style={{ padding: "1rem 3rem", fontSize: "1.15rem", marginBottom: "1.5rem", display: "inline-block" }}
         >
