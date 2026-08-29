@@ -1,10 +1,10 @@
 import * as React from "react";
 
 interface VideoCarouselProps {
-  videos: string[];
+  videos?: string[];
 }
 
-export function VideoCarousel({ videos }: VideoCarouselProps) {
+export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
   const trackRef = React.useRef<HTMLDivElement>(null);
 
   const scrollBy = (direction: 1 | -1) => {
