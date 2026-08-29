@@ -122,7 +122,7 @@ export function SiteNavbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="ma-mobile-menu"
+            className="ma-mobile-menu bg-[var(--bg-secondary)] opacity-100 z-50 w-full"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -131,8 +131,6 @@ export function SiteNavbar() {
               top: 0,
               right: 0,
               bottom: 0,
-              width: "80%",
-              maxWidth: "320px",
               padding: "5rem 2rem 2rem",
               display: "flex",
               flexDirection: "column",
