@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
-import singerAsset from "../../assets/marine_anais.png.asset.json";
 
 const SOCIALS = {
   instagram: "https://www.instagram.com/marinanais_?igsh=ejMycDA4eTBuNnNu",
@@ -105,9 +104,9 @@ export function HeroSection() {
             <motion.img
               variants={{ hover: { scale: 1.05, filter: "brightness(0.5)" } }}
               transition={{ duration: 0.3 }}
-              src={singerAsset.url}
+              src="/marine-home.jpg"
               alt="Marine Anaïs, chanteuse"
-              style={{ width: "100%", maxHeight: "55vh", objectFit: "cover", display: "block" }}
+              style={{ width: "100%", maxHeight: "55vh", objectFit: "cover", display: "block", borderRadius: "16px" }}
             />
             <motion.div
               variants={{ initial: { opacity: 0 }, hover: { opacity: 1 } }}
