@@ -422,14 +422,6 @@ function Anniversaires() {
           </div>
         </section>
 
-        {/* CTA */}
-        <div style={{ textAlign: "center" }}>
-          <Link to="/devis">
-            <button className="ma-btn ma-btn-primary" style={{ padding: "1rem 2.5rem", fontSize: "1rem" }}>
-              Demander un devis
-            </button>
-          </Link>
-        </div>
       </div>
     </div>
   );
