@@ -17,6 +17,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as BookIndexRouteImport } from './routes/book.index'
 import { Route as ServicesVoixOffRouteImport } from './routes/services/voix-off'
+import { Route as ServicesConcertMariageRouteImport } from './routes/services/concert-mariage'
 import { Route as ServicesCoachingRouteImport } from './routes/services/coaching'
 import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
 import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
@@ -67,6 +68,11 @@ const BookIndexRoute = BookIndexRouteImport.update({
 const ServicesVoixOffRoute = ServicesVoixOffRouteImport.update({
   id: '/services/voix-off',
   path: '/services/voix-off',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesConcertMariageRoute = ServicesConcertMariageRouteImport.update({
+  id: '/services/concert-mariage',
+  path: '/services/concert-mariage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesCoachingRoute = ServicesCoachingRouteImport.update({
@@ -141,6 +147,7 @@ export interface FileRoutesByFullPath {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-mariage': typeof ServicesConcertMariageRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book/': typeof BookIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByTo {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-mariage': typeof ServicesConcertMariageRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book': typeof BookIndexRoute
   '/services': typeof ServicesIndexRoute
@@ -183,6 +191,7 @@ export interface FileRoutesById {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-mariage': typeof ServicesConcertMariageRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book/': typeof BookIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -206,6 +215,7 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-mariage'
     | '/services/voix-off'
     | '/book/'
     | '/services/'
@@ -226,6 +236,7 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-mariage'
     | '/services/voix-off'
     | '/book'
     | '/services'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-mariage'
     | '/services/voix-off'
     | '/book/'
     | '/services/'
@@ -267,6 +279,7 @@ export interface RootRouteChildren {
   DevisRoute: typeof DevisRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   ServicesCoachingRoute: typeof ServicesCoachingRoute
+  ServicesConcertMariageRoute: typeof ServicesConcertMariageRoute
   ServicesVoixOffRoute: typeof ServicesVoixOffRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ServicesConcertIndexRoute: typeof ServicesConcertIndexRoute
@@ -335,6 +348,13 @@ declare module '@tanstack/react-router' {
       path: '/services/voix-off'
       fullPath: '/services/voix-off'
       preLoaderRoute: typeof ServicesVoixOffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-mariage': {
+      id: '/services/concert-mariage'
+      path: '/services/concert-mariage'
+      fullPath: '/services/concert-mariage'
+      preLoaderRoute: typeof ServicesConcertMariageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/coaching': {
@@ -438,6 +458,7 @@ const rootRouteChildren: RootRouteChildren = {
   DevisRoute: DevisRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   ServicesCoachingRoute: ServicesCoachingRoute,
+  ServicesConcertMariageRoute: ServicesConcertMariageRoute,
   ServicesVoixOffRoute: ServicesVoixOffRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ServicesConcertIndexRoute: ServicesConcertIndexRoute,
