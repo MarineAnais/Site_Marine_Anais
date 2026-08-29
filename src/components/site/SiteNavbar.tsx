@@ -171,6 +171,10 @@ export function SiteNavbar() {
       </AnimatePresence>
 
       <style>{`
+        .ma-mobile-menu {
+          background: var(--bg-secondary);
+          z-index: 200;
+        }
         @media (max-width: 900px) {
           .ma-nav-desktop { display: none !important; }
           .ma-nav-burger { display: block !important; }
