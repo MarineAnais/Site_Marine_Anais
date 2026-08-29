@@ -1,79 +1,442 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import photo from "../../../../assets/marine_singing.jpg.asset.json";
 
 export const Route = createFileRoute("/services/concert/marine-anais/anniversaires")({
   head: () => ({
     meta: [
       { title: "Marine Anaïs — Anniversaires d'Enfants" },
-      { name: "description", content: "Prestation live solo sur bande son pour les goûters d'anniversaire et fêtes d'enfants." },
+      { name: "description", content: "Animation anniversaires enfants : jeux interactifs, blind test, concert live sur les chansons Disney et films d'animation préférés." },
       { property: "og:title", content: "Marine Anaïs — Anniversaires d'Enfants" },
-      { property: "og:description", content: "Une animation chantée pleine d'énergie pour les enfants." },
+      { property: "og:description", content: "Animation anniversaires enfants : jeux interactifs, blind test, concert live sur les chansons Disney et films d'animation préférés." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Anniversaires,
 });
 
+const FORMULES = [
+  {
+    age: "3 / 5 ans",
+    duree: "30 à 45 min",
+    prix: "80 €",
+    programme: [
+      "De petites Énigmes Sonores très simples",
+      "Des Jeux d'éveil Musicaux amusants",
+      "Plusieurs chansons que l’enfant choisit pour animer sa fête",
+    ],
+  },
+  {
+    age: "6 / 8 ans",
+    duree: "45 min à 1h",
+    prix: "100 €",
+    programme: [
+      "Défis en Équipe : Blind Test et N'oubliez pas les Paroles adaptés aux films préférés de l’enfant",
+      "Chanter en chœur et à tue-tête (Vaiana, La Reine des Neiges, Le Roi Lion...)",
+    ],
+  },
+  {
+    age: "9 ans et +",
+    duree: "1h à 1h30",
+    prix: "120 €",
+    programme: [
+      "Défis en Équipe : Blind Test, Quizz, N'oubliez pas les Paroles et Devine la Réplique",
+      "Faisons la fête autour des chansons de tes films d'animation préférés !",
+    ],
+  },
+];
+
+const POINTS_FORTS = [
+  {
+    emoji: "🎁",
+    title: "Chanson Cadeau",
+    text: "Tu ne trouves pas TA CHANSON PRÉFÉRÉE dans mon répertoire ? Je l’apprendrai avec plaisir pour ton cadeau d’anniversaire !",
+  },
+  {
+    emoji: "🎨",
+    title: "Sur mesure !",
+    text: "Donne-moi tes films d’animation préférés pour que les jeux et le répertoire soient adaptés à TON THÈME !",
+  },
+  {
+    emoji: "👨‍👩‍👧",
+    title: "En famille",
+    text: "Les parents présents à la fête sont les bienvenus pour prêter main-forte pendant les jeux et pour chanter avec les enfants !",
+  },
+];
+
 function Anniversaires() {
   return (
-    <div style={{ minHeight: "calc(100vh - 85px)", padding: "3rem 2rem", display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <Link to="/services/concert/marine-anais" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start", marginLeft: "5%" }}>
-        ← Retour aux offres Marine Anaïs
-      </Link>
-      <div className="book-container" style={{ width: "100%", maxWidth: 1100, display: "flex", boxShadow: "0 30px 60px rgba(0,0,0,0.5)", borderRadius: 8, background: "#fdfdfc", color: "#222", overflow: "hidden", minHeight: 600 }}>
-        <div className="page" style={{ flex: 1, padding: "3rem 4rem" }}>
-          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <h1 style={{ fontSize: "3rem", fontFamily: "Georgia, serif", color: "#111", margin: 0 }}>Marine Anaïs</h1>
-            <h3 style={{ fontSize: "1.15rem", color: "#d3a579", fontStyle: "italic", margin: "0.5rem 0", fontWeight: "normal" }}>Live solo sur bande son</h3>
-            <div style={{ width: "80%", height: 1, background: "#d3a579", margin: "1rem auto" }} />
-          </div>
-          <p style={{ textAlign: "center", fontSize: "1.05rem", lineHeight: 1.6, color: "#444", marginBottom: "2.5rem" }}>
-            Une énergie débordante pour vos goûters d'anniversaires et fêtes d'enfants : chansons Disney, films d'animation
-            et tubes préférés des petits, avec la participation des enfants.
+    <div
+      style={{
+        minHeight: "calc(100vh - 85px)",
+        padding: "3rem 1.5rem 5rem",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        background: "var(--bg-secondary)",
+      }}
+    >
+      <div style={{ width: "100%", maxWidth: 1100 }}>
+        <Link
+          to="/services/concert/marine-anais"
+          style={{
+            color: "var(--accent-blue)",
+            fontWeight: 700,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.35rem",
+            marginBottom: "2.5rem",
+          }}
+        >
+          ← Retour aux offres Marine Anaïs
+        </Link>
+
+        {/* En-tête */}
+        <header style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <h1
+            style={{
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              color: "var(--text-light)",
+              margin: "0 0 0.75rem",
+              fontWeight: 600,
+            }}
+          >
+            Marine Anaïs — Anniversaires
+          </h1>
+          <p
+            style={{
+              fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)",
+              color: "var(--accent-cream)",
+              margin: 0,
+              fontStyle: "italic",
+            }}
+          >
+            Jeux interactifs et Concert Live
           </p>
-          <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-            <h3 style={{ fontSize: "1.35rem", fontFamily: "Georgia, serif", color: "#666", fontStyle: "italic", margin: 0 }}>Répertoire Modulable</h3>
-            <p style={{ margin: 0, color: "#888", fontSize: "0.9rem" }}>Extrait</p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", background: "#f2dac6", padding: "1.5rem", borderRadius: 12, fontSize: "0.85rem", color: "#333" }}>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              <li>- Libérée, délivrée - La Reine des Neiges</li><li>- Vaiana</li><li>- Le Roi Lion</li><li>- Raiponce</li>
-            </ul>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              <li>- Encanto</li><li>- Aladdin</li><li>- La Petite Sirène</li><li>- Tubes actuels adaptés</li>
-            </ul>
-          </div>
-        </div>
-        <div className="page" style={{ flex: 1, padding: "3rem 4rem 3rem 5rem", display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: "2rem" }}>
-            <div style={{ flex: 1 }}>
-              <h2 style={{ fontSize: "2.4rem", color: "#e0a87f", fontStyle: "italic", fontFamily: "Georgia, serif", margin: 0 }}>Nos Tarifs</h2>
-              <p style={{ color: "#555", fontStyle: "italic", margin: "0 0 2rem 0", fontSize: "0.9rem" }}>Matériel inclus</p>
-              {[
-                { t: "Formule Découverte (1h)", s: "Mini-concert participatif", p: "290 €" },
-                { t: "Formule Fête (2h)", s: "Concert + jeux chantés", p: "450 €" },
-              ].map((o) => (
-                <div key={o.t} style={{ marginBottom: "1.5rem", textAlign: "center" }}>
-                  <h4 style={{ fontSize: "1.15rem", margin: 0, fontWeight: 700 }}>{o.t}</h4>
-                  <p style={{ margin: "0 0 0.5rem 0", fontSize: "0.9rem", color: "#666" }}>{o.s}</p>
-                  <div style={{ color: "#e0a87f", fontSize: "1.4rem", fontWeight: 700 }}>{o.p}</div>
-                  <div style={{ width: "50%", height: 1, background: "#e0a87f", margin: "0.5rem auto" }} />
+          <div
+            style={{
+              width: 80,
+              height: 3,
+              background: "var(--accent-blue)",
+              margin: "1.5rem auto 0",
+              borderRadius: 999,
+            }}
+          />
+        </header>
+
+        {/* Section Formules & Tarifs */}
+        <section style={{ marginBottom: "4rem" }}>
+          <h2
+            style={{
+              fontSize: "clamp(1.5rem, 3.5vw, 2rem)",
+              color: "var(--text-light)",
+              textAlign: "center",
+              marginBottom: "2.5rem",
+              fontWeight: 600,
+            }}
+          >
+            Formules & Tarifs
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {FORMULES.map((f) => (
+              <article
+                key={f.age}
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(212,196,168,0.25)",
+                  borderRadius: 20,
+                  padding: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.35)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: "1.4rem",
+                      color: "var(--accent-cream)",
+                      margin: 0,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {f.age}
+                  </h3>
+                  <span
+                    style={{
+                      fontSize: "1.6rem",
+                      fontWeight: 700,
+                      color: "var(--accent-blue)",
+                    }}
+                  >
+                    {f.prix}
+                  </span>
                 </div>
-              ))}
-              <Link to="/devis">
-                <button className="ma-btn ma-btn-primary" style={{ padding: "0.9rem 1.5rem", width: "100%" }}>Demander un devis</button>
-              </Link>
+
+                <p
+                  style={{
+                    color: "var(--text-muted)",
+                    margin: "0 0 1.25rem",
+                    fontSize: "0.95rem",
+                  }}
+                >
+                  Durée : {f.duree}
+                </p>
+
+                <div
+                  style={{
+                    width: "100%",
+                    height: 1,
+                    background: "rgba(212,196,168,0.25)",
+                    marginBottom: "1.25rem",
+                  }}
+                />
+
+                <h4
+                  style={{
+                    fontSize: "0.85rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    color: "var(--text-muted)",
+                    margin: "0 0 0.75rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  Programme
+                </h4>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.6rem",
+                    flex: 1,
+                  }}
+                >
+                  {f.programme.map((item, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        color: "var(--text-light)",
+                        fontSize: "0.95rem",
+                        lineHeight: 1.55,
+                        paddingLeft: "1.2rem",
+                        position: "relative",
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          left: 0,
+                          color: "var(--accent-blue)",
+                          fontWeight: 700,
+                        }}
+                      >
+                        ✦
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Section Une Fête unique */}
+        <section
+          style={{
+            background: "rgba(204,220,245,0.08)",
+            border: "1px solid rgba(204,220,245,0.2)",
+            borderRadius: 24,
+            padding: "2.5rem",
+            marginBottom: "4rem",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "clamp(1.5rem, 3.5vw, 2rem)",
+              color: "var(--text-light)",
+              textAlign: "center",
+              marginBottom: "2rem",
+              fontWeight: 600,
+            }}
+          >
+            Une Fête unique, la Tienne !
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {POINTS_FORTS.map((p) => (
+              <div
+                key={p.title}
+                style={{
+                  background: "rgba(11,31,71,0.45)",
+                  borderRadius: 16,
+                  padding: "1.75rem",
+                  textAlign: "center",
+                }}
+              >
+                <div style={{ fontSize: "2.2rem", marginBottom: "0.75rem" }}>
+                  {p.emoji}
+                </div>
+                <h3
+                  style={{
+                    fontSize: "1.15rem",
+                    color: "var(--accent-cream)",
+                    margin: "0 0 0.75rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  {p.title}
+                </h3>
+                <p
+                  style={{
+                    color: "var(--text-light)",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {p.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section Fiche Technique & Logistique */}
+        <section
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(212,196,168,0.2)",
+            borderRadius: 24,
+            padding: "2.5rem",
+            marginBottom: "3rem",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "clamp(1.5rem, 3.5vw, 2rem)",
+              color: "var(--text-light)",
+              textAlign: "center",
+              marginBottom: "2rem",
+              fontWeight: 600,
+            }}
+          >
+            Fiche Technique & Logistique
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "2rem",
+            }}
+          >
+            <div>
+              <h4
+                style={{
+                  color: "var(--accent-blue)",
+                  fontSize: "1.05rem",
+                  margin: "0 0 1rem",
+                  fontWeight: 700,
+                }}
+              >
+                Matériel à prévoir sur place
+              </h4>
+              <ul
+                style={{
+                  color: "var(--text-light)",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.7,
+                  paddingLeft: "1.1rem",
+                  margin: 0,
+                }}
+              >
+                <li>Une prise électrique à proximité</li>
+                <li>Un écran accessible (télévision ou vidéoprojecteur) pour les jeux</li>
+                <li>Un câble HDMI si vous en avez un, pour brancher mon ordinateur</li>
+              </ul>
             </div>
-            <div style={{ width: 200, display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ width: "100%", height: 200, background: `url(${photo.url}) center/cover`, border: "10px solid #f2dac6", marginBottom: "2rem" }} />
-              <h3 style={{ color: "#e0a87f", fontSize: "1.8rem", fontStyle: "italic", margin: "0 0 1rem 0", fontFamily: "Georgia, serif" }}>Contact</h3>
-              <p style={{ fontSize: "0.9rem", margin: "0.2rem 0", fontWeight: 700 }}>06.89.82.69.61</p>
-              <p style={{ fontSize: "0.85rem", margin: "0.2rem 0" }}>@marinanais_</p>
-              <p style={{ fontSize: "0.75rem", margin: "0.5rem 0 0 0", fontStyle: "italic", textAlign: "center" }}>marineanaiscontact@gmail.com</p>
+
+            <div>
+              <h4
+                style={{
+                  color: "var(--accent-blue)",
+                  fontSize: "1.05rem",
+                  margin: "0 0 1rem",
+                  fontWeight: 700,
+                }}
+              >
+                Matériel fourni
+              </h4>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                Je ramène l'enceinte et le micro — seulement 10 minutes d’installation.
+              </p>
+            </div>
+
+            <div>
+              <h4
+                style={{
+                  color: "var(--accent-blue)",
+                  fontSize: "1.05rem",
+                  margin: "0 0 1rem",
+                  fontWeight: 700,
+                }}
+              >
+                📍 Secteur
+              </h4>
+              <p
+                style={{
+                  color: "var(--text-light)",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                Déplacements en Île-de-France. Frais de transport sur devis.
+              </p>
             </div>
           </div>
+        </section>
+
+        {/* CTA */}
+        <div style={{ textAlign: "center" }}>
+          <Link to="/devis">
+            <button className="ma-btn ma-btn-primary" style={{ padding: "1rem 2.5rem", fontSize: "1rem" }}>
+              Demander un devis
+            </button>
+          </Link>
         </div>
       </div>
-      <style>{`@media (max-width:900px){.book-container{flex-direction:column}.page{padding:2rem !important}}`}</style>
     </div>
   );
 }
