@@ -17,13 +17,13 @@ export const Route = createFileRoute("/book/marine-anais")({
 const presentation = `Chanter, c'est transmettre des émotions et partager un instant avec le public. Formée au chant lyrique, à la comédie musicale et au théâtre, j'ai eu la chance de jouer aussi bien dans de grandes salles de 800 places que dans l'intimité de Cafés-Concerts ou de maisons de retraite. Je serai ravie d'animer vos événements en live autour d'un répertoire Pop-Rock et variété française, d'incarner vos projets en voix off et de vous guider avec bienveillance lors de séances de coaching vocal.`;
 
 // Vidéos de la chaîne https://www.youtube.com/@MarineAnaisBook
-// Remplacez simplement ID_DE_LA_VIDEO par l'identifiant de chaque vidéo YouTube.
 const VIDEOS = [
-  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_1",
-  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_2",
-  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_3",
-  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_4",
-  "https://www.youtube.com/embed/ID_DE_LA_VIDEO_5",
+  { id: "1", url: "https://www.youtube.com/embed/O_R8ad0kTC4" },
+  { id: "2", url: "https://www.youtube.com/embed/IPHIk6fi7y4" },
+  { id: "3", url: "https://www.youtube.com/embed/eEoW_Irbx1Y" },
+  { id: "4", url: "https://www.youtube.com/embed/_G5r_K3viBs" },
+  { id: "5", url: "https://www.youtube.com/embed/FrL03FrCwkc" },
+  { id: "6", url: "https://www.youtube.com/embed/Ra2oMsCUK28" },
 ];
 
 const GALLERY = [
