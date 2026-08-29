@@ -122,6 +122,7 @@ export function SiteNavbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            className="ma-mobile-menu"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -132,9 +133,7 @@ export function SiteNavbar() {
               bottom: 0,
               width: "80%",
               maxWidth: "320px",
-              background: "var(--bg-secondary)",
               padding: "5rem 2rem 2rem",
-              zIndex: 100,
               display: "flex",
               flexDirection: "column",
               gap: "1.5rem",
@@ -172,6 +171,10 @@ export function SiteNavbar() {
       </AnimatePresence>
 
       <style>{`
+        .ma-mobile-menu {
+          background: var(--bg-secondary);
+          z-index: 200;
+        }
         @media (max-width: 900px) {
           .ma-nav-desktop { display: none !important; }
           .ma-nav-burger { display: block !important; }
