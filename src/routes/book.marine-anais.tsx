@@ -4,6 +4,7 @@ import photo2 from "../assets/marine_singing.jpg.asset.json";
 import photo3 from "../assets/marine_smiling.jpg.asset.json";
 import photo4 from "../assets/marine_anais.png.asset.json";
 import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
+import { VideoCarousel } from "../components/site/VideoCarousel";
 
 export const Route = createFileRoute("/book/marine-anais")({
   head: () => ({
