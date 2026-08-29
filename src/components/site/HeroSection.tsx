@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
-import singerAsset from "../../assets/marine_anais.png.asset.json";
 
 const SOCIALS = {
   instagram: "https://www.instagram.com/marinanais_?igsh=ejMycDA4eTBuNnNu",
