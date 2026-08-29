@@ -4,14 +4,15 @@ import photo2 from "../assets/marine_singing.jpg.asset.json";
 import photo3 from "../assets/marine_smiling.jpg.asset.json";
 import photo4 from "../assets/marine_anais.png.asset.json";
 import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
+import { VideoCarousel } from "../components/site/VideoCarousel";
 
 export const Route = createFileRoute("/book/marine-anais")({
   head: () => ({
     meta: [
       { title: "Book — Marine Anaïs" },
-      { name: "description", content: "Book de Marine Anaïs : présentation, galerie photos et lieux joués." },
+      { name: "description", content: "Book de Marine Anaïs : présentation, vidéos et galerie photos." },
       { property: "og:title", content: "Book — Marine Anaïs" },
-      { property: "og:description", content: "Présentation, galerie photos et scènes de Marine Anaïs." },
+      { property: "og:description", content: "Présentation, vidéos et galerie photos de Marine Anaïs." },
       { property: "og:image", content: photo2.url },
       { name: "twitter:image", content: photo2.url },
     ],
@@ -21,7 +22,13 @@ export const Route = createFileRoute("/book/marine-anais")({
 
 const presentation = `Chanter, c'est transmettre des émotions et partager un instant avec le public. Formée au chant lyrique, à la comédie musicale et au théâtre, j'ai eu la chance de jouer aussi bien dans de grandes salles de 800 places que dans l'intimité de Cafés-Concerts ou de maisons de retraite. Je serai ravie d'animer vos événements en live autour d'un répertoire Pop-Rock et variété française, d'incarner vos projets en voix off et de vous guider avec bienveillance lors de séances de coaching vocal.`;
 
-const LIEUX = ["Lieu 1", "Lieu 2", "Lieu 3", "Lieu 4"];
+const VIDEO_IDS = [
+  "dQw4w9WgXcQ",
+  "9bZkp7q19f0",
+  "kJQP7kiw5Fk",
+  "60ItHLz5WEA",
+  "JGwWNGJdvx8",
+];
 
 function BookMarine() {
   return (
@@ -61,6 +68,11 @@ function BookMarine() {
         </div>
       </div>
 
+      <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Vidéos</h3>
+      <div style={{ marginBottom: "4rem" }}>
+        <VideoCarousel videoIds={VIDEO_IDS} />
+      </div>
+
       <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Galerie Photos</h3>
       <div style={{ display: "flex", gap: "2rem", marginBottom: "4rem", flexWrap: "wrap" }}>
         <div style={{ flex: "1 1 300px", height: 300, background: `url(${photo3.url}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
@@ -68,13 +80,6 @@ function BookMarine() {
       </div>
 
       <div style={{ width: "100%", height: 400, background: `url(${photo2.url}) center/cover`, borderRadius: 16, marginBottom: "4rem", boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
-
-      <div>
-        <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Où l'on a joué</h3>
-        <ul style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 2, opacity: 0.9, paddingLeft: "1.5rem" }}>
-          {LIEUX.map((l) => <li key={l}>{l}</li>)}
-        </ul>
-      </div>
 
       <style>{`@media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; } }`}</style>
     </div>
