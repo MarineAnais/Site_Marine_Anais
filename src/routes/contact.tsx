@@ -58,10 +58,18 @@ function Contact() {
         <a href="https://vm.tiktok.com/ZNREASSyQ/" target="_blank" rel="noreferrer" style={socialLinkStyle}>
           <FaTiktok size={26} color="var(--accent-blue)" /> @marine_anais_off
         </a>
-        <a href="mailto:marineanaiscontact@gmail.com" style={socialLinkStyle}>
+        <a href="mailto:marineanaiscontact@gmail.com" className="ma-contact-email" style={socialLinkStyle}>
           <Mail size={28} color="var(--accent-blue)" /> marineanaiscontact@gmail.com
         </a>
       </motion.div>
+      <style>{`
+        @media (max-width: 768px) {
+          .ma-contact-email {
+            word-break: break-all;
+            font-size: 0.95rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }
