@@ -17,6 +17,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as BookIndexRouteImport } from './routes/book.index'
 import { Route as ServicesVoixOffRouteImport } from './routes/services/voix-off'
+import { Route as ServicesConcertRestaurateurRouteImport } from './routes/services/concert-restaurateur'
 import { Route as ServicesConcertMariageRouteImport } from './routes/services/concert-mariage'
 import { Route as ServicesCoachingRouteImport } from './routes/services/coaching'
 import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
@@ -70,6 +71,12 @@ const ServicesVoixOffRoute = ServicesVoixOffRouteImport.update({
   path: '/services/voix-off',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesConcertRestaurateurRoute =
+  ServicesConcertRestaurateurRouteImport.update({
+    id: '/services/concert-restaurateur',
+    path: '/services/concert-restaurateur',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesConcertMariageRoute = ServicesConcertMariageRouteImport.update({
   id: '/services/concert-mariage',
   path: '/services/concert-mariage',
@@ -148,6 +155,7 @@ export interface FileRoutesByFullPath {
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
   '/services/concert-mariage': typeof ServicesConcertMariageRoute
+  '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book/': typeof BookIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -169,6 +177,7 @@ export interface FileRoutesByTo {
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
   '/services/concert-mariage': typeof ServicesConcertMariageRoute
+  '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book': typeof BookIndexRoute
   '/services': typeof ServicesIndexRoute
@@ -192,6 +201,7 @@ export interface FileRoutesById {
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
   '/services/concert-mariage': typeof ServicesConcertMariageRoute
+  '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
   '/book/': typeof BookIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/book/solstice'
     | '/services/coaching'
     | '/services/concert-mariage'
+    | '/services/concert-restaurateur'
     | '/services/voix-off'
     | '/book/'
     | '/services/'
@@ -237,6 +248,7 @@ export interface FileRouteTypes {
     | '/book/solstice'
     | '/services/coaching'
     | '/services/concert-mariage'
+    | '/services/concert-restaurateur'
     | '/services/voix-off'
     | '/book'
     | '/services'
@@ -259,6 +271,7 @@ export interface FileRouteTypes {
     | '/book/solstice'
     | '/services/coaching'
     | '/services/concert-mariage'
+    | '/services/concert-restaurateur'
     | '/services/voix-off'
     | '/book/'
     | '/services/'
@@ -280,6 +293,7 @@ export interface RootRouteChildren {
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   ServicesCoachingRoute: typeof ServicesCoachingRoute
   ServicesConcertMariageRoute: typeof ServicesConcertMariageRoute
+  ServicesConcertRestaurateurRoute: typeof ServicesConcertRestaurateurRoute
   ServicesVoixOffRoute: typeof ServicesVoixOffRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
   ServicesConcertIndexRoute: typeof ServicesConcertIndexRoute
@@ -348,6 +362,13 @@ declare module '@tanstack/react-router' {
       path: '/services/voix-off'
       fullPath: '/services/voix-off'
       preLoaderRoute: typeof ServicesVoixOffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-restaurateur': {
+      id: '/services/concert-restaurateur'
+      path: '/services/concert-restaurateur'
+      fullPath: '/services/concert-restaurateur'
+      preLoaderRoute: typeof ServicesConcertRestaurateurRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/concert-mariage': {
@@ -459,6 +480,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentionsLegalesRoute: MentionsLegalesRoute,
   ServicesCoachingRoute: ServicesCoachingRoute,
   ServicesConcertMariageRoute: ServicesConcertMariageRoute,
+  ServicesConcertRestaurateurRoute: ServicesConcertRestaurateurRoute,
   ServicesVoixOffRoute: ServicesVoixOffRoute,
   ServicesIndexRoute: ServicesIndexRoute,
   ServicesConcertIndexRoute: ServicesConcertIndexRoute,
