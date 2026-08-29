@@ -7,6 +7,6 @@
 - Actualiser les métadonnées de la page pour refléter la présentation et les vidéos.
 
 ## Détails techniques
-- Créer un carrousel vidéo partagé avec une variante verticale, sans modifier le rendu YouTube du Book Marine Anaïs.
+- Créer un carrousel vidéo vertical propre à la page Solstice, sans modifier le composant ni la page du Book Marine Anaïs.
 - Conserver le responsive existant : deux colonnes sur ordinateur, empilé sur mobile.
 - Vérifier le build et le rendu de `/book/solstice` après modification.
