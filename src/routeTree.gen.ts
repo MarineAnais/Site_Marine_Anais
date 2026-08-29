@@ -19,6 +19,7 @@ import { Route as BookIndexRouteImport } from './routes/book.index'
 import { Route as ServicesVoixOffRouteImport } from './routes/services/voix-off'
 import { Route as ServicesConcertRestaurateurRouteImport } from './routes/services/concert-restaurateur'
 import { Route as ServicesConcertMariageRouteImport } from './routes/services/concert-mariage'
+import { Route as ServicesConcertEntrepriseRouteImport } from './routes/services/concert-entreprise'
 import { Route as ServicesCoachingRouteImport } from './routes/services/coaching'
 import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
 import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
@@ -82,6 +83,12 @@ const ServicesConcertMariageRoute = ServicesConcertMariageRouteImport.update({
   path: '/services/concert-mariage',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesConcertEntrepriseRoute =
+  ServicesConcertEntrepriseRouteImport.update({
+    id: '/services/concert-entreprise',
+    path: '/services/concert-entreprise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesCoachingRoute = ServicesCoachingRouteImport.update({
   id: '/services/coaching',
   path: '/services/coaching',
@@ -154,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-entreprise': typeof ServicesConcertEntrepriseRoute
   '/services/concert-mariage': typeof ServicesConcertMariageRoute
   '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
@@ -176,6 +184,7 @@ export interface FileRoutesByTo {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-entreprise': typeof ServicesConcertEntrepriseRoute
   '/services/concert-mariage': typeof ServicesConcertMariageRoute
   '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
@@ -200,6 +209,7 @@ export interface FileRoutesById {
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
   '/services/coaching': typeof ServicesCoachingRoute
+  '/services/concert-entreprise': typeof ServicesConcertEntrepriseRoute
   '/services/concert-mariage': typeof ServicesConcertMariageRoute
   '/services/concert-restaurateur': typeof ServicesConcertRestaurateurRoute
   '/services/voix-off': typeof ServicesVoixOffRoute
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-entreprise'
     | '/services/concert-mariage'
     | '/services/concert-restaurateur'
     | '/services/voix-off'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-entreprise'
     | '/services/concert-mariage'
     | '/services/concert-restaurateur'
     | '/services/voix-off'
@@ -270,6 +282,7 @@ export interface FileRouteTypes {
     | '/book/marine-anais'
     | '/book/solstice'
     | '/services/coaching'
+    | '/services/concert-entreprise'
     | '/services/concert-mariage'
     | '/services/concert-restaurateur'
     | '/services/voix-off'
@@ -292,6 +305,7 @@ export interface RootRouteChildren {
   DevisRoute: typeof DevisRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   ServicesCoachingRoute: typeof ServicesCoachingRoute
+  ServicesConcertEntrepriseRoute: typeof ServicesConcertEntrepriseRoute
   ServicesConcertMariageRoute: typeof ServicesConcertMariageRoute
   ServicesConcertRestaurateurRoute: typeof ServicesConcertRestaurateurRoute
   ServicesVoixOffRoute: typeof ServicesVoixOffRoute
@@ -376,6 +390,13 @@ declare module '@tanstack/react-router' {
       path: '/services/concert-mariage'
       fullPath: '/services/concert-mariage'
       preLoaderRoute: typeof ServicesConcertMariageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-entreprise': {
+      id: '/services/concert-entreprise'
+      path: '/services/concert-entreprise'
+      fullPath: '/services/concert-entreprise'
+      preLoaderRoute: typeof ServicesConcertEntrepriseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/coaching': {
@@ -479,6 +500,7 @@ const rootRouteChildren: RootRouteChildren = {
   DevisRoute: DevisRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   ServicesCoachingRoute: ServicesCoachingRoute,
+  ServicesConcertEntrepriseRoute: ServicesConcertEntrepriseRoute,
   ServicesConcertMariageRoute: ServicesConcertMariageRoute,
   ServicesConcertRestaurateurRoute: ServicesConcertRestaurateurRoute,
   ServicesVoixOffRoute: ServicesVoixOffRoute,
