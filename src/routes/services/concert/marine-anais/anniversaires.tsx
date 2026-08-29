@@ -47,17 +47,14 @@ const FORMULES = [
 
 const POINTS_FORTS = [
   {
-    emoji: "🎁",
     title: "Chanson Cadeau",
     text: "Tu ne trouves pas TA CHANSON PRÉFÉRÉE dans mon répertoire ? Je l’apprendrai avec plaisir pour ton cadeau d’anniversaire !",
   },
   {
-    emoji: "🎨",
     title: "Sur mesure !",
     text: "Donne-moi tes films d’animation préférés pour que les jeux et le répertoire soient adaptés à TON THÈME !",
   },
   {
-    emoji: "👨‍👩‍👧",
     title: "En famille",
     text: "Les parents présents à la fête sont les bienvenus pour prêter main-forte pendant les jeux et pour chanter avec les enfants !",
   },
@@ -122,6 +119,70 @@ function Anniversaires() {
             }}
           />
         </header>
+
+        {/* Section Une Fête unique */}
+        <section
+          style={{
+            background: "rgba(204,220,245,0.08)",
+            border: "1px solid rgba(204,220,245,0.2)",
+            borderRadius: 24,
+            padding: "2.5rem",
+            marginBottom: "4rem",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "clamp(1.5rem, 3.5vw, 2rem)",
+              color: "var(--text-light)",
+              textAlign: "center",
+              marginBottom: "2rem",
+              fontWeight: 600,
+            }}
+          >
+            Une Fête unique, la Tienne !
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {POINTS_FORTS.map((p) => (
+              <div
+                key={p.title}
+                style={{
+                  background: "rgba(11,31,71,0.45)",
+                  borderRadius: 16,
+                  padding: "1.75rem",
+                  textAlign: "center",
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: "1.15rem",
+                    color: "var(--accent-cream)",
+                    margin: "0 0 0.75rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  {p.title}
+                </h3>
+                <p
+                  style={{
+                    color: "var(--text-light)",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {p.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Section Formules & Tarifs */}
         <section style={{ marginBottom: "4rem" }}>
@@ -258,73 +319,6 @@ function Anniversaires() {
           </div>
         </section>
 
-        {/* Section Une Fête unique */}
-        <section
-          style={{
-            background: "rgba(204,220,245,0.08)",
-            border: "1px solid rgba(204,220,245,0.2)",
-            borderRadius: 24,
-            padding: "2.5rem",
-            marginBottom: "4rem",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "clamp(1.5rem, 3.5vw, 2rem)",
-              color: "var(--text-light)",
-              textAlign: "center",
-              marginBottom: "2rem",
-              fontWeight: 600,
-            }}
-          >
-            Une Fête unique, la Tienne !
-          </h2>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "1.5rem",
-            }}
-          >
-            {POINTS_FORTS.map((p) => (
-              <div
-                key={p.title}
-                style={{
-                  background: "rgba(11,31,71,0.45)",
-                  borderRadius: 16,
-                  padding: "1.75rem",
-                  textAlign: "center",
-                }}
-              >
-                <div style={{ fontSize: "2.2rem", marginBottom: "0.75rem" }}>
-                  {p.emoji}
-                </div>
-                <h3
-                  style={{
-                    fontSize: "1.15rem",
-                    color: "var(--accent-cream)",
-                    margin: "0 0 0.75rem",
-                    fontWeight: 700,
-                  }}
-                >
-                  {p.title}
-                </h3>
-                <p
-                  style={{
-                    color: "var(--text-light)",
-                    fontSize: "0.95rem",
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {p.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Section Fiche Technique & Logistique */}
         <section
           style={{
@@ -412,7 +406,7 @@ function Anniversaires() {
                   fontWeight: 700,
                 }}
               >
-                📍 Secteur
+                Secteur
               </h4>
               <p
                 style={{
