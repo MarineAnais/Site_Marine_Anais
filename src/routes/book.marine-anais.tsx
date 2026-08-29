@@ -10,9 +10,9 @@ export const Route = createFileRoute("/book/marine-anais")({
   head: () => ({
     meta: [
       { title: "Book — Marine Anaïs" },
-      { name: "description", content: "Book de Marine Anaïs : présentation, galerie photos et lieux joués." },
+      { name: "description", content: "Book de Marine Anaïs : présentation, vidéos et galerie photos." },
       { property: "og:title", content: "Book — Marine Anaïs" },
-      { property: "og:description", content: "Présentation, galerie photos et scènes de Marine Anaïs." },
+      { property: "og:description", content: "Présentation, vidéos et galerie photos de Marine Anaïs." },
       { property: "og:image", content: photo2.url },
       { name: "twitter:image", content: photo2.url },
     ],
@@ -22,7 +22,13 @@ export const Route = createFileRoute("/book/marine-anais")({
 
 const presentation = `Chanter, c'est transmettre des émotions et partager un instant avec le public. Formée au chant lyrique, à la comédie musicale et au théâtre, j'ai eu la chance de jouer aussi bien dans de grandes salles de 800 places que dans l'intimité de Cafés-Concerts ou de maisons de retraite. Je serai ravie d'animer vos événements en live autour d'un répertoire Pop-Rock et variété française, d'incarner vos projets en voix off et de vous guider avec bienveillance lors de séances de coaching vocal.`;
 
-const LIEUX = ["Lieu 1", "Lieu 2", "Lieu 3", "Lieu 4"];
+const VIDEO_IDS = [
+  "dQw4w9WgXcQ",
+  "9bZkp7q19f0",
+  "kJQP7kiw5Fk",
+  "60ItHLz5WEA",
+  "JGwWNGJdvx8",
+];
 
 function BookMarine() {
   return (
