@@ -30,15 +30,21 @@ function BookSolstice() {
       <h1 style={{ color: "var(--text-light)", fontSize: "2.2rem", marginBottom: "3rem", fontWeight: 700 }}>Solstice</h1>
 
       <div className="book-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
-        <img
-          src={solsticePhoto.url}
-          alt="Le duo acoustique Solstice"
-          style={{ width: "100%", height: 500, objectFit: "cover", display: "block", borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}
-        />
+        <div style={{ width: "100%", maxHeight: 520, backgroundColor: "var(--bg-secondary)", borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+          <img
+            src={solsticePhoto.url}
+            alt="Le duo acoustique Solstice"
+            style={{ width: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}
+          />
+        </div>
         <div>
           <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1rem", fontWeight: 700 }}>Présentation</h3>
-          <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.6, opacity: 0.9 }}>
-            Une ambiance élégante et décontractée pour accueillir vos invités en douceur. Un répertoire rythmé et convivial pour faire chanter et danser vos convives.
+          <p style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 1.7, opacity: 0.9, whiteSpace: "pre-line" }}>
+            {`Solstice est un duo guitare-voix spécialisé dans les reprises pop/rock en version acoustique. Nous proposons une expérience musicale chaleureuse, variée et entraînante, conçue pour rassembler toutes les générations autour de succès intemporels et de titres récents.
+
+Que ce soit pour animer une soirée en établissement (restaurant, bar, terrasse), rythmer un événement d'entreprise ou célébrer une occasion privée, nous adaptons notre concert à votre cadre pour offrir une animation sur mesure.
+
+Prestation clé en main et autonome : sonorisation complète (matériel adapté jusqu'à 150 personnes, micros HF), installation, démontage et déplacements inclus.`}
           </p>
         </div>
       </div>
