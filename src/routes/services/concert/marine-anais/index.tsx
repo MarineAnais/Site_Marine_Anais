@@ -23,12 +23,13 @@ const cardStyle: React.CSSProperties = {
   justifyContent: "center",
   boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
   cursor: "pointer",
+  position: "relative",
 };
 
 function MarineOffers() {
   const items = [
-    { to: "/services/concert/marine-anais/anniversaires", label: "Anniversaires d'Enfants" },
-    { to: "/services/concert/marine-anais/restaurateurs", label: "Restaurateurs" },
+    { to: "/services/concert/marine-anais/anniversaires", label: "Anniversaires d'Enfants", soon: false },
+    { to: "/services/concert/marine-anais/restaurateurs", label: "Restaurateurs", soon: true },
   ];
   return (
     <div style={{ minHeight: "calc(100vh - 85px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "3rem 2rem" }}>
@@ -39,9 +40,28 @@ function MarineOffers() {
       <div style={{ display: "flex", gap: "3rem", flexWrap: "wrap", justifyContent: "center", width: "100%", maxWidth: 900 }}>
         {items.map((it) => (
           <motion.div key={it.to} whileHover={{ scale: 1.05 }} style={{ flex: "1 1 300px" }}>
-            <Link to={it.to}>
+            <Link to={it.to} style={{ display: "block", position: "relative" }}>
               <div style={cardStyle}>
                 <h2 style={{ color: "var(--text-light)", fontSize: "1.9rem", fontWeight: 700, margin: 0, textAlign: "center" }}>{it.label}</h2>
+                {it.soon && (
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: 12,
+                      right: 12,
+                      background: "var(--accent-blue)",
+                      color: "var(--bg-primary)",
+                      fontSize: "0.75rem",
+                      fontWeight: 700,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                      padding: "0.35rem 0.7rem",
+                      borderRadius: 999,
+                    }}
+                  >
+                    Bientôt disponible
+                  </span>
+                )}
               </div>
             </Link>
           </motion.div>
