@@ -6,11 +6,15 @@ import solsticeHub from "../assets/solstice_hub_btn.png.asset.json";
 export const Route = createFileRoute("/book/")({
   head: () => ({
     meta: [
-      { title: "Book — Marine Anaïs" },
-      { name: "description", content: "Découvrez les books de Marine Anaïs et du duo Solstice." },
-      { property: "og:title", content: "Book — Marine Anaïs" },
-      { property: "og:description", content: "Découvrez les books de Marine Anaïs et du duo Solstice." },
+      { title: "Book & Répertoire | Marine Anaïs" },
+      { name: "description", content: "Book et répertoire de Marine Anaïs : vidéos live, photos et présentation du projet solo ainsi que du duo acoustique Solstice." },
+      { property: "og:title", content: "Book & Répertoire | Marine Anaïs" },
+      { property: "og:description", content: "Vidéos live, photos et répertoire de Marine Anaïs en solo et du duo acoustique Solstice." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://marineanais.fr/book" },
+      { name: "twitter:card", content: "summary" },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/book" }],
   }),
   component: BookHub,
 });
