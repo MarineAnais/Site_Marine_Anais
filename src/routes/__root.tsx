@@ -93,6 +93,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" } as any,
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["ProfessionalService", "Person"],
+          name: "Marine Anaïs",
+          jobTitle: "Chanteuse & Coach Vocal",
+          url: "https://marineanais.fr",
+          email: "marineanaiscontact@gmail.com",
+          description:
+            "Prestations musicales live (solo & duo Solstice), cours de chant, coaching vocal et voix off.",
+          sameAs: [
+            "https://www.instagram.com/marinanais_",
+            "https://vm.tiktok.com/ZNREASSyQ/",
+            "https://www.youtube.com/@MarineAnaisBook",
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
