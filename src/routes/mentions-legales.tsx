@@ -12,6 +12,7 @@ export const Route = createFileRoute("/mentions-legales")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/mentions-legales" }],
   }),
   component: MentionsLegalesPage,
 });

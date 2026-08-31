@@ -10,6 +10,7 @@ export const Route = createFileRoute("/devis")({
       { property: "og:title", content: "Demande de Devis — Marine Anaïs" },
       { property: "og:description", content: "Devis sur-mesure entreprise ou particulier." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/devis" }],
   }),
   component: Devis,
 });

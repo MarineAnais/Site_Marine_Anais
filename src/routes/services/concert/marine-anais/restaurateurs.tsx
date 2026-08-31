@@ -8,6 +8,7 @@ export const Route = createFileRoute("/services/concert/marine-anais/restaurateu
       { property: "og:title", content: "Marine Anaïs — Offre Restaurateurs" },
       { property: "og:description", content: "Offre restaurateurs de Marine Anaïs — Bientôt disponible." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/marine-anais/restaurateurs" }],
   }),
   component: SoloResto,
 });

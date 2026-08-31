@@ -11,6 +11,7 @@ export const Route = createFileRoute("/services/concert/")({
       { property: "og:title", content: "Prestations Live — Marine Anaïs" },
       { property: "og:description", content: "Marine Anaïs solo ou le duo acoustique Solstice pour vos événements." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert" }],
   }),
   component: LiveHub,
 });

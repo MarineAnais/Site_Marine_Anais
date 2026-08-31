@@ -10,6 +10,7 @@ export const Route = createFileRoute("/book/marine-anais")({
       { property: "og:title", content: "Book — Marine Anaïs" },
       { property: "og:description", content: "Présentation, vidéos et galerie photos de Marine Anaïs." },
       ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/book/marine-anais" }],
   }),
   component: BookMarine,
 });

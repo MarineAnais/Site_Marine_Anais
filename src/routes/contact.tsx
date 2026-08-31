@@ -11,6 +11,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Marine Anaïs" },
       { property: "og:description", content: "Contactez Marine Anaïs." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/contact" }],
   }),
   component: Contact,
 });

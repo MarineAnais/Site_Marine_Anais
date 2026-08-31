@@ -9,6 +9,7 @@ export const Route = createFileRoute("/services/concert/solstice/")({
       { property: "og:title", content: "Offres Solstice" },
       { property: "og:description", content: "Offres du duo Solstice pour mariages, restaurateurs et entreprises." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice" }],
   }),
   component: SolsticeOffers,
 });

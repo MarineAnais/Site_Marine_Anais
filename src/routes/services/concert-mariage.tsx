@@ -11,6 +11,7 @@ export const Route = createFileRoute("/services/concert-mariage")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert-mariage" }],
   }),
   component: ConcertMariage,
 });

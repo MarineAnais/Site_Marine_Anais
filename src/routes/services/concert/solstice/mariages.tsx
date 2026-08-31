@@ -11,6 +11,7 @@ export const Route = createFileRoute("/services/concert/solstice/mariages")({
       { property: "og:title", content: "Solstice — Mariages" },
       { property: "og:description", content: "Formules mariage du duo Solstice." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice/mariages" }],
   }),
   component: Mariages,
 });
