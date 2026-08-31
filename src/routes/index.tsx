@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal" },
       { property: "og:description", content: "Prestations live, coaching vocal et voix off pour vos événements." },
     ],
-    links: [{ rel: "canonical", href: "https://marineanais.fr" }],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/" }],
   }),
   component: Home,
 });
