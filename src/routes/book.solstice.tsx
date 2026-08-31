@@ -5,10 +5,10 @@ import solsticePhoto from "../assets/solstice_hub_btn.png.asset.json";
 export const Route = createFileRoute("/book/solstice")({
   head: () => ({
     meta: [
-      { title: "Duo Solstice — Pop/Rock Acoustique | Marine Anaïs" },
-      { name: "description", content: "Solstice, duo guitare-voix pop/rock acoustique : reprises intemporelles et titres récents pour restaurants, bars, événements d'entreprise et fêtes privées. Sonorisation incluse." },
-      { property: "og:title", content: "Duo Solstice — Pop/Rock Acoustique | Marine Anaïs" },
-      { property: "og:description", content: "Duo guitare-voix acoustique pop/rock : prestation clé en main pour restaurants, entreprises et événements privés." },
+      { title: "Duo Solstice — Pop/Rock Acoustique | Marine Anaïs et Sinclair" },
+      { name: "description", content: "Solstice, duo guitare-voix pop/rock acoustique avec Marine Anaïs et Sinclair : reprises intemporelles et titres récents pour restaurants, bars, événements d'entreprise et fêtes privées. Sonorisation incluse." },
+      { property: "og:title", content: "Duo Solstice — Pop/Rock Acoustique | Marine Anaïs et Sinclair" },
+      { property: "og:description", content: "Duo guitare-voix acoustique pop/rock avec Marine Anaïs et Sinclair : prestation clé en main pour restaurants, entreprises et événements privés." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://marineanais.fr/book/solstice" },
       { name: "twitter:card", content: "summary" },
