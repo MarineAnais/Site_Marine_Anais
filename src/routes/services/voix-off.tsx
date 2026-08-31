@@ -8,6 +8,7 @@ export const Route = createFileRoute("/services/voix-off")({
       { property: "og:title", content: "Voix Off — Marine Anaïs" },
       { property: "og:description", content: "Voix off professionnelle et captivante." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/voix-off" }],
   }),
   component: VoixOff,
 });

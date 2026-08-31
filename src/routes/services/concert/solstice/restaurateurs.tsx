@@ -11,6 +11,7 @@ export const Route = createFileRoute("/services/concert/solstice/restaurateurs")
       { property: "og:title", content: "Solstice — Restaurateurs" },
       { property: "og:description", content: "Formules restaurateurs du duo Solstice." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice/restaurateurs" }],
   }),
   component: Resto,
 });

@@ -9,6 +9,7 @@ export const Route = createFileRoute("/services/concert/marine-anais/")({
       { property: "og:title", content: "Marine Anaïs Solo — Offres" },
       { property: "og:description", content: "Offres solo : anniversaires d'enfants et restaurateurs." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/marine-anais" }],
   }),
   component: MarineOffers,
 });

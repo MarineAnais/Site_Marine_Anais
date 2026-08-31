@@ -9,6 +9,7 @@ export const Route = createFileRoute("/services/")({
       { property: "og:title", content: "Services — Marine Anaïs" },
       { property: "og:description", content: "Prestations live, coaching vocal et voix off." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services" }],
   }),
   component: ServicesHub,
 });

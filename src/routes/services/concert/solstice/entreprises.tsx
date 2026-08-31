@@ -11,6 +11,7 @@ export const Route = createFileRoute("/services/concert/solstice/entreprises")({
       { property: "og:title", content: "Solstice — Entreprises" },
       { property: "og:description", content: "Animation musicale pour entreprises." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice/entreprises" }],
   }),
   component: Ent,
 });

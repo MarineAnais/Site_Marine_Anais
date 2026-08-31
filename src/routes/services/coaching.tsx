@@ -9,6 +9,7 @@ export const Route = createFileRoute("/services/coaching")({
       { property: "og:title", content: "Coaching Vocal — Marine Anaïs" },
       { property: "og:description", content: "Coaching vocal personnalisé pour tous niveaux." },
     ],
+    links: [{ rel: "canonical", href: "https://marineanais.fr/services/coaching" }],
   }),
   component: CoachingHub,
 });
