@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as React from "react";
 import solsticePhoto from "../assets/solstice_hub_btn.png.asset.json";
+import { VenuesSection } from "../components/site/VenuesSection";
+import { SOLSTICE_VENUES } from "../lib/venues";
 
 export const Route = createFileRoute("/book/solstice")({
   head: () => ({
@@ -78,6 +80,8 @@ Prestation clé en main et autonome : sonorisation complète (matériel adapté 
 
       <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Vidéos</h3>
       <SolsticeVideoCarousel />
+
+      <VenuesSection title="Quelques lieux où nous avons chanté" venues={SOLSTICE_VENUES} />
 
       <style>{`
         .solstice-video-track::-webkit-scrollbar { display: none; }

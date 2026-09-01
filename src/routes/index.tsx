@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroSection } from "../components/site/HeroSection";
+import { VenuesSection } from "../components/site/VenuesSection";
+import { ALL_VENUES } from "../lib/venues";
 
 
 export const Route = createFileRoute("/")({
@@ -99,6 +101,10 @@ function Home() {
             </Link>
           ))}
         </div>
+      </div>
+
+      <div style={{ width: "100%", maxWidth: 1100, margin: "0 auto", padding: "0 2rem 4rem" }}>
+        <VenuesSection title="J'ai chanté ici" venues={ALL_VENUES} />
       </div>
 
       <style>{`
