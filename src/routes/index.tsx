@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroSection } from "../components/site/HeroSection";
-import solsticeHub from "../assets/solstice_hub_btn.png.asset.json";
-import solsticeMarriage from "../assets/solstice_Mariage.png.asset.json";
-import solsticeCompany from "../assets/solstice_Entreprise.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,13 +19,14 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const projects = [
-    { src: "/marine-photo-2.jpg", alt: "Marine Anaïs sur scène", label: "Marine Anaïs — Live", to: "/book/marine-anais" as const },
-    { src: "/marine-photo-4.jpg", alt: "Marine Anaïs en concert", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
-    { src: "/marine-photo-6.jpg", alt: "Projet artistique de Marine Anaïs", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const },
-    { src: solsticeHub.url, alt: "Le duo acoustique Solstice", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
-    { src: solsticeMarriage.url, alt: "Solstice en formule mariage", label: "Solstice — Mariages", to: "/book/solstice" as const },
-    { src: solsticeCompany.url, alt: "Solstice en formule entreprise", label: "Solstice — Entreprises", to: "/book/solstice" as const },
+    { src: "/marine-photo-1.jpg", alt: "Marine Anaïs sur scène", label: "Marine Anaïs — Live", to: "/book/marine-anais" as const },
+    { src: "/marine-photo-18.jpg", alt: "Marine Anaïs en concert", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
+    { src: "/marine-photo-2.jpg", alt: "Projet artistique de Marine Anaïs", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const },
+    { src: "/marine-photo-20.jpg", alt: "Le duo acoustique Solstice", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
+    { src: "/marine-photo-4.jpg", alt: "Solstice en formule mariage", label: "Solstice — Mariages", to: "/book/solstice" as const },
+    { src: "/marine-photo-5.jpg", alt: "Solstice en formule entreprise", label: "Solstice — Entreprises", to: "/book/solstice" as const },
   ];
+
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
