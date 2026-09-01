@@ -60,15 +60,15 @@ const VIDEOS = [
 ];
 
 const GALLERY = [
-  "/marine-photo-10.jpg",
-  "/marine-photo-3.jpg",
-  "/marine-photo-14.jpg",
-  "/marine-photo-19.jpg",
-  "/marine-photo-13.jpg",
-  "/marine-home.jpg",
-  "/marine-photo-6.jpg",
-  "/marine-photo-9.jpg",
-  "/marine-photo-12.jpg",
+  { src: "/marine-photo-10.jpg" },
+  { src: "/marine-photo-3.jpg" },
+  { src: "/marine-photo-14.jpg" },
+  { src: "/marine-photo-19.jpg", objectPosition: "center 20%" },
+  { src: "/marine-photo-13.jpg" },
+  { src: "/marine-home.jpg" },
+  { src: "/marine-photo-6.jpg" },
+  { src: "/marine-photo-9.jpg" },
+  { src: "/marine-photo-12.jpg" },
 ];
 
 function BookMarine() {
