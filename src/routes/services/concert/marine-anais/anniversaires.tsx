@@ -3,10 +3,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/services/concert/marine-anais/anniversaires")({
   head: () => ({
     meta: [
-      { title: "Marine Anaïs — Anniversaires d'Enfants" },
-      { name: "description", content: "Animation anniversaires enfants : jeux interactifs, blind test, concert live sur les chansons Disney et films d'animation préférés." },
-      { property: "og:title", content: "Marine Anaïs — Anniversaires d'Enfants" },
-      { property: "og:description", content: "Animation anniversaires enfants : jeux interactifs, blind test, concert live sur les chansons Disney et films d'animation préférés." },
+      { title: "Animation anniversaire enfant — Marine Anaïs | Concert live & jeux musicaux" },
+      { name: "description", content: "Animation anniversaire enfant en Île-de-France : jeux interactifs, blind test et concert live sur les chansons Disney et films d'animation préférés." },
+      { property: "og:title", content: "Animation anniversaire enfant — Marine Anaïs | Concert live & jeux musicaux" },
+      { property: "og:description", content: "Animation anniversaire enfant en Île-de-France : jeux interactifs, blind test et concert live sur les chansons Disney et films d'animation préférés." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

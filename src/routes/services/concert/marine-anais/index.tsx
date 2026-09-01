@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/services/concert/marine-anais/")({
   head: () => ({
     meta: [
-      { title: "Marine Anaïs Solo — Offres" },
-      { name: "description", content: "Offres solo de Marine Anaïs : anniversaires d'enfants et restaurateurs." },
-      { property: "og:title", content: "Marine Anaïs Solo — Offres" },
-      { property: "og:description", content: "Offres solo : anniversaires d'enfants et restaurateurs." },
+      { title: "Marine Anaïs Solo — Animation musicale & concerts pop-rock" },
+      { name: "description", content: "Concerts pop-rock et animation musicale en Île-de-France avec Marine Anaïs : anniversaires d'enfants et soirées restaurateurs." },
+      { property: "og:title", content: "Marine Anaïs Solo — Animation musicale & concerts pop-rock" },
+      { property: "og:description", content: "Concerts pop-rock et animation musicale en Île-de-France avec Marine Anaïs : anniversaires d'enfants et soirées restaurateurs." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/marine-anais" }],
   }),

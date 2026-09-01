@@ -7,10 +7,10 @@ import { SOLSTICE_VENUES } from "../lib/venues";
 export const Route = createFileRoute("/book/solstice")({
   head: () => ({
     meta: [
-      { title: "Duo Solstice — Pop/Rock Acoustique | Marine Anaïs et Sinclair" },
-      { name: "description", content: "Solstice, duo guitare-voix pop/rock acoustique avec Marine Anaïs et Sinclair : reprises intemporelles et titres récents pour restaurants, bars, événements d'entreprise et fêtes privées. Sonorisation incluse." },
-      { property: "og:title", content: "Duo Solstice — Pop/Rock Acoustique | Marine Anaïs et Sinclair" },
-      { property: "og:description", content: "Duo guitare-voix acoustique pop/rock avec Marine Anaïs et Sinclair : prestation clé en main pour restaurants, entreprises et événements privés." },
+      { title: "Duo Solstice — Animation musicale pop-rock acoustique en Île-de-France" },
+      { name: "description", content: "Duo acoustique Solstice : animation musicale pop-rock pour restaurants, entreprises et événements privés en Île-de-France. Prestation clé en main." },
+      { property: "og:title", content: "Duo Solstice — Animation musicale pop-rock acoustique en Île-de-France" },
+      { property: "og:description", content: "Duo acoustique Solstice : animation musicale pop-rock pour restaurants, entreprises et événements privés en Île-de-France." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://marineanais.fr/book/solstice" },
       { name: "twitter:card", content: "summary" },
@@ -62,7 +62,7 @@ function BookSolstice() {
         <div style={{ width: "100%", maxHeight: 520, backgroundColor: "var(--bg-secondary)", borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
           <img
             src={solsticePhoto.url}
-            alt="Le duo acoustique Solstice"
+            alt="Duo acoustique Solstice en prestation musicale"
             style={{ width: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}
           />
         </div>

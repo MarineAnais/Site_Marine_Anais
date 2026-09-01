@@ -6,10 +6,10 @@ import OfferSheet from "../../../../components/site/OfferSheet";
 export const Route = createFileRoute("/services/concert/solstice/mariages")({
   head: () => ({
     meta: [
-      { title: "Solstice — Mariages" },
-      { name: "description", content: "Formules du duo Solstice pour mariages : cocktail, cérémonie & cocktail, soirée." },
-      { property: "og:title", content: "Solstice — Mariages" },
-      { property: "og:description", content: "Formules mariage du duo Solstice." },
+      { title: "Mariage — Duo acoustique Solstice | Animation musicale Île-de-France" },
+      { name: "description", content: "Animation musicale pour mariage en Île-de-France avec le duo acoustique Solstice. Cérémonie, cocktail et soirée en musique pop-rock." },
+      { property: "og:title", content: "Mariage — Duo acoustique Solstice | Animation musicale Île-de-France" },
+      { property: "og:description", content: "Animation musicale pour mariage en Île-de-France avec le duo acoustique Solstice." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice/mariages" }],
   }),

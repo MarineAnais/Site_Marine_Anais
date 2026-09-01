@@ -3,10 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/services/concert/marine-anais/restaurateurs")({
   head: () => ({
     meta: [
-      { title: "Marine Anaïs — Offre Restaurateurs" },
-      { name: "description", content: "Offre restaurateurs de Marine Anaïs — Bientôt disponible." },
-      { property: "og:title", content: "Marine Anaïs — Offre Restaurateurs" },
-      { property: "og:description", content: "Offre restaurateurs de Marine Anaïs — Bientôt disponible." },
+      { title: "Animation musicale restaurant — Marine Anaïs | Bientôt disponible" },
+      { name: "description", content: "Animation musicale pour restaurants en Île-de-France avec Marine Anaïs. Concerts pop-rock et variété française — Offre bientôt disponible." },
+      { property: "og:title", content: "Animation musicale restaurant — Marine Anaïs | Bientôt disponible" },
+      { property: "og:description", content: "Animation musicale pour restaurants en Île-de-France avec Marine Anaïs. Concerts pop-rock et variété française." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/marine-anais/restaurateurs" }],
   }),

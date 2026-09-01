@@ -7,10 +7,10 @@ import { ALL_VENUES } from "../lib/venues";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison (92)" },
-      { name: "description", content: "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations musicales live (solo & duo Solstice), cours de chant et voix off à Rueil-Malmaison, dans les Hauts-de-Seine et en Île-de-France." },
-      { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison (92)" },
-      { property: "og:description", content: "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations live, cours de chant et voix off dans les Hauts-de-Seine, à Paris et en Île-de-France." },
+      { title: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison" },
+      { name: "description", content: "Chanteuse pop-rock, variété française et coach vocal. Découvrez les prestations live (solo & duo Solstice) et les cours de chant sur mesure." },
+      { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison" },
+      { property: "og:description", content: "Chanteuse pop-rock, variété française et coach vocal. Découvrez les prestations live (solo & duo Solstice) et les cours de chant sur mesure." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -21,12 +21,12 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const projects = [
-    { src: "/marine-photo-1.jpg", alt: "Marine Anaïs sur scène", label: "Marine Anaïs — Comédie Musical", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
-    { src: "/marine-photo-18.jpg", alt: "Marine Anaïs en concert", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
-    { src: "/marine-photo-2.jpg", alt: "Projet artistique de Marine Anaïs", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
-    { src: "/marine-photo-20.jpg", alt: "Le duo acoustique Solstice", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
-    { src: "/marine-photo-4.jpg", alt: "Solstice en formule mariage", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
-    { src: "/marine-photo-5.jpg", alt: "Solstice en formule entreprise", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
+    { src: "/marine-photo-1.jpg", alt: "Marine Anaïs en concert live — Chanteuse Pop-Rock", label: "Marine Anaïs — Comédie Musical", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
+    { src: "/marine-photo-18.jpg", alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
+    { src: "/marine-photo-2.jpg", alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
+    { src: "/marine-photo-20.jpg", alt: "Duo acoustique Solstice en prestation musicale", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
+    { src: "/marine-photo-4.jpg", alt: "Cours de chant et coaching vocal individuel", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
+    { src: "/marine-photo-5.jpg", alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
   ];
 
 

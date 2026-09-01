@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Marine Anaïs" },
-      { name: "description", content: "Prestations live, coaching vocal et voix off." },
-      { property: "og:title", content: "Services — Marine Anaïs" },
-      { property: "og:description", content: "Prestations live, coaching vocal et voix off." },
+      { title: "Services — Marine Anaïs | Cours de chant, concerts & voix off" },
+      { name: "description", content: "Cours de chant et technique vocale, animation musicale et concerts pop-rock en Île-de-France, voix off professionnelle. Découvrez les prestations de Marine Anaïs." },
+      { property: "og:title", content: "Services — Marine Anaïs | Cours de chant, concerts & voix off" },
+      { property: "og:description", content: "Cours de chant, animation musicale pop-rock en Île-de-France et voix off avec Marine Anaïs." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services" }],
   }),
@@ -15,8 +15,8 @@ export const Route = createFileRoute("/services/")({
 });
 
 const SERVICES = [
-  { title: "Concerts (Live)", to: "/services/concert", desc: "\u00a0Solo sur Bande Son ou\u00a0\nDuo en Acoustique" },
-  { title: "Coaching Vocal", to: "/services/coaching", desc: "Développons votre Voix ! Accompagnement\u00a0\nsur-mesure" },
+  { title: "Concerts (Live)", to: "/services/concert", desc: "Animation musicale et concerts pop-rock en Île-de-France\u00a0\nSolo ou duo acoustique Solstice" },
+  { title: "Coaching Vocal", to: "/services/coaching", desc: "Cours de chant et technique vocale\u00a0\nProfesseur de chant dans les Hauts-de-Seine" },
   { title: "Voix Off", to: "/services/voix-off", desc: "Donnez vie à vos projets audiovisuels\u00a0" },
 ];
 

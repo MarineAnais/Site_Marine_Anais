@@ -3,10 +3,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/services/voix-off")({
   head: () => ({
     meta: [
-      { title: "Voix Off — Marine Anaïs" },
-      { name: "description", content: "Voix off professionnelle pour vos projets audiovisuels, publicités et documentaires." },
-      { property: "og:title", content: "Voix Off — Marine Anaïs" },
-      { property: "og:description", content: "Voix off professionnelle et captivante." },
+      { title: "Voix Off — Marine Anaïs | Voix professionnelle pour vos projets" },
+      { name: "description", content: "Voix off professionnelle pour publicités, documentaires et projets audiovisuels. Marine Anaïs, chanteuse et coach vocal basée en région parisienne." },
+      { property: "og:title", content: "Voix Off — Marine Anaïs | Voix professionnelle pour vos projets" },
+      { property: "og:description", content: "Voix off professionnelle pour publicités, documentaires et projets audiovisuels avec Marine Anaïs." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/voix-off" }],
   }),
