@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/services/coaching")({
   head: () => ({
     meta: [
-      { title: "Coaching Vocal — Marine Anaïs" },
-      { name: "description", content: "Coaching vocal personnalisé pour tous niveaux, enfants ou adultes. Réservation en ligne." },
-      { property: "og:title", content: "Coaching Vocal — Marine Anaïs" },
-      { property: "og:description", content: "Coaching vocal personnalisé pour tous niveaux." },
+      { title: "Cours de chant et technique vocale — Marine Anaïs" },
+      { name: "description", content: "Cours de chant et technique vocale avec Marine Anaïs, professeur de chant dans les Hauts-de-Seine. Coaching vocal personnalisé pour tous niveaux, enfants et adultes." },
+      { property: "og:title", content: "Cours de chant et technique vocale — Marine Anaïs" },
+      { property: "og:description", content: "Cours de chant et technique vocale avec Marine Anaïs, professeur de chant dans les Hauts-de-Seine." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/coaching" }],
   }),
@@ -30,8 +30,8 @@ function CoachingHub() {
           Coaching Vocal
         </h1>
         <p style={{ color: "var(--accent-cream)", fontSize: "1.4rem", lineHeight: 1.6, marginBottom: "2rem", fontStyle: "italic", whiteSpace: "pre-line" }}>
-          Trouvons comment interpréter au mieux vos morceaux préférés !{" "}&nbsp;
-          {"\n"}Coaching personnalisé pour tous les niveaux
+          Cours de chant et technique vocale pour tous niveaux{" "}&nbsp;
+          {"\n"}Professeur de chant dans les Hauts-de-Seine
         </p>
 
         <div

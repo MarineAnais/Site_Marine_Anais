@@ -6,10 +6,10 @@ import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Marine Anaïs" },
-      { name: "description", content: "Contactez Marine Anaïs par email ou sur les réseaux sociaux." },
-      { property: "og:title", content: "Contact — Marine Anaïs" },
-      { property: "og:description", content: "Contactez Marine Anaïs." },
+      { title: "Contact — Marine Anaïs | Cours de chant & concerts" },
+      { name: "description", content: "Vous souhaitez réserver un concert ou prendre un cours de chant ? Contactez Marine Anaïs par email ou sur les réseaux sociaux." },
+      { property: "og:title", content: "Contact — Marine Anaïs | Cours de chant & concerts" },
+      { property: "og:description", content: "Vous souhaitez réserver un concert ou prendre un cours de chant ? Contactez Marine Anaïs par email ou sur les réseaux sociaux." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/contact" }],
   }),
@@ -30,6 +30,9 @@ function Contact() {
     <div style={{ padding: "4rem 2rem", minHeight: "calc(100vh - 85px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ textAlign: "center", marginBottom: "3rem" }}>
         <h1 style={{ fontSize: "3rem", color: "var(--accent-cream)", marginBottom: "1rem" }}>Pour me contacter</h1>
+        <p style={{ color: "var(--text-light)", fontSize: "1.15rem", maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
+          Vous souhaitez réserver un concert ou prendre un cours de chant ? N'hésitez pas à me contacter directement par email.
+        </p>
       </motion.div>
 
       <motion.div

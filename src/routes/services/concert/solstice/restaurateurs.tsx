@@ -6,10 +6,10 @@ import OfferSheet from "../../../../components/site/OfferSheet";
 export const Route = createFileRoute("/services/concert/solstice/restaurateurs")({
   head: () => ({
     meta: [
-      { title: "Solstice — Restaurateurs" },
-      { name: "description", content: "Formules du duo Solstice pour bars et restaurants." },
-      { property: "og:title", content: "Solstice — Restaurateurs" },
-      { property: "og:description", content: "Formules restaurateurs du duo Solstice." },
+      { title: "Restaurant — Duo acoustique Solstice | Animation musicale Île-de-France" },
+      { name: "description", content: "Animation musicale pour restaurants et bars en Île-de-France avec le duo acoustique Solstice. Ambiance pop-rock acoustique sur mesure." },
+      { property: "og:title", content: "Restaurant — Duo acoustique Solstice | Animation musicale Île-de-France" },
+      { property: "og:description", content: "Animation musicale pour restaurants et bars en Île-de-France avec le duo acoustique Solstice." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice/restaurateurs" }],
   }),

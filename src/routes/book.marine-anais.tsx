@@ -7,10 +7,10 @@ import { ALL_VENUES } from "../lib/venues";
 export const Route = createFileRoute("/book/marine-anais")({
   head: () => ({
     meta: [
-      { title: "Book — Marine Anaïs" },
-      { name: "description", content: "Book de Marine Anaïs : présentation, vidéos et galerie photos." },
-      { property: "og:title", content: "Book — Marine Anaïs" },
-      { property: "og:description", content: "Présentation, vidéos et galerie photos de Marine Anaïs." },
+      { title: "Book — Marine Anaïs | Chanteuse pop-rock & variété française" },
+      { name: "description", content: "Book de Marine Anaïs : photos, vidéos et présentation. Chanteuse pop-rock et variété française pour concerts et événements en Île-de-France." },
+      { property: "og:title", content: "Book — Marine Anaïs | Chanteuse pop-rock & variété française" },
+      { property: "og:description", content: "Book de Marine Anaïs : photos, vidéos et présentation. Chanteuse pop-rock et variété française pour concerts et événements." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       ],
@@ -130,7 +130,7 @@ function BookMarine() {
           >
             <img
               src={item.src}
-              alt={`Marine Anaïs en concert ${i + 1}`}
+              alt={["Marine Anaïs en concert live — Chanteuse Pop-Rock", "Prestation scénique variété française et pop-rock", "Marine Anaïs en concert live — Chanteuse Pop-Rock", "Prestation scénique variété française et pop-rock", "Cours de chant et coaching vocal individuel", "Prestation scénique variété française et pop-rock", "Marine Anaïs en concert live — Chanteuse Pop-Rock", "Prestation scénique variété française et pop-rock", "Prestation scénique variété française et pop-rock"][i]}
               loading="lazy"
               style={{
                 width: "100%",

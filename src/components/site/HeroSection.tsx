@@ -56,7 +56,7 @@ export function HeroSection() {
         >
           <span style={{ display: "block" }}>Chanteuse & Coach Vocal</span>
           <span style={{ display: "block", fontSize: "1.05rem", fontStyle: "italic" }}>
-            Pop-Rock, Variété française, Films d'animation&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Basée à Rueil-Malmaison (92)
+            Chanteuse professionnelle et coach vocal basée à Rueil-Malmaison, je propose des prestations musicales live (pop-rock, variété) ainsi que des cours de chant personnalisés pour tous niveaux.
           </span>
         </motion.p>
 
@@ -105,7 +105,7 @@ export function HeroSection() {
               variants={{ hover: { scale: 1.05, filter: "brightness(0.5)" } }}
               transition={{ duration: 0.3 }}
               src="/marine-home.jpg"
-              alt="Marine Anaïs, chanteuse"
+              alt="Marine Anaïs en concert live — Chanteuse Pop-Rock"
               style={{ width: "100%", maxHeight: "55vh", objectFit: "cover", display: "block", borderRadius: "16px" }}
             />
             <motion.div

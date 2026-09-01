@@ -6,10 +6,10 @@ import solsticeHub from "../assets/solstice_hub_btn.png.asset.json";
 export const Route = createFileRoute("/book/")({
   head: () => ({
     meta: [
-      { title: "Book & Répertoire | Marine Anaïs" },
-      { name: "description", content: "Book et répertoire de Marine Anaïs : vidéos live, photos et présentation du projet solo ainsi que du duo acoustique Solstice." },
-      { property: "og:title", content: "Book & Répertoire | Marine Anaïs" },
-      { property: "og:description", content: "Vidéos live, photos et répertoire de Marine Anaïs en solo et du duo acoustique Solstice." },
+      { title: "Book — Marine Anaïs & Duo Solstice | Chanteuse pop-rock Île-de-France" },
+      { name: "description", content: "Book de Marine Anaïs et du duo Solstice : vidéos live, photos et présentations. Chanteuse pop-rock, variété française et duo acoustique en Île-de-France." },
+      { property: "og:title", content: "Book — Marine Anaïs & Duo Solstice | Chanteuse pop-rock Île-de-France" },
+      { property: "og:description", content: "Book de Marine Anaïs et du duo Solstice : vidéos live, photos et présentations." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://marineanais.fr/book" },
       { name: "twitter:card", content: "summary" },

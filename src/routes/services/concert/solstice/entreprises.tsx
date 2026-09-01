@@ -6,10 +6,10 @@ import OfferSheet from "../../../../components/site/OfferSheet";
 export const Route = createFileRoute("/services/concert/solstice/entreprises")({
   head: () => ({
     meta: [
-      { title: "Solstice — Entreprises" },
-      { name: "description", content: "Formules Solstice pour entreprises : cocktail, séminaire, team building." },
-      { property: "og:title", content: "Solstice — Entreprises" },
-      { property: "og:description", content: "Animation musicale pour entreprises." },
+      { title: "Entreprise — Duo acoustique Solstice | Animation musicale Île-de-France" },
+      { name: "description", content: "Animation musicale pour entreprises en Île-de-France avec le duo acoustique Solstice. Cocktails, séminaires et team building en musique pop-rock." },
+      { property: "og:title", content: "Entreprise — Duo acoustique Solstice | Animation musicale Île-de-France" },
+      { property: "og:description", content: "Animation musicale pour entreprises en Île-de-France avec le duo acoustique Solstice." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice/entreprises" }],
   }),

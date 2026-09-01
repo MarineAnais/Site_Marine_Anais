@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/services/concert/solstice/")({
   head: () => ({
     meta: [
-      { title: "Offres Solstice — Marine Anaïs" },
-      { name: "description", content: "Offres du duo Solstice pour mariages, restaurateurs et entreprises." },
-      { property: "og:title", content: "Offres Solstice" },
-      { property: "og:description", content: "Offres du duo Solstice pour mariages, restaurateurs et entreprises." },
+      { title: "Duo acoustique Solstice — Animation musicale en Île-de-France" },
+      { name: "description", content: "Duo acoustique Solstice : animation musicale et concerts pop-rock en Île-de-France pour mariages, entreprises et restaurateurs." },
+      { property: "og:title", content: "Duo acoustique Solstice — Animation musicale en Île-de-France" },
+      { property: "og:description", content: "Duo acoustique Solstice : animation musicale et concerts pop-rock en Île-de-France pour mariages, entreprises et restaurateurs." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/concert/solstice" }],
   }),
