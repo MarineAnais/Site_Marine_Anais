@@ -44,17 +44,6 @@ function Home() {
           alignItems: "center",
         }}
       >
-        <h2
-          style={{
-            color: "var(--text-light)",
-            fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
-            fontWeight: 700,
-            margin: "0 0 2rem",
-            textAlign: "center",
-          }}
-        >
-          En vidéo
-        </h2>
         <iframe
           width="100%"
           style={{
