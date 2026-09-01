@@ -31,7 +31,7 @@ function Contact() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ textAlign: "center", marginBottom: "3rem" }}>
         <h1 style={{ fontSize: "3rem", color: "var(--accent-cream)", marginBottom: "1rem" }}>Pour me contacter</h1>
         <p style={{ color: "var(--text-light)", fontSize: "1.15rem", maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
-          Vous souhaitez réserver un concert ou prendre un cours de chant ? N'hésitez pas à me contacter directement par email.
+          Cours de chant & Coaching Vocal — Basée à Rueil-Malmaison (92)
         </p>
       </motion.div>
 
@@ -53,24 +53,52 @@ function Contact() {
           alignItems: "flex-start",
         }}
       >
-        <a href="https://www.instagram.com/marinanais_" target="_blank" rel="noreferrer" style={socialLinkStyle}>
-          <FaInstagram size={28} color="var(--accent-blue)" /> @marinanais_
-        </a>
-        <a href="https://www.youtube.com/@MarineAnaisBook" target="_blank" rel="noreferrer" style={socialLinkStyle}>
-          <FaYoutube size={30} color="var(--accent-blue)" /> Marine Anaïs
-        </a>
-        <a href="https://vm.tiktok.com/ZNREASSyQ/" target="_blank" rel="noreferrer" style={socialLinkStyle}>
-          <FaTiktok size={26} color="var(--accent-blue)" /> @marine_anais_off
-        </a>
         <a href="mailto:marineanaiscontact@gmail.com" className="ma-contact-email" style={socialLinkStyle}>
           <Mail size={28} color="var(--accent-blue)" /> marineanaiscontact@gmail.com
+        </a>
+        <a href="https://www.instagram.com/marinanais_" target="_blank" rel="noreferrer" style={socialLinkStyle}>
+          <FaInstagram size={28} color="var(--accent-blue)" /> Instagram — @marinanais_
+        </a>
+        <a href="https://www.youtube.com/@MarineAnaisBook" target="_blank" rel="noreferrer" style={socialLinkStyle}>
+          <FaYoutube size={30} color="var(--accent-blue)" /> YouTube — Marine Anaïs
+        </a>
+        <a href="https://vm.tiktok.com/ZNREASSyQ/" target="_blank" rel="noreferrer" style={socialLinkStyle}>
+          <FaTiktok size={26} color="var(--accent-blue)" /> TikTok — @marine_anais_off
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        style={{
+          marginTop: "2.5rem",
+          textAlign: "center",
+          maxWidth: 600,
+        }}
+      >
+        <p style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 1.6, marginBottom: "0.75rem" }}>
+          Vous cherchez à développer votre technique vocale ou préparer une prestation ?
+        </p>
+        <a
+          href="https://calendly.com/marineanais"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            color: "var(--accent-blue)",
+            fontSize: "1.05rem",
+            textDecoration: "underline",
+            textUnderlineOffset: 4,
+          }}
+        >
+          Réservez votre créneau ou échangeons sur votre projet.
         </a>
       </motion.div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
         style={{
           marginTop: "2rem",
           color: "var(--text-muted)",
@@ -80,7 +108,7 @@ function Contact() {
           lineHeight: 1.6,
         }}
       >
-        Basée à Rueil-Malmaison (92) — Interventions dans les Hauts-de-Seine, à Paris et en Île-de-France.
+        Interventions dans les Hauts-de-Seine, à Paris et en Île-de-France.
       </motion.p>
       <style>{`
         @media (max-width: 768px) {
