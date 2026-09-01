@@ -9,6 +9,8 @@ export const Route = createFileRoute("/book/marine-anais")({
       { name: "description", content: "Book de Marine Anaïs : présentation, vidéos et galerie photos." },
       { property: "og:title", content: "Book — Marine Anaïs" },
       { property: "og:description", content: "Présentation, vidéos et galerie photos de Marine Anaïs." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/book/marine-anais" }],
   }),
@@ -19,12 +21,42 @@ const presentation = `Chanter, c'est transmettre des émotions et partager un in
 
 // Vidéos de la chaîne https://www.youtube.com/@MarineAnaisBook
 const VIDEOS = [
-  { id: "1", url: "https://www.youtube.com/embed/O_R8ad0kTC4" },
-  { id: "2", url: "https://www.youtube.com/embed/IPHIk6fi7y4" },
-  { id: "3", url: "https://www.youtube.com/embed/eEoW_Irbx1Y" },
-  { id: "4", url: "https://www.youtube.com/embed/_G5r_K3viBs" },
-  { id: "5", url: "https://www.youtube.com/embed/FrL03FrCwkc" },
-  { id: "6", url: "https://www.youtube.com/embed/Ra2oMsCUK28" },
+  {
+    id: "1",
+    url: "https://www.youtube.com/embed/O_R8ad0kTC4",
+    title: "Concert – I Wanna Be a Producer",
+    context: "Un numéro de comédie musicale interprété sur scène avec l'ensemble Groupe Suivant.",
+  },
+  {
+    id: "2",
+    url: "https://www.youtube.com/embed/IPHIk6fi7y4",
+    title: "Concert – You Can't Stop the Beat",
+    context: "Une prestation collective énergique, portée par l'ambiance d'un grand final de spectacle.",
+  },
+  {
+    id: "3",
+    url: "https://www.youtube.com/embed/eEoW_Irbx1Y",
+    title: "Concert – Partir là-bas",
+    context: "Une interprétation solo sensible d'un classique de film d'animation.",
+  },
+  {
+    id: "4",
+    url: "https://www.youtube.com/embed/_G5r_K3viBs",
+    title: "Concert – Voyage dans le temps",
+    context: "Un extrait scénique qui traverse les époques dans une atmosphère vivante et théâtrale.",
+  },
+  {
+    id: "5",
+    url: "https://www.youtube.com/embed/FrL03FrCwkc",
+    title: "Concert – Bring Me to Life",
+    context: "Une reprise pop-rock intense mettant en avant la puissance et les nuances de la voix.",
+  },
+  {
+    id: "6",
+    url: "https://www.youtube.com/embed/Ra2oMsCUK28",
+    title: "Concert – Je vais t'aimer",
+    context: "Une reprise de variété française pensée comme un moment de partage avec le public.",
+  },
 ];
 
 const GALLERY = [
