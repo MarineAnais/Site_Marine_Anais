@@ -60,11 +60,15 @@ const VIDEOS = [
 ];
 
 const GALLERY = [
-  "/marine-photo-2.jpg",
+  "/marine-photo-10.jpg",
   "/marine-photo-3.jpg",
-  "/marine-photo-4.jpg",
-  "/marine-photo-5.jpg",
+  "/marine-photo-14.jpg",
+  "/marine-photo-19.jpg",
+  "/marine-photo-13.jpg",
+  "/marine-home.jpg",
   "/marine-photo-6.jpg",
+  "/marine-photo-9.jpg",
+  "/marine-photo-12.jpg",
 ];
 
 function BookMarine() {
