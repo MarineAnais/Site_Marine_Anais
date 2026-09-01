@@ -4,6 +4,7 @@ export interface Venue {
   name: string;
   url: string;
   logo: { url: string };
+  cardBackground?: string;
 }
 
 interface VenuesSectionProps {
