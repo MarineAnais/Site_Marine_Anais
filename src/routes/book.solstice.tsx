@@ -19,11 +19,36 @@ export const Route = createFileRoute("/book/solstice")({
 });
 
 const VIDEOS = [
-  { id: "1", url: "https://www.instagram.com/reel/DWy4W66CHIq/embed" },
-  { id: "2", url: "https://www.instagram.com/reel/DXJnyBXiHLH/embed" },
-  { id: "3", url: "https://www.instagram.com/reel/DXZoQUECMK1/embed" },
-  { id: "4", url: "https://www.instagram.com/reel/DWt2VQiiI5-/embed" },
-  { id: "5", url: "https://www.instagram.com/reel/Dah-OL1o7Ek/embed" },
+  {
+    id: "1",
+    url: "https://www.instagram.com/reel/DWy4W66CHIq/embed",
+    title: "Concert au Préau – 9 avril 2026",
+    context: "Annonce du concert de Solstice au Préau, à Rueil-Malmaison, dans une ambiance chaleureuse et conviviale.",
+  },
+  {
+    id: "2",
+    url: "https://www.instagram.com/reel/DXJnyBXiHLH/embed",
+    title: "Concert au Préau – Avril 2026",
+    context: "Best of du premier concert du duo, au plus près du public du Préau.",
+  },
+  {
+    id: "3",
+    url: "https://www.instagram.com/reel/DXZoQUECMK1/embed",
+    title: "Extrait Solstice – Le Chemin",
+    context: "Reprise acoustique de Kyo lors de la jam du lundi au Highlander.",
+  },
+  {
+    id: "4",
+    url: "https://www.instagram.com/reel/DWt2VQiiI5-/embed",
+    title: "Extrait Solstice – Live au Préau",
+    context: "Un aperçu guitare-voix de l'univers du duo avant son concert à Rueil-Malmaison.",
+  },
+  {
+    id: "5",
+    url: "https://www.instagram.com/reel/Dah-OL1o7Ek/embed",
+    title: "Extrait Solstice – Enemy & Shallow",
+    context: "Deux reprises en acoustique captées en concert au Mamato.",
+  },
 ];
 
 function BookSolstice() {
@@ -80,18 +105,24 @@ function SolsticeVideoCarousel() {
         className="solstice-video-track"
         style={{ display: "flex", gap: "1.5rem", overflowX: "auto", scrollSnapType: "x mandatory", scrollbarWidth: "none", padding: "0.5rem 0" }}
       >
-        {VIDEOS.map((video, index) => (
+        {VIDEOS.map((video) => (
           <div key={video.id} style={{ flex: "0 0 min(82vw, 340px)", scrollSnapAlign: "start" }}>
             <div style={{ position: "relative", width: "100%", aspectRatio: "9 / 16", overflow: "hidden", borderRadius: 16, backgroundColor: "var(--bg-secondary)", boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}>
               <iframe
                 src={video.url}
-                title={`Reel Instagram Solstice ${index + 1}`}
+                title={video.title}
                 loading="lazy"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 allowFullScreen
                 style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
               />
             </div>
+            <h4 style={{ color: "var(--text-light)", fontSize: "1.05rem", fontWeight: 700, margin: "1rem 0 0.35rem" }}>
+              {video.title}
+            </h4>
+            <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6, margin: 0 }}>
+              {video.context}
+            </p>
           </div>
         ))}
       </div>

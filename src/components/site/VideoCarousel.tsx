@@ -3,6 +3,8 @@ import * as React from "react";
 interface VideoItem {
   id: string;
   url: string;
+  title: string;
+  context: string;
 }
 
 interface VideoCarouselProps {
@@ -39,7 +41,7 @@ export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
           padding: "0.5rem 0",
         }}
       >
-        {videos.map((video, i) => (
+        {videos.map((video) => (
           <div
             key={video.id}
             style={{
@@ -61,7 +63,8 @@ export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
             >
               <iframe
                 src={video.url}
-                title={`Vidéo YouTube ${i + 1}`}
+                title={video.title}
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 style={{
@@ -73,6 +76,26 @@ export function VideoCarousel({ videos = [] }: VideoCarouselProps) {
                 }}
               />
             </div>
+            <h4
+              style={{
+                color: "var(--text-light)",
+                fontSize: "1.05rem",
+                fontWeight: 700,
+                margin: "1rem 0 0.35rem",
+              }}
+            >
+              {video.title}
+            </h4>
+            <p
+              style={{
+                color: "var(--text-muted)",
+                fontSize: "0.95rem",
+                lineHeight: 1.6,
+                margin: 0,
+              }}
+            >
+              {video.context}
+            </p>
           </div>
         ))}
       </div>
