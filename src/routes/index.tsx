@@ -89,7 +89,12 @@ function Home() {
               className="home-project-link"
               aria-label={`Découvrir ${project.label}`}
             >
-              <img src={project.src} alt={project.alt} loading="lazy" />
+              <img
+                src={project.src}
+                alt={project.alt}
+                loading="lazy"
+                style={{ objectPosition: project.objectPosition }}
+              />
               <span>{project.label}</span>
             </Link>
           ))}
