@@ -19,6 +19,7 @@ export const VENUE_AU_PREAU: Venue = {
   name: "Au Préau",
   url: "https://aupreau.fr/",
   logo: auPreauLogo,
+  cardBackground: "#1a2a4a",
 };
 
 export const ALL_VENUES: Venue[] = [VENUE_GALERIE_DURBEC, VENUE_MAMATO, VENUE_AU_PREAU];
