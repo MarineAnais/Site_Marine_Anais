@@ -22,14 +22,14 @@ const VIDEOS = [
   {
     id: "1",
     url: "https://www.instagram.com/reel/DWy4W66CHIq/embed",
-    title: "Concert au Préau – 9 avril 2026",
+    title: "Répétition Solstice",
     context: "Annonce du concert de Solstice au Préau, à Rueil-Malmaison, dans une ambiance chaleureuse et conviviale.",
   },
   {
     id: "2",
     url: "https://www.instagram.com/reel/DXJnyBXiHLH/embed",
     title: "Concert au Préau – Avril 2026",
-    context: "Best of du premier concert du duo, au plus près du public du Préau.",
+    context: "Best of du premier concert du duo, au plus près du public de Au Préau.",
   },
   {
     id: "3",
@@ -40,7 +40,7 @@ const VIDEOS = [
   {
     id: "4",
     url: "https://www.instagram.com/reel/DWt2VQiiI5-/embed",
-    title: "Extrait Solstice – Live au Préau",
+    title: "Répétition Solstice – Numb",
     context: "Un aperçu guitare-voix de l'univers du duo avant son concert à Rueil-Malmaison.",
   },
   {
