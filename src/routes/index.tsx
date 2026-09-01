@@ -4,10 +4,10 @@ import { HeroSection } from "../components/site/HeroSection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marine Anaïs — Chanteuse & Coach Vocal" },
-      { name: "description", content: "Chanteuse & Coach Vocal. Prestations live, coaching et voix off. Pop-Rock, variété française, films d'animation." },
-      { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal" },
-      { property: "og:description", content: "Prestations live, coaching vocal et voix off pour vos événements." },
+      { title: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison (92)" },
+      { name: "description", content: "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations musicales live (solo & duo Solstice), cours de chant et voix off à Rueil-Malmaison, dans les Hauts-de-Seine et en Île-de-France." },
+      { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison (92)" },
+      { property: "og:description", content: "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations live, cours de chant et voix off dans les Hauts-de-Seine, à Paris et en Île-de-France." },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/" }],
   }),

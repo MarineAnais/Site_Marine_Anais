@@ -63,6 +63,22 @@ function Contact() {
           <Mail size={28} color="var(--accent-blue)" /> marineanaiscontact@gmail.com
         </a>
       </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        style={{
+          marginTop: "2rem",
+          color: "var(--text-muted)",
+          fontSize: "1rem",
+          textAlign: "center",
+          maxWidth: 600,
+          lineHeight: 1.6,
+        }}
+      >
+        Basée à Rueil-Malmaison (92) — Interventions dans les Hauts-de-Seine, à Paris et en Île-de-France.
+      </motion.p>
       <style>{`
         @media (max-width: 768px) {
           .ma-contact-email {

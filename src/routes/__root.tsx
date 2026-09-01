@@ -79,10 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Marine Anaïs — Chanteuse & Coach Vocal" },
-      { name: "description", content: "Marine Anaïs, chanteuse et coach vocal — prestations live (solo & duo Solstice), coaching vocal, voix off. Pop-Rock, variété française, films d'animation." },
-      { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal" },
-      { property: "og:description", content: "Prestations live, coaching vocal et voix off pour vos événements." },
+      { title: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison (92)" },
+      { name: "description", content: "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations musicales live (solo & duo Solstice), cours de chant et voix off à Rueil-Malmaison, dans les Hauts-de-Seine et en Île-de-France." },
+      { property: "og:title", content: "Marine Anaïs — Chanteuse & Coach Vocal à Rueil-Malmaison (92)" },
+      { property: "og:description", content: "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations live, cours de chant et voix off dans les Hauts-de-Seine, à Paris et en Île-de-France." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -104,7 +104,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           url: "https://marineanais.fr",
           email: "marineanaiscontact@gmail.com",
           description:
-            "Prestations musicales live (solo & duo Solstice), cours de chant, coaching vocal et voix off.",
+            "Chanteuse et coach vocal basée à Rueil-Malmaison (92). Prestations musicales live (solo & duo Solstice), cours de chant, coaching vocal et voix off à Rueil-Malmaison, dans les Hauts-de-Seine et en Île-de-France.",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Rueil-Malmaison",
+            postalCode: "92500",
+            addressRegion: "Hauts-de-Seine",
+            addressCountry: "FR",
+          },
+          areaServed: ["Rueil-Malmaison", "Hauts-de-Seine", "Île-de-France", "Paris"],
           sameAs: [
             "https://www.instagram.com/marinanais_",
             "https://vm.tiktok.com/ZNREASSyQ/",
