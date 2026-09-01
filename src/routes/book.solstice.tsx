@@ -81,6 +81,8 @@ Prestation clé en main et autonome : sonorisation complète (matériel adapté 
       <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Vidéos</h3>
       <SolsticeVideoCarousel />
 
+      <VenuesSection title="Quelques lieux où nous avons chanté" venues={SOLSTICE_VENUES} />
+
       <style>{`
         .solstice-video-track::-webkit-scrollbar { display: none; }
         @media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; gap: 2rem !important; } }

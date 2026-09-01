@@ -103,6 +103,10 @@ function Home() {
         </div>
       </div>
 
+      <div style={{ width: "100%", maxWidth: 1100, margin: "0 auto", padding: "0 2rem 4rem" }}>
+        <VenuesSection title="J'ai chanté ici" venues={ALL_VENUES} />
+      </div>
+
       <style>{`
         .home-project-grid {
           display: grid;

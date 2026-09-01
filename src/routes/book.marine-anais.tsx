@@ -147,6 +147,8 @@ function BookMarine() {
         ))}
       </div>
 
+      <VenuesSection title="Quelques lieux où j'ai chanté" venues={ALL_VENUES} />
+
       <style>{`
         @media (max-width: 1100px){ .photo-gallery{ grid-template-columns: repeat(2, 1fr) !important; } }
         @media (max-width: 900px){ .book-grid{ grid-template-columns: 1fr !important; } }
