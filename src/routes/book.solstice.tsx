@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as React from "react";
 import solsticePhoto from "../assets/solstice_hub_btn.png.asset.json";
+import { VenuesSection } from "../components/site/VenuesSection";
+import { SOLSTICE_VENUES } from "../lib/venues";
 
 export const Route = createFileRoute("/book/solstice")({
   head: () => ({
