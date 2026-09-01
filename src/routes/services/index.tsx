@@ -15,9 +15,9 @@ export const Route = createFileRoute("/services/")({
 });
 
 const SERVICES = [
-  { title: "Concerts (Live)", to: "/services/concert", desc: "Animation musicale et concerts pop-rock en Île-de-France\u00a0\nSolo ou duo acoustique Solstice" },
-  { title: "Coaching Vocal", to: "/services/coaching", desc: "Cours de chant et technique vocale\u00a0\nProfesseur de chant dans les Hauts-de-Seine" },
-  { title: "Voix Off", to: "/services/voix-off", desc: "Donnez vie à vos projets audiovisuels\u00a0" },
+  { title: "Concerts (Live)", to: "/services/concert", desc: "Animation musicale et concerts pop-rock en Île-de-France\u00a0\nDuo Acoustique ou Solo" },
+  { title: "Coaching Vocal", to: "/services/coaching", desc: "Cours de chant et technique vocale, dans les Hauts-de-Seine\n\n" },
+  { title: "Voix Off", to: "/services/voix-off", desc: "Donnez vie à vos projets audiovisuels\u00a0\n\n" },
 ];
 
 function ServicesHub() {
