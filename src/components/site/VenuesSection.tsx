@@ -51,7 +51,7 @@ export function VenuesSection({ title, venues }: VenuesSectionProps) {
               minHeight: 160,
               padding: "1.5rem",
               borderRadius: 16,
-              backgroundColor: "var(--text-light)",
+              backgroundColor: venue.cardBackground || "var(--text-light)",
               boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}
