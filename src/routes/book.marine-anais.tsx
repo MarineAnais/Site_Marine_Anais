@@ -24,38 +24,38 @@ const VIDEOS = [
   {
     id: "1",
     url: "https://www.youtube.com/embed/O_R8ad0kTC4",
-    title: "Concert – I Wanna Be a Producer",
-    context: "Un numéro de comédie musicale interprété sur scène avec l'ensemble Groupe Suivant.",
+    title: "Spectacle Groupe Suivant – I Wanna Be a Producer",
+    context: "Un numéro de Comédie Musicale interprété sur scène au Théatre André Malraux avec l'Avant Scène de Rueil-Malmaison",
   },
   {
     id: "2",
     url: "https://www.youtube.com/embed/IPHIk6fi7y4",
-    title: "Concert – You Can't Stop the Beat",
-    context: "Une prestation collective énergique, portée par l'ambiance d'un grand final de spectacle.",
+    title: "Spectacle Groupe Suivant\u00a0\u00a0– You Can't Stop the Beat",
+    context: "Final du spectacle portée par le collectif énergique de l'Avant Scène",
   },
   {
     id: "3",
     url: "https://www.youtube.com/embed/eEoW_Irbx1Y",
-    title: "Concert – Partir là-bas",
-    context: "Une interprétation solo sensible d'un classique de film d'animation.",
+    title: "Cover – Partir là-bas",
+    context: "Interprétation d'un classique de film d'animation.\u00a0",
   },
   {
     id: "4",
     url: "https://www.youtube.com/embed/_G5r_K3viBs",
-    title: "Concert – Voyage dans le temps",
-    context: "Un extrait scénique qui traverse les époques dans une atmosphère vivante et théâtrale.",
+    title: "\u00a0Voyage dans le temps",
+    context: "\n",
   },
   {
     id: "5",
     url: "https://www.youtube.com/embed/FrL03FrCwkc",
-    title: "Concert – Bring Me to Life",
+    title: "Spectacle En avant vers le Passé\u00a0 – Bring Me to Life",
     context: "Une reprise pop-rock intense mettant en avant la puissance et les nuances de la voix.",
   },
   {
     id: "6",
     url: "https://www.youtube.com/embed/Ra2oMsCUK28",
     title: "Concert – Je vais t'aimer",
-    context: "Une reprise de variété française pensée comme un moment de partage avec le public.",
+    context: "Une reprise de variété française et un moment de partage avec le public.",
   },
 ];
 
