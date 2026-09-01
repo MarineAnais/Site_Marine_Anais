@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroSection } from "../components/site/HeroSection";
-import solsticeHub from "../assets/solstice_hub_btn.png.asset.json";
-import solsticeMarriage from "../assets/solstice_Mariage.png.asset.json";
-import solsticeCompany from "../assets/solstice_Entreprise.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
