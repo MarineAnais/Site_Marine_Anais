@@ -19,12 +19,12 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const projects = [
-    { src: "/marine-photo-1.jpg", alt: "Marine Anaïs sur scène", label: "Marine Anaïs — Live", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
+    { src: "/marine-photo-1.jpg", alt: "Marine Anaïs sur scène", label: "Marine Anaïs — Comédie Musical", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
     { src: "/marine-photo-18.jpg", alt: "Marine Anaïs en concert", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
     { src: "/marine-photo-2.jpg", alt: "Projet artistique de Marine Anaïs", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
     { src: "/marine-photo-20.jpg", alt: "Le duo acoustique Solstice", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
-    { src: "/marine-photo-4.jpg", alt: "Solstice en formule mariage", label: "Solstice — Mariages", to: "/book/solstice" as const },
-    { src: "/marine-photo-5.jpg", alt: "Solstice en formule entreprise", label: "Solstice — Entreprises", to: "/book/solstice" as const },
+    { src: "/marine-photo-4.jpg", alt: "Solstice en formule mariage", label: "Marine Anaïs — Spectacle", to: "/book/solstice" as const },
+    { src: "/marine-photo-5.jpg", alt: "Solstice en formule entreprise", label: "Marine Anaïs — Spectacle", to: "/book/solstice" as const },
   ];
 
 
