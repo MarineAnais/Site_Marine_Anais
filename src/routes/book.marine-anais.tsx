@@ -116,9 +116,9 @@ function BookMarine() {
 
       <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1.5rem", fontWeight: 700 }}>Galerie Photos</h3>
       <div className="photo-gallery" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "4rem" }}>
-        {GALLERY.map((src, i) => (
+        {GALLERY.map((item, i) => (
           <div
-            key={src}
+            key={item.src}
             style={{
               overflow: "hidden",
               borderRadius: 16,
@@ -127,13 +127,14 @@ function BookMarine() {
             }}
           >
             <img
-              src={src}
+              src={item.src}
               alt={`Marine Anaïs en concert ${i + 1}`}
               loading="lazy"
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                objectPosition: item.objectPosition || "center center",
                 display: "block",
                 transition: "transform 0.45s ease",
               }}
