@@ -56,8 +56,7 @@ export function HeroSection() {
         >
           <span style={{ display: "block" }}>Chanteuse & Coach Vocal</span>
           <span style={{ display: "block", fontSize: "1.05rem", fontStyle: "italic" }}>
-            Pop-Rock, Variété française, Films d'animation,
-            &nbsp;Basée à Rueil-Malmaison (92)
+            Pop-Rock, Variété française, Films d'animation,&nbsp; &nbsp; &nbsp; &nbsp; Basée à Rueil-Malmaison (92)
           </span>
         </motion.p>
 
