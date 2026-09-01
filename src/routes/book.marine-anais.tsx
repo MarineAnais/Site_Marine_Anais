@@ -67,7 +67,7 @@ const GALLERY = [
   { src: "/marine-photo-13.jpg" },
   { src: "/marine-home.jpg" },
   { src: "/marine-photo-6.jpg" },
-  { src: "/marine-photo-9.jpg" },
+  { src: "/marine-photo-9.jpg", objectPosition: "center 20%" },
   { src: "/marine-photo-12.jpg" },
 ];
 
