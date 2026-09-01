@@ -56,7 +56,9 @@ export function HeroSection() {
         >
           <span style={{ display: "block" }}>Chanteuse & Coach Vocal</span>
           <span style={{ display: "block", fontSize: "1.05rem", fontStyle: "italic" }}>
-            Prestations musicales live (pop-rock, variété) et        cours de chant personnalisés pour tous niveaux.                Basée à Rueil-Malmaison.
+            Prestations musicales live (pop-rock, variété) et 
+            cours de chant personnalisés pour tous niveaux.
+            Basée à Rueil-Malmaison.
           </span>
         </motion.p>
 
