@@ -80,7 +80,7 @@ function Contact() {
           lineHeight: 1.6,
         }}
       >
-        Basée à Rueil-Malmaison (92) — Interventions dans les Hauts-de-Seine, à Paris et en Île-de-France.
+        Basée à Rueil-Malmaison (92) — Déplacement possible dans les Hauts-de-Seine, à Paris et en Île-de-France.
       </motion.p>
       <style>{`
         @media (max-width: 768px) {
