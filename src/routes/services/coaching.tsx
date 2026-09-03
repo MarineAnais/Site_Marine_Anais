@@ -4,10 +4,17 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/services/coaching")({
   head: () => ({
     meta: [
-      { title: "Cours de chant et technique vocale — Marine Anaïs" },
-      { name: "description", content: "Cours de chant et technique vocale avec Marine Anaïs, professeur de chant dans les Hauts-de-Seine. Coaching vocal personnalisé pour tous niveaux, enfants et adultes." },
-      { property: "og:title", content: "Cours de chant et technique vocale — Marine Anaïs" },
-      { property: "og:description", content: "Cours de chant et technique vocale avec Marine Anaïs, professeur de chant dans les Hauts-de-Seine." },
+      { title: "Coaching Vocal & Technique Vocale — Marine Anaïs" },
+      {
+        name: "description",
+        content:
+          "Coaching vocal et technique vocale avec Marine Anaïs dans les Hauts-de-Seine (92). Séances personnalisées axées sur l'interprétation pour enfants et adultes.",
+      },
+      { property: "og:title", content: "Coaching Vocal & Technique Vocale — Marine Anaïs" },
+      {
+        property: "og:description",
+        content: "Coaching vocal et technique vocale avec Marine Anaïs dans les Hauts-de-Seine.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://marineanais.fr/services/coaching" }],
   }),
@@ -16,100 +23,149 @@ export const Route = createFileRoute("/services/coaching")({
 
 function CoachingHub() {
   return (
-    <div style={{ minHeight: "calc(100vh - 85px)", display: "flex", flexDirection: "column", alignItems: "center", padding: "5rem 2rem" }}>
-      <Link to="/services" style={{ color: "var(--accent-blue)", fontWeight: 700, marginBottom: "2rem", alignSelf: "flex-start" }}>
-        ← Retour aux services
-      </Link>
-      <motion.div
+    <div style={{ minHeight: "calc(100vh - 85px)", display: "flex", flexDirection: "column", alignItems: "center", padding: "4rem 1.5rem" }}>
+      {/* Navigation Retour */}
+      <div style={{ width: "100%", maxWidth: 800, marginBottom: "2rem" }}>
+        <Link to="/services" style={{ color: "var(--accent-blue)", fontWeight: 700, textDecoration: "none" }}>
+          ← Retour aux services
+        </Link>
+      </div>
+
+      <motion.main
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        style={{ textAlign: "center", maxWidth: 800 }}
+        style={{ textAlign: "center", maxWidth: 800, width: "100%" }}
       >
-        <h1 style={{ color: "var(--text-light)", marginBottom: "1.5rem", fontSize: "3rem", fontWeight: 500 }}>
-          Coaching Vocal
-        </h1>
-        <p style={{ color: "var(--accent-cream)", fontSize: "1.4rem", lineHeight: 1.6, marginBottom: "2rem", fontStyle: "italic", whiteSpace: "pre-line" }}>
-          Coaching, technique vocale & interprétation pour tous niveaux — Hauts-de-Seine
-        </p>
+        {/* En-tête */}
+        <header style={{ marginBottom: "2.5rem" }}>
+          <h1 style={{ color: "var(--text-light)", marginBottom: "1rem", fontSize: "2.8rem", fontWeight: 500 }}>
+            Coaching Vocal
+          </h1>
+          <p style={{ color: "var(--accent-cream)", fontSize: "1.3rem", lineHeight: 1.5, fontStyle: "italic", margin: 0 }}>
+            Coaching, technique vocale & interprétation pour tous niveaux — Hauts-de-Seine
+          </p>
+        </header>
 
-        <p style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 1.6, marginBottom: "2.5rem" }}>
-          Des séances sur mesure de 1h30 pour travailler la technique vocale, la respiration et la justesse, avec une spécialisation dédiée à l’interprétation : incarner un texte, transmettre des émotions et libérer sa présence scénique, toujours dans la bienveillance et le plaisir.
-        </p>
+        {/* Présentation de l'approche */}
+        <section style={{ marginBottom: "2.5rem" }}>
+          <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.7, margin: 0 }}>
+            Des séances sur mesure de <strong>1h30</strong> pour travailler la technique vocale, la respiration et la justesse, avec une spécialisation dédiée à <strong>l’interprétation</strong> : incarner un texte, transmettre des émotions et libérer sa présence scénique, toujours dans la bienveillance et le plaisir.
+          </p>
+        </section>
 
+        {/* Encadré Conseil Préparation */}
         <div
           style={{
-            background: "rgba(204, 220, 245, 0.1)",
-            border: "1px solid rgba(204, 220, 245, 0.35)",
+            background: "rgba(204, 220, 245, 0.08)",
+            border: "1px solid rgba(204, 220, 245, 0.25)",
             borderRadius: "12px",
-            padding: "1.5rem 2rem",
-            marginBottom: "2.5rem",
+            padding: "1.25rem 1.75rem",
+            marginBottom: "3rem",
             textAlign: "left",
           }}
         >
-          <p style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 1.6, margin: 0 }}>
-            <strong style={{ color: "var(--accent-blue)" }}>Préparez votre séance :</strong>{" "}
+          <p style={{ color: "var(--text-light)", fontSize: "1rem", lineHeight: 1.6, margin: 0 }}>
+            <strong style={{ color: "var(--accent-blue)" }}>💡 Préparez votre séance :</strong>{" "}
             N’hésitez pas à me préciser quelle chanson vous souhaitez travailler lors de votre coaching pour que je puisse préparer au mieux votre venue !
           </p>
         </div>
 
-        <div
+        {/* Grille des Formules & Tarifs */}
+        <section style={{ marginBottom: "2.5rem" }}>
+          <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem" }}>
+            Tarifs & Formules (1h30)
+          </h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "1.25rem",
+              width: "100%",
+            }}
+          >
+            {/* Card Enfants */}
+            <div
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(212,196,168,0.2)",
+                borderRadius: "12px",
+                padding: "1.75rem 1.25rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <span style={{ fontSize: "2.2rem", fontWeight: 700, color: "var(--accent-blue)", marginBottom: "0.25rem" }}>35 €</span>
+              <h3 style={{ color: "var(--text-light)", fontSize: "1.15rem", fontWeight: 600, margin: "0.5rem 0 0.25rem" }}>Coaching Enfant</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", margin: 0 }}>Séance de 1h30</p>
+              <span style={{ marginTop: "1rem", fontSize: "0.85rem", color: "var(--accent-cream)", background: "rgba(255,255,255,0.05)", padding: "0.3rem 0.75rem", borderRadius: "20px" }}>
+                Exclusivement à votre domicile
+              </span>
+            </div>
+
+            {/* Card Adultes */}
+            <div
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(212,196,168,0.2)",
+                borderRadius: "12px",
+                padding: "1.75rem 1.25rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <span style={{ fontSize: "2.2rem", fontWeight: 700, color: "var(--accent-blue)", marginBottom: "0.25rem" }}>45 €</span>
+              <h3 style={{ color: "var(--text-light)", fontSize: "1.15rem", fontWeight: 600, margin: "0.5rem 0 0.25rem" }}>Coaching Adulte</h3>
+              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", margin: 0 }}>Séance de 1h30</p>
+              <span style={{ marginTop: "1rem", fontSize: "0.85rem", color: "var(--accent-cream)", background: "rgba(255,255,255,0.05)", padding: "0.3rem 0.75rem", borderRadius: "20px" }}>
+                À mon domicile ou à votre domicile
+              </span>
+            </div>
+          </div>
+
+          {/* Précisions logistiques */}
+          <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6, marginTop: "1.5rem" }}>
+            <strong>Règlement par CESU accepté</strong> pour les séances à domicile (50% de crédit d'impôt).<br />
+            Frais de déplacement applicables selon la distance.
+          </p>
+        </section>
+
+        {/* Bloc d'Appel à l'Action (CTA) */}
+        <section
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "1rem",
-            width: "100%",
-            marginBottom: "2.5rem",
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(204, 220, 245, 0.15)",
+            borderRadius: "16px",
+            padding: "2.5rem 2rem",
+            marginTop: "1rem",
           }}
         >
-          <div
+          <h2 style={{ color: "var(--text-light)", fontSize: "1.4rem", fontWeight: 500, marginBottom: "1rem" }}>
+            Prêt(e) à réserver votre créneau ?
+          </h2>
+          <a
+            href="https://calendly.com/marineanais"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ma-btn ma-btn-primary"
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(212,196,168,0.2)",
-              borderRadius: "12px",
-              padding: "1.5rem 1.25rem",
-              textAlign: "center",
+              padding: "1rem 2.5rem",
+              fontSize: "1.1rem",
+              fontWeight: 600,
+              marginBottom: "1.25rem",
+              display: "inline-block",
+              textDecoration: "none",
             }}
           >
-            <div style={{ fontSize: "2rem", fontWeight: 600, color: "var(--accent-blue)", marginBottom: "0.5rem" }}>35 €</div>
-            <div style={{ color: "var(--text-light)", fontWeight: 500, marginBottom: "0.5rem" }}>Cours enfant à domicile</div>
-            <div style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>Séance de 1h30</div>
-          </div>
-          <div
-            style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(212,196,168,0.2)",
-              borderRadius: "12px",
-              padding: "1.5rem 1.25rem",
-              textAlign: "center",
-            }}
-          >
-            <div style={{ fontSize: "2rem", fontWeight: 600, color: "var(--accent-blue)", marginBottom: "0.5rem" }}>45 €</div>
-            <div style={{ color: "var(--text-light)", fontWeight: 500, marginBottom: "0.5rem" }}>Cours adulte</div>
-            <div style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>Séance de 1h30</div>
-          </div>
-        </div>
-
-        <p style={{ color: "var(--text-muted)", fontSize: "1rem", maxWidth: 600, margin: "0 auto 2.5rem", lineHeight: 1.6 }}>
-          Paiement possible en CESU. Frais de déplacement applicables selon la localisation.
-        </p>
-
-        <a
-          href="https://calendly.com/marineanais"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ma-btn ma-btn-primary"
-          style={{ padding: "1rem 3rem", fontSize: "1.15rem", marginBottom: "1.5rem", display: "inline-block" }}
-        >
-          Réserver sur Calendly
-        </a>
-
-        <p style={{ color: "var(--text-muted)", fontSize: "1rem", maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
-          Il n’est pas possible de choisir directement entre un cours adulte ou enfant sur Calendly.
-          {" "}<strong style={{ color: "var(--text-light)" }}>Précisez-le simplement dans les notes ou par message</strong>{" "}
-          lors de votre réservation, et j’ajusterai la séance en conséquence.
-        </p>
-      </motion.div>
+            Réserver ma séance sur Calendly
+          </a>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", maxWidth: 550, margin: "0 auto", lineHeight: 1.5 }}>
+            <em>Note :</em> La sélection enfant/adulte et le choix du lieu se font directement lors de votre réservation. Précisez simplement ces détails dans les notes de réservation.
+          </p>
+        </section>
+      </motion.main>
     </div>
   );
 }
