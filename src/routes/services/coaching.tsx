@@ -50,7 +50,7 @@ function CoachingHub() {
         {/* Présentation de l'approche */}
         <section style={{ marginBottom: "2.5rem" }}>
           <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.7, margin: 0 }}>
-            Des séances sur mesure de <strong>1h30</strong> pour travailler la technique vocale, la respiration et la justesse, avec une spécialisation dédiée à <strong>l’interprétation</strong> : incarner un texte, transmettre des émotions et libérer sa présence scénique, toujours dans la bienveillance et le plaisir.
+            L'objectif : vous guider avec bienveillance pour développer votre technique vocale et interpréter au mieux les chansons que vous souhaitez travailler. Chaque séance de 1h30 est pensée sur mesure pour libérer votre voix, transmettre vos émotions et gagner en confiance.
           </p>
         </section>
 
