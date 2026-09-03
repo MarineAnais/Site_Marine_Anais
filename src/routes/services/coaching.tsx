@@ -45,7 +45,7 @@ function CoachingHub() {
         >
           <p style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 1.6, margin: 0 }}>
             <strong style={{ color: "var(--accent-blue)" }}>Préparez votre séance :</strong>{" "}
-            N’hésitez pas à préciser quelle chanson vous souhaitez travailler pendant le coaching, pour que je prépare au mieux votre séance !
+            N’hésitez pas à me préciser quelle chanson vous souhaitez travailler lors de votre coaching pour que je puisse préparer au mieux votre venue !
           </p>
         </div>
 
