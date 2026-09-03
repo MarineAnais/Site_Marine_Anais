@@ -33,6 +33,10 @@ function CoachingHub() {
           Coaching, technique vocale & interprétation pour tous niveaux — Hauts-de-Seine
         </p>
 
+        <p style={{ color: "var(--text-light)", fontSize: "1.05rem", lineHeight: 1.6, marginBottom: "2.5rem" }}>
+          Des séances sur mesure de 1h30 pour travailler la technique vocale, la respiration et la justesse, avec une spécialisation dédiée à l’interprétation : incarner un texte, transmettre des émotions et libérer sa présence scénique, toujours dans la bienveillance et le plaisir.
+        </p>
+
         <div
           style={{
             background: "rgba(204, 220, 245, 0.1)",
