@@ -54,27 +54,10 @@ function CoachingHub() {
           </p>
         </section>
 
-        {/* Encadré Conseil Préparation */}
-        <div
-          style={{
-            background: "rgba(204, 220, 245, 0.08)",
-            border: "1px solid rgba(204, 220, 245, 0.25)",
-            borderRadius: "12px",
-            padding: "1.25rem 1.75rem",
-            marginBottom: "3rem",
-            textAlign: "left",
-          }}
-        >
-          <p style={{ color: "var(--text-light)", fontSize: "1rem", lineHeight: 1.6, margin: 0 }}>
-            <strong style={{ color: "var(--accent-blue)" }}>💡 Préparez votre séance :</strong>{" "}
-            N’hésitez pas à me préciser quelle chanson vous souhaitez travailler lors de votre coaching pour que je puisse préparer au mieux votre venue !
-          </p>
-        </div>
-
         {/* Grille des Formules & Tarifs */}
         <section style={{ marginBottom: "2.5rem" }}>
           <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem" }}>
-            Tarifs & Formules (1h30)
+            Tarifs pour 1h30
           </h2>
           <div
             style={{
@@ -100,7 +83,7 @@ function CoachingHub() {
               <h3 style={{ color: "var(--text-light)", fontSize: "1.15rem", fontWeight: 600, margin: "0.5rem 0 0.25rem" }}>Coaching Enfant</h3>
               <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", margin: 0 }}>Séance de 1h30</p>
               <span style={{ marginTop: "1rem", fontSize: "0.85rem", color: "var(--accent-cream)", background: "rgba(255,255,255,0.05)", padding: "0.3rem 0.75rem", borderRadius: "20px" }}>
-                Exclusivement à votre domicile
+                Exclusivement chez vous
               </span>
             </div>
 
@@ -120,15 +103,14 @@ function CoachingHub() {
               <h3 style={{ color: "var(--text-light)", fontSize: "1.15rem", fontWeight: 600, margin: "0.5rem 0 0.25rem" }}>Coaching Adulte</h3>
               <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", margin: 0 }}>Séance de 1h30</p>
               <span style={{ marginTop: "1rem", fontSize: "0.85rem", color: "var(--accent-cream)", background: "rgba(255,255,255,0.05)", padding: "0.3rem 0.75rem", borderRadius: "20px" }}>
-                À mon domicile ou à votre domicile
+                À mon domicile (Rueil-Malmaison) ou chez vous
               </span>
             </div>
           </div>
 
           {/* Précisions logistiques */}
           <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6, marginTop: "1.5rem" }}>
-            <strong>Règlement par CESU accepté</strong> pour les séances à domicile (50% de crédit d'impôt).<br />
-            Frais de déplacement applicables selon la distance.
+            Règlement par CESU (50 % de crédit d'impôt) et frais de déplacement applicables si je me déplace chez vous.
           </p>
         </section>
 
@@ -139,7 +121,7 @@ function CoachingHub() {
             border: "1px solid rgba(204, 220, 245, 0.15)",
             borderRadius: "16px",
             padding: "2.5rem 2rem",
-            marginTop: "1rem",
+            marginBottom: "2.5rem",
           }}
         >
           <h2 style={{ color: "var(--text-light)", fontSize: "1.4rem", fontWeight: 500, marginBottom: "1rem" }}>
@@ -165,6 +147,22 @@ function CoachingHub() {
             <em>Note :</em> La sélection enfant/adulte et le choix du lieu se font directement lors de votre réservation. Précisez simplement ces détails dans les notes de réservation.
           </p>
         </section>
+
+        {/* Encadré Conseil Préparation */}
+        <div
+          style={{
+            background: "rgba(204, 220, 245, 0.08)",
+            border: "1px solid rgba(204, 220, 245, 0.25)",
+            borderRadius: "12px",
+            padding: "1.25rem 1.75rem",
+            textAlign: "left",
+          }}
+        >
+          <p style={{ color: "var(--text-light)", fontSize: "1rem", lineHeight: 1.6, margin: 0 }}>
+            <strong style={{ color: "var(--accent-blue)" }}>💡 Préparez votre séance :</strong>{" "}
+            N’hésitez pas à me préciser quelle chanson vous souhaitez travailler lors de votre coaching pour que je puisse préparer au mieux votre venue !
+          </p>
+        </div>
       </motion.main>
     </div>
   );
