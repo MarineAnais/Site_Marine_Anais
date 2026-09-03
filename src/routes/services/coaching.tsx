@@ -30,8 +30,7 @@ function CoachingHub() {
           Coaching Vocal
         </h1>
         <p style={{ color: "var(--accent-cream)", fontSize: "1.4rem", lineHeight: 1.6, marginBottom: "2rem", fontStyle: "italic", whiteSpace: "pre-line" }}>
-          Cours de chant et technique vocale pour tous niveaux{" "}&nbsp;
-          {"\n"}Professeur de chant dans les Hauts-de-Seine
+          Coaching, technique vocale & interprétation pour tous niveaux — Hauts-de-Seine
         </p>
 
         <div
