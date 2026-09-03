@@ -50,7 +50,7 @@ function CoachingHub() {
         {/* Présentation de l'approche */}
         <section style={{ marginBottom: "2.5rem" }}>
           <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.7, margin: 0 }}>
-            L'objectif : vous guider avec bienveillance pour développer votre technique vocale et interpréter au mieux les chansons que vous souhaitez travailler. Chaque séance de 1h30 est pensée sur mesure pour libérer votre voix, transmettre vos émotions et gagner en confiance.
+            <strong>L'objectif</strong> : vous guider avec bienveillance pour développer votre technique vocale et <strong>interpréter au mieux les chansons</strong> que vous souhaitez travailler. Chaque séance de <strong>1h30</strong> est pensée sur mesure pour libérer votre voix, transmettre vos émotions et gagner en confiance.
           </p>
         </section>
 
