@@ -53,6 +53,47 @@ function CoachingHub() {
           </p>
         </div>
 
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: "1rem",
+            width: "100%",
+            marginBottom: "2.5rem",
+          }}
+        >
+          <div
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(212,196,168,0.2)",
+              borderRadius: "12px",
+              padding: "1.5rem 1.25rem",
+              textAlign: "center",
+            }}
+          >
+            <div style={{ fontSize: "2rem", fontWeight: 600, color: "var(--accent-blue)", marginBottom: "0.5rem" }}>35 €</div>
+            <div style={{ color: "var(--text-light)", fontWeight: 500, marginBottom: "0.5rem" }}>Cours enfant à domicile</div>
+            <div style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>Séance de 1h30</div>
+          </div>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(212,196,168,0.2)",
+              borderRadius: "12px",
+              padding: "1.5rem 1.25rem",
+              textAlign: "center",
+            }}
+          >
+            <div style={{ fontSize: "2rem", fontWeight: 600, color: "var(--accent-blue)", marginBottom: "0.5rem" }}>45 €</div>
+            <div style={{ color: "var(--text-light)", fontWeight: 500, marginBottom: "0.5rem" }}>Cours adulte</div>
+            <div style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>Séance de 1h30</div>
+          </div>
+        </div>
+
+        <p style={{ color: "var(--text-muted)", fontSize: "1rem", maxWidth: 600, margin: "0 auto 2.5rem", lineHeight: 1.6 }}>
+          Paiement possible en CESU. Frais de déplacement applicables selon la localisation.
+        </p>
+
         <a
           href="https://calendly.com/marineanais"
           target="_blank"
