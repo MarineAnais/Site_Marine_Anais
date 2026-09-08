@@ -125,7 +125,7 @@ function CoachingHub() {
           }}
         >
           <h2 style={{ color: "var(--text-light)", fontSize: "1.4rem", fontWeight: 500, marginBottom: "1rem" }}>
-            Prêt(e) à réserver votre créneau ?
+            Pour réserver votre créneau 
           </h2>
           <a
             href="https://calendly.com/marineanais"
@@ -144,7 +144,7 @@ function CoachingHub() {
             Réserver ma séance sur Calendly
           </a>
           <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", maxWidth: 550, margin: "0 auto", lineHeight: 1.5 }}>
-            <em>Note :</em> La sélection enfant/adulte et le choix du lieu se font directement lors de votre réservation. Précisez simplement ces détails dans les notes de réservation.
+            La sélection enfant/adulte et le choix du lieu ne fonctionne pas sur Calendly. Précisez s'il sagit d'un cours adulte ou enfant ainsi que le lieu, votre domicile (avec l'adresse) ou le miens dans les notes de réservation.
           </p>
         </section>
 
