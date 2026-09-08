@@ -135,9 +135,25 @@ function CoachingHub() {
           >
             Choisissez la date et l'heure sur Calendly
           </a>
-          <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", maxWidth: 550, margin: "0 auto", lineHeight: 1.5, fontStyle: "italic" }}>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", maxWidth: 550, margin: "0 auto 1.5rem", lineHeight: 1.5, fontStyle: "italic" }}>
             La sélection enfant/adulte et le choix du lieu ne fonctionne pas sur Calendly. Précisez s'il sagit d'un cours adulte ou enfant ainsi que le lieu, votre domicile (avec l'adresse) ou le miens dans les notes de réservation.
           </p>
+
+          {/* Encadré Conseil Préparation */}
+          <div
+            style={{
+              background: "rgba(204, 220, 245, 0.08)",
+              border: "1px solid rgba(204, 220, 245, 0.25)",
+              borderRadius: "12px",
+              padding: "1.25rem 1.75rem",
+              textAlign: "left",
+            }}
+          >
+            <p style={{ color: "var(--text-light)", fontSize: "1rem", lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: "var(--accent-blue)" }}>💡 Préparez votre séance :</strong>{" "}
+              Pour préparer au mieux votre session{" "}préciser quelle chanson vous souhaitez travailler lors de votre coaching et vos objectifs !
+            </p>
+          </div>
         </section>
 
         {/* Encadré Conseil Préparation */}
