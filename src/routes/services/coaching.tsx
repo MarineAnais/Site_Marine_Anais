@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
 
 export const Route = createFileRoute("/services/coaching")({
   head: () => ({
@@ -31,12 +30,7 @@ function CoachingHub() {
         </Link>
       </div>
 
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        style={{ textAlign: "center", maxWidth: 800, width: "100%" }}
-      >
+      <main style={{ textAlign: "center", maxWidth: 800, width: "100%" }}>
         {/* En-tête */}
         <header style={{ marginBottom: "2.5rem" }}>
           <h1 style={{ color: "var(--text-light)", marginBottom: "1rem", fontSize: "2.8rem", fontWeight: 500 }}>
@@ -163,7 +157,7 @@ function CoachingHub() {
             N’hésitez pas à me préciser quelle chanson vous souhaitez travailler lors de votre coaching pour que je puisse préparer au mieux votre venue !
           </p>
         </div>
-      </motion.main>
+      </main>
     </div>
   );
 }
