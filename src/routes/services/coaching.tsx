@@ -68,7 +68,6 @@ function CoachingHub() {
             >
               <span style={{ fontSize: "2.2rem", fontWeight: 700, color: "var(--accent-blue)", marginBottom: "0.25rem" }}>35 €</span>
               <h3 style={{ color: "var(--text-light)", fontSize: "1.15rem", fontWeight: 600, margin: "0.5rem 0 0.25rem" }}>Coaching Enfant</h3>
-              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", margin: 0 }}>Séance de 1h30</p>
               <span style={{ marginTop: "1rem", fontSize: "0.85rem", color: "var(--accent-cream)", background: "rgba(255,255,255,0.05)", padding: "0.3rem 0.75rem", borderRadius: "20px" }}>
                 Exclusivement chez vous
               </span>
