@@ -62,6 +62,11 @@ export default function OfferSheet({ title, imageUrl, pdfUrl, pdfName, backLink 
         Télécharger la fiche offre en PDF
       </a>
 
+      <Link to="/contact" className="offer-cta offer-cta-secondary">
+        Contacter nous pour réserver une date de concert
+      </Link>
+
+
       <style>{`
         .offer-cta {
           margin-top: 2.25rem;
