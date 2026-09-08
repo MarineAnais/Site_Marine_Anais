@@ -133,7 +133,7 @@ function CoachingHub() {
               textDecoration: "none",
             }}
           >
-            Réserver ma séance sur Calendly
+            Choisissez la date et l'heure sur Calendly
           </a>
           <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", maxWidth: 550, margin: "0 auto", lineHeight: 1.5, fontStyle: "italic" }}>
             La sélection enfant/adulte et le choix du lieu ne fonctionne pas sur Calendly. Précisez s'il sagit d'un cours adulte ou enfant ainsi que le lieu, votre domicile (avec l'adresse) ou le miens dans les notes de réservation.
