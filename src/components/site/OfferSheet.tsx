@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
+
 
 type Props = {
   title: string;
@@ -60,9 +62,14 @@ export default function OfferSheet({ title, imageUrl, pdfUrl, pdfName, backLink 
         Télécharger la fiche offre en PDF
       </a>
 
+      <Link to="/contact" className="offer-cta offer-cta-secondary">
+        Contacter nous pour réserver une date de concert
+      </Link>
+
+
       <style>{`
         .offer-cta {
-          margin-top: 2.25rem;
+          margin-top: 1rem;
           display: inline-block;
           max-width: 100%;
           text-align: center;
@@ -74,14 +81,27 @@ export default function OfferSheet({ title, imageUrl, pdfUrl, pdfName, backLink 
           text-decoration: none;
           transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
         }
+        .offer-cta:first-of-type {
+          margin-top: 2.25rem;
+        }
         .offer-cta:hover {
           background: #B0C8E8;
           transform: translateY(-2px);
           box-shadow: 0 12px 28px rgba(204,220,245,0.25);
         }
+        .offer-cta-secondary {
+          background: transparent;
+          color: var(--text-light);
+          border: 2px solid var(--accent-blue);
+        }
+        .offer-cta-secondary:hover {
+          background: var(--accent-blue);
+          color: #0b1626;
+        }
         @media (max-width: 640px) {
           .offer-cta { width: 100%; padding: 0.9rem 1rem; }
         }
+
       `}</style>
     </div>
   );
