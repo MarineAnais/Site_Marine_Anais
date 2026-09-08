@@ -31,7 +31,7 @@ function Contact() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} style={{ textAlign: "center", marginBottom: "3rem" }}>
         <h1 style={{ fontSize: "3rem", color: "var(--accent-cream)", marginBottom: "1rem" }}>Pour me contacter</h1>
         <p style={{ color: "var(--text-light)", fontSize: "1.15rem", maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
-          Vous souhaitez réserver un concert ou prendre un cours de chant ? N'hésitez pas à me contacter directement par email.
+          Vous souhaitez réserver un concert, prendre un cours de chant ou une voix off pour un projet ? N'hésitez pas à me contacter directement par email.
         </p>
       </motion.div>
 
