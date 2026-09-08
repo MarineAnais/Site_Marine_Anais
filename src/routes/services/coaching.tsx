@@ -47,13 +47,6 @@ function CoachingHub() {
           </p>
         </header>
 
-        {/* Présentation de l'approche */}
-        <section style={{ marginBottom: "2.5rem" }}>
-          <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.7, margin: 0 }}>
-            <strong>L'objectif</strong> : vous guider avec bienveillance pour développer votre technique vocale et <strong>interpréter au mieux les chansons</strong> que vous souhaitez travailler. Chaque séance de <strong>1h30</strong> est pensée sur mesure pour libérer votre voix, transmettre vos émotions et gagner en confiance.
-          </p>
-        </section>
-
         {/* Grille des Formules & Tarifs */}
         <section style={{ marginBottom: "2.5rem" }}>
           <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem" }}>
@@ -111,6 +104,13 @@ function CoachingHub() {
           {/* Précisions logistiques */}
           <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6, marginTop: "1.5rem" }}>
             Règlement par CESU (50 % de crédit d'impôt) et frais de déplacement applicables si je me déplace chez vous.
+          </p>
+        </section>
+
+        {/* Présentation de l'approche */}
+        <section style={{ marginBottom: "2.5rem" }}>
+          <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.7, margin: 0 }}>
+            <strong>L'objectif</strong> : vous guider avec bienveillance pour développer votre technique vocale et <strong>interpréter au mieux les chansons</strong> que vous souhaitez travailler. Chaque séance de <strong>1h30</strong> est pensée sur mesure pour libérer votre voix, transmettre vos émotions et gagner en confiance.
           </p>
         </section>
 
