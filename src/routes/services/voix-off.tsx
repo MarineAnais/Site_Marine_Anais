@@ -22,7 +22,7 @@ function VoixOff() {
       <div style={{ textAlign: "center", marginBottom: "3rem" }}>
         <h1 style={{ fontSize: "2.5rem", color: "var(--accent-cream)", marginBottom: "1rem" }}>Voix Off</h1>
         <p style={{ color: "var(--text-light)", fontSize: "1.15rem", maxWidth: 800, margin: "0 auto", lineHeight: 1.6 }}>
-          Donnez vie à vos projets audiovisuels, publicités et documentaires avec une voix professionnelle et captivante.
+          Une voix expressive, vibrante et lumineuse pour donner vie à vos projets audiovisuels.
         </p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "4rem", gap: "2rem" }}>
