@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
 import { VideoCarousel } from "../components/site/VideoCarousel";
 import { VenuesSection } from "../components/site/VenuesSection";
@@ -78,9 +78,6 @@ function BookMarine() {
     <div style={{ minHeight: "calc(100vh - 85px)", padding: "4rem 2rem", maxWidth: 1200, margin: "0 auto" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "3rem", gap: "1rem", flexWrap: "wrap" }}>
         <h1 style={{ color: "var(--text-light)", fontSize: "2.2rem", fontWeight: 700, margin: 0 }}>Marine Anaïs</h1>
-        <Link to="/services/concert/marine-anais" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.75rem 1.5rem", borderRadius: 999, border: "1px solid var(--accent-cream)", color: "var(--accent-cream)", fontWeight: 700, letterSpacing: "0.5px", textDecoration: "none", whiteSpace: "nowrap" }}>
-          Mes Offres <span aria-hidden="true">→</span>
-        </Link>
       </div>
 
       <div className="book-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
