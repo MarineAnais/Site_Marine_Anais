@@ -9,42 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as BookRouteImport } from './routes/book'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as DevisRouteImport } from './routes/devis'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as BookIndexRouteImport } from './routes/book.index'
-import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
-import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
+import { Route as DevisRouteImport } from './routes/devis'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
-import { Route as ServicesCoachingRouteImport } from './routes/services/coaching'
-import { Route as ServicesConcertEntrepriseRouteImport } from './routes/services/concert-entreprise'
-import { Route as ServicesConcertMariageRouteImport } from './routes/services/concert-mariage'
-import { Route as ServicesConcertRestaurateurRouteImport } from './routes/services/concert-restaurateur'
+import { Route as BookIndexRouteImport } from './routes/book.index'
 import { Route as ServicesVoixOffRouteImport } from './routes/services/voix-off'
+import { Route as ServicesConcertRestaurateurRouteImport } from './routes/services/concert-restaurateur'
+import { Route as ServicesConcertMariageRouteImport } from './routes/services/concert-mariage'
+import { Route as ServicesConcertEntrepriseRouteImport } from './routes/services/concert-entreprise'
+import { Route as ServicesCoachingRouteImport } from './routes/services/coaching'
+import { Route as BookSolsticeRouteImport } from './routes/book.solstice'
+import { Route as BookMarineAnaisRouteImport } from './routes/book.marine-anais'
 import { Route as ServicesConcertIndexRouteImport } from './routes/services/concert/index'
-import { Route as ServicesConcertMarineAnaisIndexRouteImport } from './routes/services/concert/marine-anais/index'
-import { Route as ServicesConcertMarineAnaisAnniversairesRouteImport } from './routes/services/concert/marine-anais/anniversaires'
-import { Route as ServicesConcertMarineAnaisRestaurateursRouteImport } from './routes/services/concert/marine-anais/restaurateurs'
 import { Route as ServicesConcertSolsticeIndexRouteImport } from './routes/services/concert/solstice/index'
-import { Route as ServicesConcertSolsticeEntreprisesRouteImport } from './routes/services/concert/solstice/entreprises'
-import { Route as ServicesConcertSolsticeMariagesRouteImport } from './routes/services/concert/solstice/mariages'
+import { Route as ServicesConcertMarineAnaisIndexRouteImport } from './routes/services/concert/marine-anais/index'
 import { Route as ServicesConcertSolsticeRestaurateursRouteImport } from './routes/services/concert/solstice/restaurateurs'
+import { Route as ServicesConcertSolsticeMariagesRouteImport } from './routes/services/concert/solstice/mariages'
+import { Route as ServicesConcertSolsticeEntreprisesRouteImport } from './routes/services/concert/solstice/entreprises'
+import { Route as ServicesConcertMarineAnaisRestaurateursRouteImport } from './routes/services/concert/marine-anais/restaurateurs'
+import { Route as ServicesConcertMarineAnaisAnniversairesRouteImport } from './routes/services/concert/marine-anais/anniversaires'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookRoute = BookRouteImport.update({
-  id: '/book',
-  path: '/book',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DevisRoute = DevisRouteImport.update({
@@ -52,9 +42,24 @@ const DevisRoute = DevisRouteImport.update({
   path: '/devis',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
-  id: '/mentions-legales',
-  path: '/mentions-legales',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookIndexRoute = BookIndexRouteImport.update({
@@ -62,35 +67,9 @@ const BookIndexRoute = BookIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BookRoute,
 } as any)
-const BookMarineAnaisRoute = BookMarineAnaisRouteImport.update({
-  id: '/marine-anais',
-  path: '/marine-anais',
-  getParentRoute: () => BookRoute,
-} as any)
-const BookSolsticeRoute = BookSolsticeRouteImport.update({
-  id: '/solstice',
-  path: '/solstice',
-  getParentRoute: () => BookRoute,
-} as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesCoachingRoute = ServicesCoachingRouteImport.update({
-  id: '/services/coaching',
-  path: '/services/coaching',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesConcertEntrepriseRoute =
-  ServicesConcertEntrepriseRouteImport.update({
-    id: '/services/concert-entreprise',
-    path: '/services/concert-entreprise',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesConcertMariageRoute = ServicesConcertMariageRouteImport.update({
-  id: '/services/concert-mariage',
-  path: '/services/concert-mariage',
+const ServicesVoixOffRoute = ServicesVoixOffRouteImport.update({
+  id: '/services/voix-off',
+  path: '/services/voix-off',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesConcertRestaurateurRoute =
@@ -99,44 +78,53 @@ const ServicesConcertRestaurateurRoute =
     path: '/services/concert-restaurateur',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesVoixOffRoute = ServicesVoixOffRouteImport.update({
-  id: '/services/voix-off',
-  path: '/services/voix-off',
+const ServicesConcertMariageRoute = ServicesConcertMariageRouteImport.update({
+  id: '/services/concert-mariage',
+  path: '/services/concert-mariage',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesConcertEntrepriseRoute =
+  ServicesConcertEntrepriseRouteImport.update({
+    id: '/services/concert-entreprise',
+    path: '/services/concert-entreprise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesCoachingRoute = ServicesCoachingRouteImport.update({
+  id: '/services/coaching',
+  path: '/services/coaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookSolsticeRoute = BookSolsticeRouteImport.update({
+  id: '/solstice',
+  path: '/solstice',
+  getParentRoute: () => BookRoute,
+} as any)
+const BookMarineAnaisRoute = BookMarineAnaisRouteImport.update({
+  id: '/marine-anais',
+  path: '/marine-anais',
+  getParentRoute: () => BookRoute,
 } as any)
 const ServicesConcertIndexRoute = ServicesConcertIndexRouteImport.update({
   id: '/services/concert/',
   path: '/services/concert/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesConcertMarineAnaisIndexRoute =
-  ServicesConcertMarineAnaisIndexRouteImport.update({
-    id: '/services/concert/marine-anais/',
-    path: '/services/concert/marine-anais/',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesConcertMarineAnaisAnniversairesRoute =
-  ServicesConcertMarineAnaisAnniversairesRouteImport.update({
-    id: '/services/concert/marine-anais/anniversaires',
-    path: '/services/concert/marine-anais/anniversaires',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesConcertMarineAnaisRestaurateursRoute =
-  ServicesConcertMarineAnaisRestaurateursRouteImport.update({
-    id: '/services/concert/marine-anais/restaurateurs',
-    path: '/services/concert/marine-anais/restaurateurs',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ServicesConcertSolsticeIndexRoute =
   ServicesConcertSolsticeIndexRouteImport.update({
     id: '/services/concert/solstice/',
     path: '/services/concert/solstice/',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesConcertSolsticeEntreprisesRoute =
-  ServicesConcertSolsticeEntreprisesRouteImport.update({
-    id: '/services/concert/solstice/entreprises',
-    path: '/services/concert/solstice/entreprises',
+const ServicesConcertMarineAnaisIndexRoute =
+  ServicesConcertMarineAnaisIndexRouteImport.update({
+    id: '/services/concert/marine-anais/',
+    path: '/services/concert/marine-anais/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesConcertSolsticeRestaurateursRoute =
+  ServicesConcertSolsticeRestaurateursRouteImport.update({
+    id: '/services/concert/solstice/restaurateurs',
+    path: '/services/concert/solstice/restaurateurs',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesConcertSolsticeMariagesRoute =
@@ -145,10 +133,22 @@ const ServicesConcertSolsticeMariagesRoute =
     path: '/services/concert/solstice/mariages',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesConcertSolsticeRestaurateursRoute =
-  ServicesConcertSolsticeRestaurateursRouteImport.update({
-    id: '/services/concert/solstice/restaurateurs',
-    path: '/services/concert/solstice/restaurateurs',
+const ServicesConcertSolsticeEntreprisesRoute =
+  ServicesConcertSolsticeEntreprisesRouteImport.update({
+    id: '/services/concert/solstice/entreprises',
+    path: '/services/concert/solstice/entreprises',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesConcertMarineAnaisRestaurateursRoute =
+  ServicesConcertMarineAnaisRestaurateursRouteImport.update({
+    id: '/services/concert/marine-anais/restaurateurs',
+    path: '/services/concert/marine-anais/restaurateurs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesConcertMarineAnaisAnniversairesRoute =
+  ServicesConcertMarineAnaisAnniversairesRouteImport.update({
+    id: '/services/concert/marine-anais/anniversaires',
+    path: '/services/concert/marine-anais/anniversaires',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -322,25 +322,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book': {
-      id: '/book'
-      path: '/book'
-      fullPath: '/book'
-      preLoaderRoute: typeof BookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/devis': {
@@ -350,11 +336,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DevisRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/mentions-legales': {
-      id: '/mentions-legales'
-      path: '/mentions-legales'
-      fullPath: '/mentions-legales'
-      preLoaderRoute: typeof MentionsLegalesRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book/': {
@@ -364,46 +371,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookIndexRouteImport
       parentRoute: typeof BookRoute
     }
-    '/book/marine-anais': {
-      id: '/book/marine-anais'
-      path: '/marine-anais'
-      fullPath: '/book/marine-anais'
-      preLoaderRoute: typeof BookMarineAnaisRouteImport
-      parentRoute: typeof BookRoute
-    }
-    '/book/solstice': {
-      id: '/book/solstice'
-      path: '/solstice'
-      fullPath: '/book/solstice'
-      preLoaderRoute: typeof BookSolsticeRouteImport
-      parentRoute: typeof BookRoute
-    }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/coaching': {
-      id: '/services/coaching'
-      path: '/services/coaching'
-      fullPath: '/services/coaching'
-      preLoaderRoute: typeof ServicesCoachingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/concert-entreprise': {
-      id: '/services/concert-entreprise'
-      path: '/services/concert-entreprise'
-      fullPath: '/services/concert-entreprise'
-      preLoaderRoute: typeof ServicesConcertEntrepriseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/concert-mariage': {
-      id: '/services/concert-mariage'
-      path: '/services/concert-mariage'
-      fullPath: '/services/concert-mariage'
-      preLoaderRoute: typeof ServicesConcertMariageRouteImport
+    '/services/voix-off': {
+      id: '/services/voix-off'
+      path: '/services/voix-off'
+      fullPath: '/services/voix-off'
+      preLoaderRoute: typeof ServicesVoixOffRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/concert-restaurateur': {
@@ -413,39 +385,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesConcertRestaurateurRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/voix-off': {
-      id: '/services/voix-off'
-      path: '/services/voix-off'
-      fullPath: '/services/voix-off'
-      preLoaderRoute: typeof ServicesVoixOffRouteImport
+    '/services/concert-mariage': {
+      id: '/services/concert-mariage'
+      path: '/services/concert-mariage'
+      fullPath: '/services/concert-mariage'
+      preLoaderRoute: typeof ServicesConcertMariageRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/services/concert-entreprise': {
+      id: '/services/concert-entreprise'
+      path: '/services/concert-entreprise'
+      fullPath: '/services/concert-entreprise'
+      preLoaderRoute: typeof ServicesConcertEntrepriseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/coaching': {
+      id: '/services/coaching'
+      path: '/services/coaching'
+      fullPath: '/services/coaching'
+      preLoaderRoute: typeof ServicesCoachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book/solstice': {
+      id: '/book/solstice'
+      path: '/solstice'
+      fullPath: '/book/solstice'
+      preLoaderRoute: typeof BookSolsticeRouteImport
+      parentRoute: typeof BookRoute
+    }
+    '/book/marine-anais': {
+      id: '/book/marine-anais'
+      path: '/marine-anais'
+      fullPath: '/book/marine-anais'
+      preLoaderRoute: typeof BookMarineAnaisRouteImport
+      parentRoute: typeof BookRoute
     }
     '/services/concert/': {
       id: '/services/concert/'
       path: '/services/concert'
       fullPath: '/services/concert/'
       preLoaderRoute: typeof ServicesConcertIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/concert/marine-anais/': {
-      id: '/services/concert/marine-anais/'
-      path: '/services/concert/marine-anais'
-      fullPath: '/services/concert/marine-anais/'
-      preLoaderRoute: typeof ServicesConcertMarineAnaisIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/concert/marine-anais/anniversaires': {
-      id: '/services/concert/marine-anais/anniversaires'
-      path: '/services/concert/marine-anais/anniversaires'
-      fullPath: '/services/concert/marine-anais/anniversaires'
-      preLoaderRoute: typeof ServicesConcertMarineAnaisAnniversairesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/concert/marine-anais/restaurateurs': {
-      id: '/services/concert/marine-anais/restaurateurs'
-      path: '/services/concert/marine-anais/restaurateurs'
-      fullPath: '/services/concert/marine-anais/restaurateurs'
-      preLoaderRoute: typeof ServicesConcertMarineAnaisRestaurateursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/concert/solstice/': {
@@ -455,11 +434,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesConcertSolsticeIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/concert/solstice/entreprises': {
-      id: '/services/concert/solstice/entreprises'
-      path: '/services/concert/solstice/entreprises'
-      fullPath: '/services/concert/solstice/entreprises'
-      preLoaderRoute: typeof ServicesConcertSolsticeEntreprisesRouteImport
+    '/services/concert/marine-anais/': {
+      id: '/services/concert/marine-anais/'
+      path: '/services/concert/marine-anais'
+      fullPath: '/services/concert/marine-anais/'
+      preLoaderRoute: typeof ServicesConcertMarineAnaisIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert/solstice/restaurateurs': {
+      id: '/services/concert/solstice/restaurateurs'
+      path: '/services/concert/solstice/restaurateurs'
+      fullPath: '/services/concert/solstice/restaurateurs'
+      preLoaderRoute: typeof ServicesConcertSolsticeRestaurateursRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/concert/solstice/mariages': {
@@ -469,11 +455,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesConcertSolsticeMariagesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/concert/solstice/restaurateurs': {
-      id: '/services/concert/solstice/restaurateurs'
-      path: '/services/concert/solstice/restaurateurs'
-      fullPath: '/services/concert/solstice/restaurateurs'
-      preLoaderRoute: typeof ServicesConcertSolsticeRestaurateursRouteImport
+    '/services/concert/solstice/entreprises': {
+      id: '/services/concert/solstice/entreprises'
+      path: '/services/concert/solstice/entreprises'
+      fullPath: '/services/concert/solstice/entreprises'
+      preLoaderRoute: typeof ServicesConcertSolsticeEntreprisesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert/marine-anais/restaurateurs': {
+      id: '/services/concert/marine-anais/restaurateurs'
+      path: '/services/concert/marine-anais/restaurateurs'
+      fullPath: '/services/concert/marine-anais/restaurateurs'
+      preLoaderRoute: typeof ServicesConcertMarineAnaisRestaurateursRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/concert/marine-anais/anniversaires': {
+      id: '/services/concert/marine-anais/anniversaires'
+      path: '/services/concert/marine-anais/anniversaires'
+      fullPath: '/services/concert/marine-anais/anniversaires'
+      preLoaderRoute: typeof ServicesConcertMarineAnaisAnniversairesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
