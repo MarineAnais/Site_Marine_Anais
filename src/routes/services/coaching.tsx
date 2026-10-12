@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import TestimonialsSection from "../../components/site/TestimonialsSection";
 
 export const Route = createFileRoute("/services/coaching")({
   head: () => ({
@@ -105,6 +106,24 @@ function CoachingHub() {
             <strong>L'objectif</strong> : vous guider avec bienveillance pour développer votre technique vocale et <strong>interpréter au mieux les chansons</strong> que vous souhaitez travailler. Chaque séance de <strong>1h30</strong> est pensée sur mesure pour libérer votre voix, transmettre vos émotions et gagner en confiance.
           </p>
         </section>
+
+        {/* Témoignages & Avis */}
+        <TestimonialsSection
+          testimonials={[
+            {
+              quote:
+                "Je recommande de prendre des cours de chant avec Marine Anaïs. Sa grande force, c'est son écoute et sa pédagogie. Elle repère tout de suite ce qu'il faut ajuster et s'arrête sur chaque petit détail jusqu'à ce qu'on ait le bon déclic et que ça sonne juste. Les cours sont hyper personnalisés et très enrichissants !",
+              name: "Clélie P.",
+              date: "Sept. 2026",
+            },
+            {
+              quote:
+                "Je prends des cours avec Marine Anaïs et son accompagnement est très complet. Elle m'aide autant sur la posture, la gestion du souffle et la détente que sur le placement de la voix et la prononciation. Grâce à son écoute et à sa pédagogie, je me sens beaucoup plus à l'aise. Une excellente coach vocale que je recommande.",
+              name: "Christine M.",
+              date: "Oct. 2026",
+            },
+          ]}
+        />
 
         {/* Bloc d'Appel à l'Action (CTA) */}
         <section
