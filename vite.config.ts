@@ -12,9 +12,10 @@ import { nitro } from "nitro/vite";
 //   - ailleurs (VPS, local) : serveur Node dans .output/
 // On peut forcer un format avec la variable d'environnement NITRO_PRESET.
 //
-// GitHub Pages (NITRO_PRESET=github_pages) : le site est généré en fichiers fixes
-// (une page HTML par route) dans .output/public. Voir .github/workflows/pages.yml.
-const isStaticBuild = process.env.NITRO_PRESET === "github_pages";
+// GitHub Pages (STATIC_BUILD=1) : le site est généré en fichiers fixes (une page HTML
+// par route) dans dist/client, grâce au prérendu de TanStack Start, sans Nitro.
+// Voir .github/workflows/pages.yml.
+const isStaticBuild = process.env.STATIC_BUILD === "1";
 
 export default defineConfig({
   server: { port: 3000 },
@@ -33,7 +34,8 @@ export default defineConfig({
         ? { prerender: { enabled: true, crawlLinks: true, failOnError: true } }
         : {}),
     }),
-    nitro(),
+    // Nitro (format de déploiement serveur) n'est pas utilisé pour le build statique.
+    ...(isStaticBuild ? [] : [nitro()]),
     viteReact(),
   ],
 });
