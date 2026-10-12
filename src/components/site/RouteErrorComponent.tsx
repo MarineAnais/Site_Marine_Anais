@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { useRouter } from "@tanstack/react-router";
-import { reportLovableError } from "@/lib/lovable-error-reporting";
 
 export default function RouteErrorComponent({
   error,
@@ -12,9 +10,6 @@ export default function RouteErrorComponent({
   const errorObj = error instanceof Error ? error : new Error(String(error));
   console.error(errorObj);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(errorObj, { boundary: "tanstack_root_error_component" });
-  }, [errorObj]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
