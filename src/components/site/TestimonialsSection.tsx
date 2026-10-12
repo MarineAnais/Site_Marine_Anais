@@ -99,6 +99,7 @@ export default function TestimonialsSection({
                   lineHeight: 1.7,
                   fontSize: "1rem",
                   margin: 0,
+                  whiteSpace: "pre-line",
                 }}
               >
                 « {t.quote} »
