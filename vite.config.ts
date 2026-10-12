@@ -31,7 +31,17 @@ export default defineConfig({
       // Prérendu des pages uniquement pour le build statique, pour ne rien changer
       // au fonctionnement sur Vercel / Netlify.
       ...(isStaticBuild
-        ? { prerender: { enabled: true, crawlLinks: true, failOnError: true } }
+        ? {
+            prerender: {
+              enabled: true,
+              crawlLinks: true,
+              failOnError: true,
+              // Ne prérendre que les pages : on saute les fichiers (PDF, images…)
+              // et les anciennes adresses d'assets Lovable (/__l5e/…).
+              filter: (page: { path: string }) =>
+                !page.path.startsWith("/__l5e/") && !/\.[a-z0-9]+$/i.test(page.path),
+            },
+          }
         : {}),
     }),
     // Nitro (format de déploiement serveur) n'est pas utilisé pour le build statique.
