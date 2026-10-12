@@ -6,14 +6,15 @@ export default function RouteErrorComponent({
   error,
   reset,
 }: {
-  error: Error;
+  error: unknown;
   reset: () => void;
 }) {
-  console.error(error);
+  const errorObj = error instanceof Error ? error : new Error(String(error));
+  console.error(errorObj);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+    reportLovableError(errorObj, { boundary: "tanstack_root_error_component" });
+  }, [errorObj]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
