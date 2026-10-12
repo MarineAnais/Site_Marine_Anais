@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import TestimonialsSection from "../../../components/site/TestimonialsSection";
+import TestimonialsSection from "../../components/site/TestimonialsSection";
 
 export const Route = createFileRoute("/services/coaching")({
   head: () => ({
