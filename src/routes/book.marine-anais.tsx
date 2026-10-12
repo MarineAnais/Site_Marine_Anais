@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { asset } from "@/lib/asset";
 import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
 import { VideoCarousel } from "../components/site/VideoCarousel";
 import { VenuesSection } from "../components/site/VenuesSection";
@@ -62,15 +63,15 @@ const VIDEOS = [
 ];
 
 const GALLERY = [
-  { src: "/marine-photo-10.jpg" },
-  { src: "/marine-photo-3.jpg" },
-  { src: "/marine-photo-14.jpg" },
-  { src: "/marine-photo-19.jpg", objectPosition: "center 20%" },
-  { src: "/marine-photo-13.jpg" },
-  { src: "/marine-home.jpg" },
-  { src: "/marine-photo-6.jpg" },
-  { src: "/marine-photo-9.jpg", objectPosition: "center 20%" },
-  { src: "/marine-photo-12.jpg" },
+  { src: asset("/marine-photo-10.jpg") },
+  { src: asset("/marine-photo-3.jpg") },
+  { src: asset("/marine-photo-14.jpg") },
+  { src: asset("/marine-photo-19.jpg"), objectPosition: "center 20%" },
+  { src: asset("/marine-photo-13.jpg") },
+  { src: asset("/marine-home.jpg") },
+  { src: asset("/marine-photo-6.jpg") },
+  { src: asset("/marine-photo-9.jpg"), objectPosition: "center 20%" },
+  { src: asset("/marine-photo-12.jpg") },
 ];
 
 function BookMarine() {
@@ -81,7 +82,7 @@ function BookMarine() {
       </div>
 
       <div className="book-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "4rem", marginBottom: "4rem", alignItems: "center" }}>
-        <div style={{ width: "100%", height: 500, background: `url(/marine-photo-1.jpg) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
+        <div style={{ width: "100%", height: 500, background: `url(${asset("/marine-photo-1.jpg")}) center/cover`, borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }} />
         <div>
           <h3 style={{ color: "var(--text-light)", fontSize: "1.2rem", marginBottom: "1rem", fontWeight: 700 }}>Présentation</h3>
           <p style={{ color: "var(--text-light)", fontSize: "1.1rem", lineHeight: 1.6, opacity: 0.9, whiteSpace: "pre-wrap" }}>{presentation}</p>

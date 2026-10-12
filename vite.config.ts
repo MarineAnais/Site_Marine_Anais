@@ -17,7 +17,12 @@ import { nitro } from "nitro/vite";
 // Voir .github/workflows/pages.yml.
 const isStaticBuild = process.env.STATIC_BUILD === "1";
 
+// Préfixe des adresses du site. "/" à la racine d'un domaine (par défaut) ; sur l'adresse
+// github.io du dépôt : SITE_BASE=/artist-website-forge/ (voir .github/workflows/pages.yml).
+const base = process.env.SITE_BASE || "/";
+
 export default defineConfig({
+  base,
   server: { port: 3000 },
   resolve: {
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/react-start"],

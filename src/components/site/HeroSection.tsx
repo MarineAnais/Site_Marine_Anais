@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { asset } from "@/lib/asset";
 import { Link } from "@tanstack/react-router";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
@@ -106,7 +107,7 @@ export function HeroSection() {
             <motion.img
               variants={{ hover: { scale: 1.05, filter: "brightness(0.5)" } }}
               transition={{ duration: 0.3 }}
-              src="/marine-home.jpg"
+              src={asset("/marine-home.jpg")}
               alt="Marine Anaïs en concert live — Chanteuse Pop-Rock"
               style={{ width: "100%", maxHeight: "55vh", objectFit: "cover", display: "block", borderRadius: "16px" }}
             />

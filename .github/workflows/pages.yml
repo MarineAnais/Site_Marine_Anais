@@ -44,6 +44,8 @@ jobs:
           exit $code
         env:
           STATIC_BUILD: "1"
+          # Adresse github.io du dépôt. Passer à "/" une fois marineanais.fr branché.
+          SITE_BASE: /artist-website-forge/
 
       - name: Finaliser le dossier publié
         run: |
@@ -57,6 +59,12 @@ jobs:
           echo "Contenu du site généré :"
           find dist/client -maxdepth 2 -not -path '*/assets/*' | sort | head -60
           test -f dist/client/index.html
+          # Contrôle : les fichiers CSS/JS doivent porter le préfixe du site
+          if [ "$SITE_BASE" != "/" ]; then
+            grep -q "${SITE_BASE}assets/" dist/client/index.html || { echo "::error::Le préfixe ${SITE_BASE} est absent de index.html"; exit 1; }
+          fi
+        env:
+          SITE_BASE: /artist-website-forge/
 
       - uses: actions/upload-pages-artifact@v3
         with:

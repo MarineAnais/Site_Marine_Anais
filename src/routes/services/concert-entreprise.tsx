@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { asset } from "@/lib/asset";
 import OfferSheet from "../../components/site/OfferSheet";
 
 export const Route = createFileRoute("/services/concert-entreprise")({
@@ -20,8 +21,8 @@ function ConcertEntreprise() {
   return (
     <OfferSheet
       title="Offre Entreprises & Corporate"
-      imageUrl="/brochure-entreprise.png"
-      pdfUrl="/brochure-entreprise.pdf"
+      imageUrl={asset("/brochure-entreprise.png")}
+      pdfUrl={asset("/brochure-entreprise.pdf")}
       pdfName="brochure-entreprise.pdf"
       backLink={
         <Link to="/services" style={{ color: "var(--accent-blue)", fontWeight: 700 }}>

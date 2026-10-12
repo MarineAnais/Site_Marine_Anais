@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { asset } from "@/lib/asset";
 import { HeroSection } from "../components/site/HeroSection";
 import { VenuesSection } from "../components/site/VenuesSection";
 import { ALL_VENUES } from "../lib/venues";
@@ -21,12 +22,12 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const projects = [
-    { src: "/marine-photo-1.jpg", alt: "Marine Anaïs en concert live — Chanteuse Pop-Rock", label: "Marine Anaïs — Comédie Musical", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
-    { src: "/marine-photo-18.jpg", alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
-    { src: "/marine-photo-2.jpg", alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
-    { src: "/marine-photo-20.jpg", alt: "Duo acoustique Solstice en prestation musicale", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
-    { src: "/marine-photo-4.jpg", alt: "Cours de chant et coaching vocal individuel", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
-    { src: "/marine-photo-5.jpg", alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
+    { src: asset("/marine-photo-1.jpg"), alt: "Marine Anaïs en concert live — Chanteuse Pop-Rock", label: "Marine Anaïs — Comédie Musical", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
+    { src: asset("/marine-photo-18.jpg"), alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Concert", to: "/book/marine-anais" as const },
+    { src: asset("/marine-photo-2.jpg"), alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Projet solo", to: "/book/marine-anais" as const, objectPosition: "center 20%" as const },
+    { src: asset("/marine-photo-20.jpg"), alt: "Duo acoustique Solstice en prestation musicale", label: "Solstice — Duo acoustique", to: "/book/solstice" as const },
+    { src: asset("/marine-photo-4.jpg"), alt: "Cours de chant et coaching vocal individuel", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
+    { src: asset("/marine-photo-5.jpg"), alt: "Prestation scénique variété française et pop-rock", label: "Marine Anaïs — Spectacle", to: "/book/marine-anais" as const },
   ];
 
 

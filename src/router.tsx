@@ -5,8 +5,12 @@ import { routeTree } from "./routeTree.gen";
 export const getRouter = () => {
   const queryClient = new QueryClient();
 
+  // "" à la racine d'un domaine, "/artist-website-forge" sur github.io
+  const basepath = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
   const router = createRouter({
     routeTree,
+    basepath,
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
