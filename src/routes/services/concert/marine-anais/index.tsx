@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import TestimonialsSection from "../../../../components/site/TestimonialsSection";
 
 export const Route = createFileRoute("/services/concert/marine-anais/")({
   head: () => ({
@@ -67,6 +68,21 @@ function MarineOffers() {
             </Link>
           </motion.div>
         ))}
+      </div>
+
+      {/* Témoignages & Avis */}
+      <div style={{ width: "100%", maxWidth: 900, marginTop: "4rem" }}>
+        <TestimonialsSection
+          testimonials={[
+            {
+              quote:
+                "Un grand merci à Marine Anaïs pour sa présence à la Galerie Durbec pour la Fête de la Musique ! Avec un répertoire très varié qui a plu aux petits comme aux grands, elle a su maintenir une belle énergie tout au long des 4 heures de prestation. On sent chez elle une vraie volonté de faire plaisir au public. Une superbe collaboration qu'on réitérera avec plaisir !",
+              name: "Gilles D.",
+              role: "Gérant de la galerie",
+              date: "Juin 2026",
+            },
+          ]}
+        />
       </div>
     </div>
   );
