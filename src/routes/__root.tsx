@@ -1,18 +1,18 @@
+import { lazy, Suspense, type ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
-  useRouter,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNavbar } from "../components/site/SiteNavbar";
 import { SiteFooter } from "../components/site/SiteFooter";
+
+const ErrorComponent = lazy(() => import("../components/site/RouteErrorComponent"));
 
 function NotFoundComponent() {
   return (
