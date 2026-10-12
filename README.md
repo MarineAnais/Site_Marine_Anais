@@ -1,26 +1,43 @@
-# Marine Anaïs
+# Marine Anaïs — site officiel
 
-je suis chanteuse et je veux créer un site à partir d'un code que j'ai sur git hub
+Site de Marine Anaïs, chanteuse et coach vocal à Rueil-Malmaison : prestations live (solo et duo Solstice), cours de chant, voix off, book, demande de devis et contact.
 
-This project was built with [Lovable](https://lovable.dev).
+Construit avec [TanStack Start](https://tanstack.com/start) (React), Tailwind CSS et Vite.
 
-**Live app**: https://artist-website-forge.lovable.app
+## Lancer le site sur son ordinateur
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/78f9d35f-107f-4078-985a-799a1a217094).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Il faut [Node.js](https://nodejs.org) (version 20 ou plus récente).
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install      # télécharge les dépendances (une seule fois)
+npm run dev      # lance le site sur http://localhost:3000
 ```
+
+## Construire le site
+
+```sh
+npm run build
+```
+
+Le résultat est généré dans le dossier `.output/`.
+
+## Mettre le site en ligne
+
+Le projet se déploie sur Cloudflare Pages, Vercel ou Netlify : il suffit de relier le dépôt GitHub à l'hébergeur, qui installe et construit le site lui-même. Le bon format de déploiement est détecté automatiquement.
+
+Réglages à indiquer à l'hébergeur :
+
+- **Commande d'installation** : `npm install`
+- **Commande de build** : `npm run build`
+
+Pour forcer un format précis, définir la variable d'environnement `NITRO_PRESET` (par exemple `cloudflare_pages`, `vercel` ou `netlify`).
+
+## Organisation du code
+
+- `src/routes/` : une page par fichier (accueil, services, book, devis, contact, mentions légales)
+- `src/components/site/` : éléments du site (barre de navigation, pied de page, carrousels…)
+- `src/components/ui/` : composants d'interface génériques
+- `src/styles.css` : couleurs et styles globaux
+- `public/` : images, brochures PDF, `robots.txt`, `sitemap.xml`
+
+`src/routeTree.gen.ts` est généré automatiquement : ne pas le modifier à la main.
