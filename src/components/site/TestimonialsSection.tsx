@@ -24,20 +24,6 @@ const cardStyle: React.CSSProperties = {
 function EditorialItem({ t }: { t: Testimonial }) {
   return (
     <figure style={{ margin: 0, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-      <span
-        aria-hidden
-        style={{
-          fontSize: "3.2rem",
-          lineHeight: 1,
-          color: "var(--accent-blue)",
-          opacity: 0.55,
-          fontFamily: "Georgia, 'Times New Roman', serif",
-          marginBottom: "0.75rem",
-          userSelect: "none",
-        }}
-      >
-        «
-      </span>
       <blockquote
         style={{
           color: "var(--text-light)",
