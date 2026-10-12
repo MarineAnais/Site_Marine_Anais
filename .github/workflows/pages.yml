@@ -31,7 +31,17 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Construire le site (fichiers fixes)
-        run: npm run build
+        shell: bash
+        run: |
+          set +e
+          npm run build 2>&1 | tee build.log
+          code=${PIPESTATUS[0]}
+          if [ "$code" -ne 0 ]; then
+            # Affiche la fin du journal dans un encadré d'erreur facile à lire / à copier
+            msg=$(tail -n 40 build.log | sed -e 's/\x1b\[[0-9;]*m//g' -e 's/%/%25/g' -e 's/\r/%0D/g' | sed -e ':a;N;$!ba;s/\n/%0A/g')
+            echo "::error title=Erreur pendant la construction du site::${msg}"
+          fi
+          exit $code
         env:
           NITRO_PRESET: github_pages
 
