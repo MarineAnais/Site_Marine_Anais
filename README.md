@@ -1,6 +1,6 @@
 # Marine Anaïs — site officiel
 
-Site de Marine Anaïs, chanteuse et coach vocal à Rueil-Malmaison : prestations live (solo et duo Solstice), cours de chant, voix off, book, demande de devis et contact.
+Site de Marine Anaïs, chanteuse et coach vocal à Rueil-Malmaison : prestations live (solo et duo Solstice), cours de chant, voix off, book et contact.
 
 Construit avec [TanStack Start](https://tanstack.com/start) (React), Tailwind CSS et Vite.
 
@@ -34,7 +34,7 @@ Pour forcer un format précis, définir la variable d'environnement `NITRO_PRESE
 
 ## Organisation du code
 
-- `src/routes/` : une page par fichier (accueil, services, book, devis, contact, mentions légales)
+- `src/routes/` : une page par fichier (accueil, services, book, contact, mentions légales)
 - `src/components/site/` : éléments du site (barre de navigation, pied de page, carrousels…)
 - `src/components/ui/` : composants d'interface génériques
 - `src/styles.css` : couleurs et styles globaux

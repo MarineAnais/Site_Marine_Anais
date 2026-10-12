@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
-import { Route as DevisRouteImport } from './routes/devis'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as IndexRouteImport } from './routes/index'
@@ -35,11 +34,6 @@ import { Route as ServicesConcertMarineAnaisAnniversairesRouteImport } from './r
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   id: '/mentions-legales',
   path: '/mentions-legales',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DevisRoute = DevisRouteImport.update({
-  id: '/devis',
-  path: '/devis',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -156,7 +150,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/book': typeof BookRouteWithChildren
   '/contact': typeof ContactRoute
-  '/devis': typeof DevisRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
@@ -179,7 +172,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/devis': typeof DevisRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
@@ -204,7 +196,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/book': typeof BookRouteWithChildren
   '/contact': typeof ContactRoute
-  '/devis': typeof DevisRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/book/marine-anais': typeof BookMarineAnaisRoute
   '/book/solstice': typeof BookSolsticeRoute
@@ -230,7 +221,6 @@ export interface FileRouteTypes {
     | '/'
     | '/book'
     | '/contact'
-    | '/devis'
     | '/mentions-legales'
     | '/book/marine-anais'
     | '/book/solstice'
@@ -253,7 +243,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
-    | '/devis'
     | '/mentions-legales'
     | '/book/marine-anais'
     | '/book/solstice'
@@ -277,7 +266,6 @@ export interface FileRouteTypes {
     | '/'
     | '/book'
     | '/contact'
-    | '/devis'
     | '/mentions-legales'
     | '/book/marine-anais'
     | '/book/solstice'
@@ -302,7 +290,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BookRoute: typeof BookRouteWithChildren
   ContactRoute: typeof ContactRoute
-  DevisRoute: typeof DevisRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   ServicesCoachingRoute: typeof ServicesCoachingRoute
   ServicesConcertEntrepriseRoute: typeof ServicesConcertEntrepriseRoute
@@ -327,13 +314,6 @@ declare module '@tanstack/react-router' {
       path: '/mentions-legales'
       fullPath: '/mentions-legales'
       preLoaderRoute: typeof MentionsLegalesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/devis': {
-      id: '/devis'
-      path: '/devis'
-      fullPath: '/devis'
-      preLoaderRoute: typeof DevisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -497,7 +477,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BookRoute: BookRouteWithChildren,
   ContactRoute: ContactRoute,
-  DevisRoute: DevisRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   ServicesCoachingRoute: ServicesCoachingRoute,
   ServicesConcertEntrepriseRoute: ServicesConcertEntrepriseRoute,
