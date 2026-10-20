@@ -159,7 +159,7 @@ function CoachingHub() {
 
         {/* Témoignages & Avis */}
         <TestimonialsSection
-          variant="editorial"
+          variant="alternating"
           testimonials={[
             {
               quote:

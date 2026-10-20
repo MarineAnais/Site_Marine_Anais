@@ -8,7 +8,7 @@ export interface Testimonial {
 interface TestimonialsSectionProps {
   title?: string;
   testimonials: Testimonial[];
-  variant?: "card" | "editorial";
+  variant?: "card" | "editorial" | "alternating";
 }
 
 const cardStyle: React.CSSProperties = {
@@ -69,11 +69,61 @@ function EditorialItem({ t }: { t: Testimonial }) {
   );
 }
 
+function splitFirstSentence(text: string): [string, string] {
+  const m = text.match(/^(.+?[.!?…])(\s+[\s\S]*)?$/);
+  return m ? [m[1], m[2] ?? ""] : [text, ""];
+}
+
+function AlternatingList({ testimonials }: { testimonials: Testimonial[] }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem", width: "100%" }}>
+      {testimonials.map((t, i) => {
+        const [first, rest] = splitFirstSentence(t.quote);
+        return (
+          <figure
+            key={t.name + t.date}
+            style={{
+              margin: 0,
+              width: "min(100%, 620px)",
+              alignSelf: i % 2 === 0 ? "flex-end" : "flex-start",
+              background: "#ffffff",
+              color: "#1f1f1f",
+              borderRadius: 12,
+              padding: "1.75rem",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+              textAlign: "left",
+            }}
+          >
+            <blockquote style={{ margin: 0, lineHeight: 1.7, fontSize: "1rem", fontStyle: "italic", whiteSpace: "pre-line" }}>
+              <strong style={{ fontWeight: 700 }}>{first}</strong>
+              {rest}
+            </blockquote>
+            <figcaption style={{ marginTop: "1.25rem", fontSize: "1.1rem", color: "#444" }}>
+              — <strong>{t.name}</strong>
+              {t.role ? `, ${t.role}` : ""} ({t.date})
+            </figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function TestimonialsSection({
   title = "Témoignages & Avis",
   testimonials,
   variant = "card",
 }: TestimonialsSectionProps) {
+  if (variant === "alternating") {
+    return (
+      <section style={{ marginBottom: "2.5rem", width: "100%" }}>
+        <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem", textAlign: "center" }}>
+          {title}
+        </h2>
+        <AlternatingList testimonials={testimonials} />
+      </section>
+    );
+  }
   return (
     <section style={{ marginBottom: "2.5rem", width: "100%" }}>
       <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem", textAlign: "center" }}>
