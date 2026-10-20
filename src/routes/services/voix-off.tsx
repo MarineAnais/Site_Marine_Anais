@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import TestimonialsSection from "../../components/site/TestimonialsSection";
+import ecouteLogo from "@/assets/logo-ecoute-du-vivant.jpeg.asset.json";
+import originsLogo from "@/assets/logo-origins.jpeg.asset.json";
 
 export const Route = createFileRoute("/services/voix-off")({
   head: () => ({
@@ -25,8 +26,42 @@ type Collaboration = {
 };
 
 const COLLABORATIONS: Collaboration[] = [
-  { name: "L'Écoute du Vivant" }, // lien à venir
-  { name: "Origins" }, // lien à venir
+  {
+    name: "L'Écoute du Vivant",
+    url: "https://www.instagram.com/ecoute_du_vivant?cplk=MTI1Y3N4anZuZDI5dg==",
+    logo: ecouteLogo.url,
+    background: "#f3ead8",
+  },
+  {
+    name: "Origins",
+    url: "https://linktr.ee/asso.origins?utm_source=linktree_profile_share&ltsid=e3874358-bfed-46be-9499-e36ea4f02efc",
+    logo: originsLogo.url,
+    background: "#000000",
+  },
+];
+
+const REVIEWS = [
+  {
+    firstSentence:
+      "J'ai fait appel à Marine Anaïs pour la voix off de mon podcast Les Nouvelles de l'Écoute du Vivant.",
+    paragraphs: [
+      "Elle a pris le temps de trouver le ton exact qui correspondait à ce que j'attendais et à l'univers du projet. C'était un vrai plaisir de travailler avec elle et je ferai de nouveau appel à elle pour de prochains épisodes !",
+    ],
+    author: "Grégory Guillou-Montéan",
+    role: "Fondateur de l’Écoute du Vivant",
+    date: "Mai 2026",
+  },
+  {
+    firstSentence:
+      "On recommande vivement Marine Anaïs pour sa créativité, sa réactivité et sa capacité à donner vie à un projet avec authenticité !",
+    paragraphs: [
+      "On a fait appel à elle pour une prestation voix off lors d’un week-end événementiel pour notre association de jeux vidéo, Origins. ✨",
+      "À l'occasion de notre Color Party, Marine a imaginé et interprété un personnage sur-mesure pour immerger les participants dès le début de la soirée. Son implication et son talent ont apporté une vraie identité à l'événement et rendu l'expérience encore plus mémorable et conviviale !",
+    ],
+    author: "La team Origins 💫",
+    role: "",
+    date: "Mai 2026",
+  },
 ];
 
 const tileStyle: React.CSSProperties = {
@@ -98,12 +133,12 @@ function VoixOff() {
           <p style={{ color: "var(--text-muted)", margin: 0 }}>Démos audio à venir</p>
         </div>
 
-        {/* Collaborations & Projets */}
+        {/* Collaborations */}
         <section style={{ width: "100%", marginTop: "2rem" }}>
           <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem", textAlign: "center" }}>
-            Ils me font confiance
+            Collaborations
           </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "1.5rem" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "2rem" }}>
             {COLLABORATIONS.map((c) => (
               <CollaborationTile key={c.name} c={c} />
             ))}
@@ -115,25 +150,47 @@ function VoixOff() {
         </section>
 
         {/* Témoignages & Avis */}
-        <div style={{ width: "100%", maxWidth: 900 }}>
-          <TestimonialsSection
-            testimonials={[
-              {
-                quote:
-                  "J'ai fait appel à Marine Anaïs pour la voix off de mon podcast Les Nouvelles de l'Écoute du Vivant. Elle a pris le temps de trouver le ton exact qui correspondait à ce que j'attendais et à l'univers du projet. C'était un vrai plaisir de travailler avec elle et je ferai de nouveau appel à elle pour de prochains épisodes !",
-                name: "Grégory Guillou-Montéan",
-                role: "Fondateur de l’Écoute du Vivant",
-                date: "Mai 2026",
-              },
-              {
-                quote:
-                  "On recommande vivement Marine Anaïs pour sa créativité, sa réactivité et sa capacité à donner vie à un projet avec authenticité ! On a fait appel à elle pour une prestation voix off lors d’un week-end événementiel pour notre association de jeux vidéo, Origins. ✨\nÀ l'occasion de notre Color Party, Marine a imaginé et interprété un personnage sur-mesure pour immerger les participants dès le début de la soirée. Son implication et son talent ont apporté une vraie identité à l'événement et rendu l'expérience encore plus mémorable et conviviale !",
-                name: "La team Origins 💫",
-                date: "Mai 2026",
-              },
-            ]}
-          />
-        </div>
+        <section style={{ width: "100%", maxWidth: 900 }}>
+          <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem", textAlign: "center" }}>
+            Témoignages & Avis
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
+            {REVIEWS.map((r, i) => (
+              <figure
+                key={r.author}
+                style={{
+                  margin: 0,
+                  width: "min(100%, 640px)",
+                  alignSelf: i % 2 === 0 ? "flex-end" : "flex-start",
+                  background: "#ffffff",
+                  color: "#1f1f1f",
+                  borderRadius: 12,
+                  padding: "1.75rem 1.75rem 1.5rem",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+                  textAlign: "left",
+                }}
+              >
+                <blockquote style={{ margin: 0, lineHeight: 1.7, fontSize: "1rem", fontStyle: "italic" }}>
+                  {r.paragraphs.map((p, j) => (
+                    <p key={j} style={{ margin: j === 0 ? 0 : "0.9rem 0 0" }}>
+                      {j === 0 ? (
+                        <>
+                          <strong style={{ fontWeight: 700 }}>{r.firstSentence}</strong> {p}
+                        </>
+                      ) : (
+                        p
+                      )}
+                    </p>
+                  ))}
+                </blockquote>
+                <figcaption style={{ marginTop: "1.25rem", fontSize: "1.05rem", color: "#444" }}>
+                  — <strong>{r.author}</strong>
+                  {r.role ? `, ${r.role}` : ""} ({r.date})
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
 
         <Link to="/contact">
           <button className="ma-btn ma-btn-primary" style={{ padding: "1rem 2rem", fontSize: "1.05rem" }}>
