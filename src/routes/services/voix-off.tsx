@@ -133,35 +133,34 @@ function VoixOff() {
           <p style={{ color: "var(--text-muted)", margin: 0 }}>Démos audio à venir</p>
         </div>
 
-        {/* Collaborations */}
-        <section style={{ width: "100%", marginTop: "2rem" }}>
-          <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem", textAlign: "center" }}>
-            Collaborations
-          </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center", gap: "2rem" }}>
-            {COLLABORATIONS.map((c) => (
-              <CollaborationTile key={c.name} c={c} />
-            ))}
-          </div>
-          <style>{`
-            .collab-tile-link:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
-            .collab-tile-link:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 4px; }
-          `}</style>
-        </section>
+        <style>{`
+          .collab-tile-link:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+          .collab-tile-link:focus-visible { outline: 2px solid var(--accent-blue); outline-offset: 4px; }
+          @media (max-width: 720px) { .review-row { flex-direction: column !important; } }
+        `}</style>
 
         {/* Témoignages & Avis */}
         <section style={{ width: "100%", maxWidth: 900 }}>
           <h2 style={{ color: "var(--text-light)", fontSize: "1.5rem", fontWeight: 500, marginBottom: "1.5rem", textAlign: "center" }}>
             Témoignages & Avis
           </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
             {REVIEWS.map((r, i) => (
-              <figure
+              <div
                 key={r.author}
+                className="review-row"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "2rem",
+                  flexDirection: i % 2 === 0 ? "row" : "row-reverse",
+                }}
+              >
+              <CollaborationTile c={COLLABORATIONS[i]} />
+              <figure
                 style={{
                   margin: 0,
-                  width: "min(100%, 640px)",
-                  alignSelf: i % 2 === 0 ? "flex-end" : "flex-start",
+                  flex: 1,
                   background: "#ffffff",
                   color: "#1f1f1f",
                   borderRadius: 12,
@@ -188,6 +187,7 @@ function VoixOff() {
                   {r.role ? `, ${r.role}` : ""} ({r.date})
                 </figcaption>
               </figure>
+              </div>
             ))}
           </div>
         </section>
