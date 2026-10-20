@@ -23,7 +23,11 @@ const base = process.env.SITE_BASE || "/";
 
 export default defineConfig({
   base,
-  server: { port: 3000 },
+  server: {
+    port: 3000,
+    // Les dépendances peuvent être installées hors du dossier du projet (lien symbolique).
+    fs: { allow: [".", "/persist"] },
+  },
   resolve: {
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/react-start"],
   },
