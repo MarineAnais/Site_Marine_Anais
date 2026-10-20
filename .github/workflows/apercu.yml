@@ -1,0 +1,39 @@
+# Outil de diagnostic : compare l'ancien site (Lovable) au nouveau build.
+# Se lance quand on pousse sur la branche `apercu` et y dépose les captures.
+name: Aperçu comparatif
+on:
+  push:
+    branches: [apercu]
+permissions:
+  contents: write
+jobs:
+  captures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Construire le site (racine du domaine)
+        run: npm run build
+        env:
+          STATIC_BUILD: "1"
+      - name: Finaliser
+        run: |
+          cd dist/client
+          test -f 404.html || cp index.html 404.html
+      - name: Installer le navigateur de test
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: Prendre les captures
+        run: node .github/scripts/captures.mjs
+      - name: Déposer les captures sur la branche
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -f captures
+          git commit -m "Captures comparatives (ancien Lovable / nouveau)" || exit 0
+          git push origin HEAD:apercu
