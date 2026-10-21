@@ -1,0 +1,26 @@
+# Outil à usage unique : copie les images/PDF de l'ancien site (Lovable) dans le dépôt.
+name: Récupérer les médias
+on:
+  push:
+    branches: [fidelite-design]
+    paths: [".github/workflows/recuperer-medias.yml", ".github/scripts/recuperer-medias.sh"]
+permissions:
+  contents: write
+jobs:
+  medias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Télécharger depuis marineanais.fr
+        run: bash .github/scripts/recuperer-medias.sh
+      - name: Ranger dans le dépôt
+        if: success()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add public/medias
+          git commit -m "Récupérer les images et PDF de l'ancien site dans public/medias" || exit 0
+          git push origin HEAD:fidelite-design
