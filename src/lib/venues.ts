@@ -1,6 +1,6 @@
-import galerieDurbecLogo from "../assets/logo_gallerie_drubec.jpeg.asset.json";
-import mamatoLogo from "../assets/mamato-logo-1611045542.jpg.asset.json";
-import auPreauLogo from "../assets/LOGO-blanc_au_preau.png.asset.json";
+import { logoDurbec as galerieDurbecLogo } from "./medias";
+import { logoMamato as mamatoLogo } from "./medias";
+import { logoAuPreau as auPreauLogo } from "./medias";
 import type { Venue } from "../components/site/VenuesSection";
 
 export const VENUE_GALERIE_DURBEC: Venue = {

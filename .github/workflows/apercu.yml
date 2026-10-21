@@ -1,0 +1,39 @@
+# Outil de diagnostic : compare l'ancien site (Lovable) au nouveau build, page par page.
+# Les captures sont déposées sur la branche `apercu-captures` (pour ne pas encombrer le code).
+name: Aperçu comparatif
+on:
+  push:
+    branches: [fidelite-design]
+permissions:
+  contents: write
+jobs:
+  captures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Construire le site comme il sera publié
+        run: |
+          if [ -f public/CNAME ]; then BASE=/; else BASE=/${{ github.event.repository.name }}/; fi
+          echo "SITE_BASE=$BASE" >> "$GITHUB_ENV"
+          SITE_BASE=$BASE STATIC_BUILD=1 npm run build
+          cd dist/client && (test -f 404.html || cp index.html 404.html)
+      - name: Installer le navigateur de test
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.49.1 pngjs@7.0.0 pixelmatch@6.0.0
+          npx playwright install --with-deps chromium
+      - name: Prendre les captures et comparer
+        run: node .github/scripts/captures.mjs
+      - name: Déposer les captures sur la branche apercu-captures
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git checkout -q --orphan captures-tmp
+          git rm -rf -q --cached . || true
+          git add -f captures
+          git commit -q -m "Captures du commit ${GITHUB_SHA::7}"
+          git push -f origin captures-tmp:apercu-captures

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { asset } from "@/lib/asset";
-import cvPdf from "../assets/cv-marine-anais.pdf.asset.json";
+import { cvMarineAnais as cvPdf } from "../lib/medias";
 import { VideoCarousel } from "../components/site/VideoCarousel";
 import { VenuesSection } from "../components/site/VenuesSection";
 import { ALL_VENUES } from "../lib/venues";

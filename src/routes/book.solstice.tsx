@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import * as React from "react";
-import solsticePhoto from "../assets/solstice_hub_btn.png.asset.json";
+import { solsticeHubBtn as solsticePhoto } from "../lib/medias";
 import { VenuesSection } from "../components/site/VenuesSection";
 import { SOLSTICE_VENUES } from "../lib/venues";
 

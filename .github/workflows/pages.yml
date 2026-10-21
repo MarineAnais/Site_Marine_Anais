@@ -1,11 +1,11 @@
 # Construit le site et le met en ligne sur GitHub Pages à chaque modification de `main`.
-# Sur les autres branches (ex. retrait-lovable), le site est seulement construit pour
+# Sur les autres branches (ex. fidelite-design), le site est seulement construit pour
 # vérifier que tout fonctionne : une croix rouge dans GitHub = quelque chose à corriger.
 name: Site GitHub Pages
 
 on:
   push:
-    branches: [main, retrait-lovable]
+    branches: [main, fidelite-design]
   workflow_dispatch:
 
 permissions:
@@ -30,6 +30,17 @@ jobs:
       - name: Installer les dépendances
         run: npm install --no-audit --no-fund
 
+      - name: Déterminer l'adresse de base du site
+        id: base
+        run: |
+          # Avec un nom de domaine personnalisé (fichier public/CNAME), le site est à la racine.
+          # Sinon il est dans un sous-dossier qui porte le nom du dépôt (adresse github.io).
+          if [ -f public/CNAME ]; then
+            echo "value=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=/${{ github.event.repository.name }}/" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Construire le site (fichiers fixes)
         shell: bash
         run: |
@@ -44,8 +55,7 @@ jobs:
           exit $code
         env:
           STATIC_BUILD: "1"
-          # Adresse github.io du dépôt. Passer à "/" une fois marineanais.fr branché.
-          SITE_BASE: /artist-website-forge/
+          SITE_BASE: ${{ steps.base.outputs.value }}
 
       - name: Finaliser le dossier publié
         run: |
@@ -64,7 +74,7 @@ jobs:
             grep -q "${SITE_BASE}assets/" dist/client/index.html || { echo "::error::Le préfixe ${SITE_BASE} est absent de index.html"; exit 1; }
           fi
         env:
-          SITE_BASE: /artist-website-forge/
+          SITE_BASE: ${{ steps.base.outputs.value }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

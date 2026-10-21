@@ -18,7 +18,7 @@ import { nitro } from "nitro/vite";
 const isStaticBuild = process.env.STATIC_BUILD === "1";
 
 // Préfixe des adresses du site. "/" à la racine d'un domaine (par défaut) ; sur l'adresse
-// github.io du dépôt : SITE_BASE=/artist-website-forge/ (voir .github/workflows/pages.yml).
+// github.io du dépôt : SITE_BASE=/<nom-du-dépôt>/ (voir .github/workflows/pages.yml).
 const base = process.env.SITE_BASE || "/";
 
 export default defineConfig({

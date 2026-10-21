@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import marineHub from "../../../assets/marine_hub_btn.jpg.asset.json";
-import solsticeHub from "../../../assets/solstice_hub_btn.png.asset.json";
+import { marineHubBtn as marineHub } from "../../../lib/medias";
+import { solsticeHubBtn as solsticeHub } from "../../../lib/medias";
 
 export const Route = createFileRoute("/services/concert/")({
   head: () => ({

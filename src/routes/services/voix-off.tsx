@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import ecouteLogo from "@/assets/logo-ecoute-du-vivant.jpeg.asset.json";
-import originsLogo from "@/assets/logo-origins.jpeg.asset.json";
+import { logoEcouteDuVivant as ecouteLogo } from "@/lib/medias";
+import { logoOrigins as originsLogo } from "@/lib/medias";
 
 export const Route = createFileRoute("/services/voix-off")({
   head: () => ({

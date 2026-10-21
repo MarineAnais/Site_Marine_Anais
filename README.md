@@ -25,13 +25,11 @@ Le résultat est généré dans le dossier `.output/`.
 
 Le site est publié gratuitement par GitHub Pages. À chaque modification de la branche `main`, GitHub construit le site (fichier `.github/workflows/pages.yml`) et le met en ligne tout seul. Sur les autres branches, il le construit seulement pour vérifier que tout fonctionne (onglet **Actions** du dépôt).
 
-Réglages à faire une seule fois dans GitHub, onglet **Settings → Pages** :
+Réglages à faire une seule fois dans GitHub, onglet **Settings → Pages** : **Source** = **GitHub Actions**.
 
-1. **Source** : choisir **GitHub Actions**.
-2. **Custom domain** : saisir `marineanais.fr`, puis cocher **Enforce HTTPS** une fois la case disponible.
-3. Chez le vendeur du nom de domaine, ajouter les enregistrements DNS indiqués par GitHub (voir la documentation « Configuring a custom domain for your GitHub Pages site »).
+Adresse du site : tant qu'aucun nom de domaine n'est branché, le site est publié dans un sous-dossier portant le nom du dépôt (`https://marineanais.github.io/<nom-du-dépôt>/`). Dès qu'un fichier `public/CNAME` existe (contenant `marineanais.fr`), le site est construit pour la racine du domaine : c'est ce fichier qui fait le changement, rien d'autre à modifier.
 
-Le site est prévu pour être servi à la racine d'un domaine : sans nom de domaine personnalisé, les images et les liens ne s'afficheraient pas correctement à l'adresse `marineanais.github.io/artist-website-forge`.
+Images et PDF : ils sont rangés dans `public/medias/` et déclarés dans `src/lib/medias.ts`.
 
 Pour un autre hébergeur (Vercel, Netlify, Cloudflare Pages), il suffit de relier le dépôt : le format de déploiement est détecté automatiquement (commande d'installation `npm install`, commande de build `npm run build`).
 

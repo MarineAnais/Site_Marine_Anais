@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import visuel from "../../../../assets/solstice_Entreprise.png.asset.json";
-import pdf from "../../../../assets/Offre_Solstice_Entreprise.pdf.asset.json";
+import { solsticeEntreprise as visuel } from "../../../../lib/medias";
+import { offreSolsticeEntreprise as pdf } from "../../../../lib/medias";
 import OfferSheet from "../../../../components/site/OfferSheet";
 
 export const Route = createFileRoute("/services/concert/solstice/entreprises")({
